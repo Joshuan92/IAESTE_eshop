@@ -1,0 +1,77 @@
+.top-bar {
+  background: #555;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 10px 0;
+}
+
+.top-bar.top-bar-light {
+  background: #fff;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+}
+
+.top-bar.top-bar-light a.login-btn, .top-bar.top-bar-light a.signup-btn {
+  color: #555 !important;
+}
+
+.top-bar.top-bar-light a.login-btn span, .top-bar.top-bar-light a.signup-btn span {
+  display: inline-block;
+}
+
+.top-bar p {
+  margin-bottom: 0;
+  font-size: 0.75rem;
+}
+
+.top-bar ul {
+  margin-bottom: 0;
+}
+
+.top-bar a.login-btn, .top-bar a.signup-btn {
+  color: #eee;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none !important;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.top-bar a.login-btn i, .top-bar a.signup-btn i {
+  margin-right: 10px;
+}
+
+.top-bar ul.social-custom {
+  margin-left: 20px;
+}
+
+.top-bar ul.social-custom li {
+  padding: 0;
+  margin: 0;
+}
+
+.top-bar ul.social-custom a {
+  text-decoration: none !important;
+  font-size: 0.7rem;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  color: #999;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0;
+}
+
+.top-bar ul.social-custom a:hover {
+  background: #4fbfa8;
+  color: #fff;
+}
+
+.top-bar .contact-info {
+  margin-right: 20px;
+}
+
+.top-bar .contact-info a {
+  font-size: 0.8rem;
+}
