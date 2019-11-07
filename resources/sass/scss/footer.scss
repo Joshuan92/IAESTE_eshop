@@ -1,0 +1,96 @@
+footer.main-footer {
+  padding: 60px 0;
+  padding-bottom: 0;
+  background: #555;
+  color: #fff;
+}
+
+footer.main-footer a {
+  color: inherit;
+  color: #eee;
+}
+
+footer.main-footer h4 {
+  color: #eee;
+  margin: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+footer.main-footer p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+footer.main-footer hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  background: none;
+}
+
+footer.main-footer .footer-blog-list li {
+  margin-bottom: 20px;
+}
+
+footer.main-footer .image {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+footer.main-footer .text {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+footer.main-footer .text a {
+  font-size: 0.8rem;
+}
+
+footer.main-footer .photo-stream li {
+  margin: 0;
+}
+
+footer.main-footer .photo-stream a {
+  width: 80px;
+  height: 80px;
+  padding: 5px;
+  display: block;
+}
+
+footer.main-footer .copyrights {
+  padding: 50px 0;
+  background: #333;
+  color: #ccc;
+  margin-top: 50px;
+}
+
+footer.main-footer .copyrights a {
+  color: #4fbfa8;
+}
+
+footer.main-footer .copyrights p {
+  color: inherit;
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  footer.main-footer .photo-stream a {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 767px) {
+  footer.main-footer .photo-stream li {
+    width: 32%;
+    margin-bottom: 10px;
+  }
+  footer.main-footer .photo-stream a {
+    width: 100%;
+    height: auto;
+  }
+}

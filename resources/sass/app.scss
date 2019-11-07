@@ -1,1 +1,19 @@
-//
+@import './scss/navbar.scss';
+@import './scss/newCarousel.scss';
+@import './scss/topbar.scss';
+@import './scss/footer.scss';
+@import './scss/testimonials.scss';
+@import './scss/clients.scss';
+@import './scss/about.scss';
+@import './scss/rollercaster.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #555!important;
+  padding-bottom: 10px;
+}
