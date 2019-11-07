@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from './../../../img/iaeste_ikariera.png';
+import Logo from './../../../public/img/iaeste_ikariera.png';
 import {
   BrowserRouter as Router,
   Switch,

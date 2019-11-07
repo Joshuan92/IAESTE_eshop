@@ -1,10 +1,10 @@
 import React from 'react';
-import Cust1 from './../img/customer-1.png';
-import Cust2 from './../img/customer-2.png';
-import Cust3 from './../img/customer-3.png';
-import Cust4 from './../img/customer-4.png';
-import Cust5 from './../img/customer-5.png';
-import Cust6 from './../img/customer-6.png';
+import Cust1 from './../../../public/img/customer-1.png';
+import Cust2 from './../../../public/img/customer-2.png';
+import Cust3 from './../../../public/img/customer-3.png';
+import Cust4 from './../../../public/img/customer-4.png';
+import Cust5 from './../../../public/img/customer-5.png';
+import Cust6 from './../../../public/img/customer-6.png';
 
 export default class Clients extends React.Component {
   render(){

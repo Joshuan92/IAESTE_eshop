@@ -1,9 +1,9 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 
-import Mac from './../img/template-mac.png';
-import Customize from './../img/template-easy-customize.png';
-import Code from './../img/template-easy-code.png';
+import Mac from './../../../public/img/template-mac.png';
+import Customize from './../../../public/img/template-easy-customize.png';
+import Code from './../../../public/img/template-easy-code.png';
 
 
 export default class Rollercaster extends React.Component {
