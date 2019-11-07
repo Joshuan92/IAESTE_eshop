@@ -1,7 +1,7 @@
 import React from 'react';
-import Pers1 from './../img/person-1.jpg';
-import Pers2 from './../img/person-2.jpg';
-import Pers3 from './../img/person-3.png';
+import Pers1 from './../../../public/img/person-1.jpg';
+import Pers2 from './../../../public/img/person-2.jpg';
+import Pers3 from './../../../public/img/person-3.png';
 
 export default class Topbar extends React.Component {
   render(){

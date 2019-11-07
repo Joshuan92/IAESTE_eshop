@@ -7,7 +7,8 @@ import Testimonials from './Testimonials.jsx';
 import Clients from './Clients.jsx';
 import Footer from './Footer.jsx';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import CarieerFair from './CarierFairs.jsx';
+
+import './../../sass/app.scss'; 
 
 
 export default class App extends React.Component {
@@ -16,10 +17,7 @@ export default class App extends React.Component {
       <>
         <Topbar       />
         <Navbar       />
-        <HashRouter>
-
-        <Route exact path="/carieer" component={ CarieerFairs } />
-        </HashRouter>
+        
         <NewCarousel  />
         <About        />
         <Testimonials />

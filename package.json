@@ -36,5 +36,12 @@
         "plugins": [
             "@babel/plugin-proposal-class-properties"
         ]
+    },
+    "dependencies": {
+        "bootstrap": "^4.3.1",
+        "node-sass": "^4.13.0",
+        "react-responsive-carousel": "^3.1.51",
+        "react-router-dom": "^5.1.2",
+        "reactstrap": "^8.1.1"
     }
 }
