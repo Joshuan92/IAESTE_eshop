@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('name');
             $table->text('short_description');
             $table->text('details');
-            $table->int('price');
+            $table->integer('price');
             $table->string('address_street')->nullable();
             $table->string('address_zip_code')->nullable();
             $table->string('address_city')->nullable();
