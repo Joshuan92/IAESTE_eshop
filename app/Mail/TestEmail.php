@@ -16,9 +16,9 @@ class TestEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($name)
     {
-        //
+        $this->user_name = $name;
     }
 
     /**
@@ -28,6 +28,6 @@ class TestEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('test_mail', ['name' => $this->user_name]);
     }
 }

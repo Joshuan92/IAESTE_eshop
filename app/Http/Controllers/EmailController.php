@@ -9,7 +9,12 @@ use Illuminate\Support\Facades\Mail;
 class EmailController extends Controller
 {
     public function index() {
-        $to_name = 'TO_NAME';
+        $user_name = 'Paul';
+        $user_email = 'paul@example.com';
+
+        Mail::to($user_email)->send(new TestEmail($user_name));
+        
+        /* $to_name = 'TO_NAME';
         $to_email = 'TO_EMAIL_ADDRESS';
         $data = array('name'=>"Sam Jose", "body" => "Test mail");
         
@@ -17,6 +22,6 @@ class EmailController extends Controller
         $message->to($to_email, $to_name)
                 ->subject('Artisans Web Testing Mail');
         $message->from('FROM_EMAIL_ADDRESS','Artisans Web');
-});
+}); */
 }
 }

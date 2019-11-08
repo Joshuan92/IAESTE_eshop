@@ -23,19 +23,19 @@ export default class Navbar extends React.Component {
                 <a className="nav-link" href="#">Events</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Carieer fairs</a>
+                <a className="nav-link">Careers Fairs</a> 
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#interships">Interships</a>
+                <a className="nav-link" href="#interships">Internships</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="freshman.html">Freshman guide</a>
+                <a className="nav-link" href="freshman.html">Freshman Guide</a>
               </li>
               <li className="nav-item"> 
-                <a className="nav-link" href="partnerships.html">Partnership</a>
+                <a className="nav-link" href="partnerships.html">Partnerships</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="project_info.html">Project information</a>
+                <a className="nav-link" href="project_info.html">Project Information</a>
               </li>
               <li>
                 <button type="button" className="btn btn-primary">Sign in</button>

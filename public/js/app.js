@@ -38853,14 +38853,14 @@ function (_React$Component) {
         className: "col-md-6"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "About Us"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "about-content"
-      }, " Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus rhoncus. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Integer tempor. Curabitur ligula sapien, pulvinar a vestibulum quis, facilisis vel sapien. Nullam dapibus fermentum ipsum. In dapibus augue non sapien. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Pellentesque pretium lectus id turpis. Cras pede libero, dapibus nec, pretium sit amet, tempor quis. Nulla est. Cras elementum. Nullam rhoncus aliquam metus. Nulla quis diam. Nullam dapibus fermentum ipsum. Etiam neque."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "IAESTE Czech Republic is a member of IAESTE a.s.b.l. (Association sans but lucratif), an independent, non-for-profit organisation registered in Luxembourg, which was founded in 1948 and currently operates at least in 85 countries worldwide. Its main goal is to enable technical university students to travel abroad and gain professional experience through the IAESTE international traineeship programme. In the Czech Republic, IAESTE also organizes HR projects, which are listed in this brochure. The organization is run by students of diverse study back- grounds, who do so on a voluntary basis in their free time. Their aim is to bring together universities and companies and facilitate new opportunities. More information about IAESTE Czech Republic is available in the Annual Report of IAESTE Czech Republic."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
         className: "btn btn-primary"
       }, "Read more"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-6 skills-bar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Carieer fairs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Careers Fairs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "progress"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "progress-bar",
@@ -38874,7 +38874,7 @@ function (_React$Component) {
         style: {
           width: '75%'
         }
-      }, "75 %")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Student programs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "75 %")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Student Programs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "progress"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "progress-bar",
@@ -39425,27 +39425,27 @@ function (_React$Component) {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-link"
-      }, "Carieer fairs")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Careers Fairs")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-link",
         href: "#interships"
-      }, "Interships")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Internships")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-link",
         href: "freshman.html"
-      }, "Freshman guide")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Freshman Guide")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-link",
         href: "partnerships.html"
-      }, "Partnership")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Partnerships")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-link",
         href: "project_info.html"
-      }, "Project information")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Project Information")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
         className: "btn btn-primary"
       }, "Sign in")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -39682,21 +39682,21 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: _public_img_person_1_jpg__WEBPACK_IMPORTED_MODULE_1___default.a,
         className: "user"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("blockquote", null, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus rhoncus. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Integer tempor. Curabitur ligula sapien, pulvinar a vestibulum quis, facilisis vel sapien."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Michal Gazd\xEDk", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " Founder at XYZ ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("blockquote", null, "The iKariera expositions have been steadily getting to the top of all student fairs for many years now. That is not just because of the high numbers of students who attend every year and are very interested in cooperation opportunities, but also because the exposition organization is on an extremely high level. The IAESTE expositions provide our company with a unique opportunity to showcase itself to students and future graduates."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Michal Pr\xE1t", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "HR Marketing Specialist \u0160koda Transportation")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-4 text-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: _public_img_person_2_jpg__WEBPACK_IMPORTED_MODULE_2___default.a,
         className: "user"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("blockquote", null, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus rhoncus. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Integer tempor. Curabitur ligula sapien, pulvinar a vestibulum quis, facilisis vel sapien."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Michal Gazd\xEDk", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " Founder at XYZ ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("blockquote", null, "We have been attending the iKariera expositions for four years. We especially appreciate that they are located directly on Faculty of Civil Engineering campus, allowing us to meet talented students interested in a career in this sector. In spite of being student- organized, the exposition maintains a high level of professionalism."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "V\xEDtek Vyhnal", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Human Resources Manager Hilti \u010CR spol. s r.o.")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-4 text-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: _public_img_person_3_png__WEBPACK_IMPORTED_MODULE_3___default.a,
         className: "user"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("blockquote", null, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus rhoncus. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Integer tempor. Curabitur ligula sapien, pulvinar a vestibulum quis, facilisis vel sapien."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Michal Gazd\xEDk", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " Founder at XYZ ")))))));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("blockquote", null, "We have been collaborating with the student organization IAESTE for a number of years, because of the quality of their services and their unique history and mission. We think the organization\u2018s greatest advantage is its close connection to universities, which means the career fairs can take place right on university grounds. This increases the turnout and allows the exhibitors to target on students better than in other projects. The personal contact with students also gives the exhibitors feedback on their job opportunities and benefits portfolios."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Karel Zu\u010Dek", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Engineering Project Manager Procter and Gamble")))))));
     }
   }]);
 
@@ -39871,7 +39871,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/michalgazdik/web/iaeste_eshop/IAESTE_eshop/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/paulcoltofeanu/web/bootcamp/Final Project/Pre-production/final-project-mockup-2/IAESTE_eshop/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })
