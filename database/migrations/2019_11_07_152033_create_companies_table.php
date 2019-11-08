@@ -26,7 +26,6 @@ class CreateCompaniesTable extends Migration
             $table->string('DICO')->nullable();
             $table->string('contact_person')->nullable();
             $table->string('contact_email')->nullable();
-            $table->string('contact_email')->nullable();
             $table->string('contact_phone')->nullable();
             $table->timestamps();
         });
