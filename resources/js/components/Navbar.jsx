@@ -13,7 +13,7 @@ export default class Navbar extends React.Component {
     return(
       <section id="nav-bar">
         <nav className="navbar navbar-expand-lg navbar-light">
-          <a className="navbar-brand" href="#"><img src={ Logo }/></a>
+          <Link to='/' className="navbar-brand"><img src={ Logo }/></Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -22,8 +22,9 @@ export default class Navbar extends React.Component {
               <li className="nav-item active">
                 <a className="nav-link" href="#">Events</a>
               </li>
+             
               <li className="nav-item">
-                <a className="nav-link">Carieer fairs</a>
+              <Link to='/career' className="nav-link">Career fairs</Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#interships">Interships</a>
@@ -37,12 +38,12 @@ export default class Navbar extends React.Component {
               <li className="nav-item">
                 <a className="nav-link" href="project_info.html">Project information</a>
               </li>
-              <li>
+             {/*  <li>
                 <button type="button" className="btn btn-primary">Sign in</button>
               </li>
               <li>
                 <button type="button" className="btn btn-primary">Register</button>
-              </li>
+              </li> */}
               </ul>
             
           </div>
