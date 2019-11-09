@@ -15,8 +15,6 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('email');
-            $table->string('password');
             $table->string('company_name')->nullable();
             $table->string('address_street')->nullable();
             $table->string('address_zip_code')->nullable();
@@ -26,7 +24,9 @@ class CreateCompaniesTable extends Migration
             $table->string('DICO')->nullable();
             $table->string('contact_person')->nullable();
             $table->string('contact_email')->nullable();
+            $table->timestamp('contact_email_verified_at')->nullable();
             $table->string('contact_phone')->nullable();
+            $table->boolean('confirmed')->nullable()->default(false);
             $table->timestamps();
         });
     }

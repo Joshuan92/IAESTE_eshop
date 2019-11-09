@@ -15,12 +15,9 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('local_commitee_id');
             $table->bigInteger('type_id');
             $table->string('name');
             $table->text('short_description');
-            $table->text('details');
-            $table->integer('price');
             $table->string('address_street')->nullable();
             $table->string('address_zip_code')->nullable();
             $table->string('address_city')->nullable();
