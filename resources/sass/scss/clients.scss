@@ -8,38 +8,20 @@
 
 .fluid {
   width: 50%;
-
 }
 
 .bg-gray {
-  background: #e9ecef !important;
+  background: #F7F7F7;
 }
 
-
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-.partners {
-  margin-bottom: 40px;
-  margin-top: 10px;
-}
-
-.partners .item {
-  margin: 0 0px;
-}
-
-.partners .item img {
+.partners .items img {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.partners .item img:hover {
+.partners .items img:hover {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }

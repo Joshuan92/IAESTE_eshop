@@ -27,7 +27,7 @@ export default class Topbar extends React.Component {
                   a unique opportunity to showcase
                   itself to students and future graduates.
                 </blockquote>
-                <h3>Michal Prát<span>HR Marketing Specialist Škoda Transportation</span></h3>
+                <h3>Michal Prát<span><br/>HR Marketing Specialist Škoda Transportation</span></h3>
               </div>
             </div>
 
@@ -46,7 +46,7 @@ export default class Topbar extends React.Component {
 
                   a high level of professionalism.
                 </blockquote>
-                <h3>Vítek Vyhnal<span>Human Resources Manager Hilti ČR spol. s r.o.</span></h3>
+                <h3>Vítek Vyhnal<span><br/>Human Resources Manager Hilti ČR spol. s r.o.</span></h3>
               </div>
             </div>
 
@@ -69,7 +69,7 @@ export default class Topbar extends React.Component {
                   the exhibitors feedback on their job
                   opportunities and benefits portfolios.
                 </blockquote>
-                <h3>Karel Zuček<span>Engineering Project Manager Procter and Gamble</span></h3>
+                <h3>Karel Zuček<span><br/>Engineering Project Manager Procter and Gamble</span></h3>
               </div>
             </div>
 

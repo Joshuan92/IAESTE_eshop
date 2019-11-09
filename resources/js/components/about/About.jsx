@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Scale from './Scale.jsx';
+import dataScale from './dataScale.js';
 
 export default class About extends React.Component {
   render(){
@@ -15,26 +17,14 @@ export default class About extends React.Component {
                   </Link>
               </div>
               <div className="col-md-6 skills-bar">
-                <p>Carieer fairs</p>
-              <div className="progress">
-                <div className="progress-bar" style={{ width: '80%' }}>80 %
-              </div>
-              </div>
-                <p>Internships</p>
-              <div className="progress">
-                <div className="progress-bar" style={{ width: '75%' }}>75 %
-              </div>
-              </div>
-                <p>Student programs</p>
-                <div className="progress">
-                <div className="progress-bar" style={{ width: '60%' }}>60 %
-              </div>
-              </div>
-                <p>Workshops</p>
-                  <div className="progress">
-                  <div className="progress-bar" style={{ width: '40%' }}>40 %
-              </div>
-              </div>
+              {
+                dataScale.map(scale => 
+                  <Scale 
+                    name={ scale.name }
+                    data={ scale.data }
+                    />)
+              }  
+              
         </div>
       </div>
     </div>

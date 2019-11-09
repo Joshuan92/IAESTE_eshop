@@ -70,7 +70,7 @@ export default class Footer extends React.Component {
             </div>
               <div className="col-lg-3">
                 <h4 className="h6">Contact</h4>
-                <p className="text-uppercase"><strong>Universal Ltd.</strong><br/>13/25 New Avenue <br/>Newtown upon River <br/>45Y 73J <br/>England <br/><strong>Great Britain</strong></p><a href="contact.html" className="btn btn-template-main">Go to contact page</a>
+                <p className="text-uppercase"><a href="https://www.iaeste.cz/"><strong>IAESTE Czech Republic</strong></a><br/>Zikova 4 <br/>Praha 6 <br/>166 36 <br/><strong>Czech Republic</strong></p><a href="contact.html" className="btn btn-template-main">Go to contact page</a>
                 <hr className="d-block d-lg-none"/>
               </div>
             <div className="col-lg-3">

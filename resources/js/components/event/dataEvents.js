@@ -1,0 +1,68 @@
+const dataEvents = [
+  {
+    id: 1,
+    name: 'Portfolio item',
+    img: './../images/Image1.jpeg',
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada',
+    view: 'View',
+    website: 'Website',
+  },
+  {
+    id: 2,
+    name: 'Portfolio item',
+    img: './../images/Image2.jpeg',
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada',
+    view: 'View',
+    website: 'Website',
+  },
+  {
+    id: 3,
+    name: 'Portfolio item',
+    img: './../images/Image9.jpeg',
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada',
+    view: 'View',
+    website: 'Website',
+  },
+  {
+    id: 4,
+    name: 'Portfolio item',
+    img: './../images/Image4.jpeg',
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada',
+    view: 'View',
+    website: 'Website',
+  },
+  {
+    id: 5,
+    name: 'Portfolio item',
+    img: './../images/Image5.jpeg',
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada',
+    view: 'View',
+    website: 'Website',
+  },
+  {
+    id: 6,
+    name: 'Portfolio item',
+    img: './../images/Image6.jpeg',
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada',
+    view: 'View',
+    website: 'Website',
+  },
+  {
+    id: 7,
+    name: 'Portfolio item',
+    img: './../images/Image7.jpeg',
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada',
+    view: 'View',
+    website: 'Website',
+  },
+  {
+    id: 8,
+    name: 'Portfolio item',
+    img: './../images/Image8.jpeg',
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada',
+    view: 'View',
+    website: 'Website',
+  },
+]
+
+export default dataEvents

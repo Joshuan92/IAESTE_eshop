@@ -36,3 +36,4 @@ mix.react('resources/js/app.js', 'public/js')
  
 // add versioning 
 mix.version();
+
