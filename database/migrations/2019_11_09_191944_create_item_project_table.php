@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectTypesTable extends Migration
+class CreateItemProjectTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateProjectTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_types', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('project_type');
-            $table->timestamps();
+        Schema::create('item_project', function (Blueprint $table) {
+            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('project_id');
+
+            $table->primary(['item_id', 'project_id']);
+            
         });
     }
 
@@ -27,6 +29,6 @@ class CreateProjectTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_types');
+        Schema::dropIfExists('item_project');
     }
 }
