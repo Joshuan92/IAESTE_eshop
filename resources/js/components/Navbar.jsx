@@ -15,28 +15,27 @@ export default class Navbar extends React.Component {
         <nav className="navbar navbar-expand-lg navbar-light">
           <Link to='/' className="navbar-brand"><img src={ Logo }/></Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="#">Events</a>
-              </li>
-             
+              <Link to='/events' className="nav-link">Events</Link>
+              </li>      
               <li className="nav-item">
               <Link to='/career' className="nav-link">Career fairs</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#interships">Interships</a>
+              <Link to='/internship' className="nav-link">Internships</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="freshman.html">Freshman guide</a>
+              <Link to='/freshman' className="nav-link">Freshman guide</Link>
               </li>
               <li className="nav-item"> 
-                <a className="nav-link" href="partnerships.html">Partnership</a>
+              <Link to='/partnership' className="nav-link">Partnership</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="project_info.html">Project information</a>
+              <Link to='/project_info' className="nav-link">Project information</Link>
               </li>
              {/*  <li>
                 <button type="button" className="btn btn-primary">Sign in</button>
