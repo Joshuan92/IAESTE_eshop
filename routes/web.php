@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 */
 
-Route::get('/{anything?}', function () {
+Route::get('/react/{anything?}', function () {
     return view('welcome');
 })->where('anything', '.*');
+
+Route::get('/user', 'CompanyController@index');
