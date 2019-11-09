@@ -13,11 +13,12 @@ export default class CareerFair extends React.Component {
               <div className="row">
                   {
                     fairInfo.map(fair => 
-                      <SingleFair key={fair.id}
-                          name={fair.name}
-                          text={fair.text}
-                          venue={fair.venue}
-                          date={fair.date}
+                      <SingleFair key={ fair.id }
+                          name={ fair.name }
+                          text={ fair.text }
+                          venue={ fair.venue }
+                          date={ fair.date }
+                          img={ fair.img }
                       />)
                   }
                 </div>
