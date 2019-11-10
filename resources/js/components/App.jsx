@@ -11,6 +11,7 @@ import ReadMore from './ReadMore.jsx';
 import Partnership from './../components/partnership/Partnership.jsx';
 import Freshman from './../components/freshman/Freshman.jsx';
 import Internship from './Internship.jsx';
+import Login from './../components/loginForm/Login.jsx';
 import Event from './../components/event/Event.jsx';
 import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -27,7 +28,7 @@ export default class App extends React.Component {
            
         <Topbar />
         <Navbar />
-
+        
         <Switch >
           <Route exact path='/'>
               <NewCarousel/>
@@ -58,6 +59,10 @@ export default class App extends React.Component {
 
           <Route path='/about' >
             <ReadMore />
+          </Route>
+
+          <Route path='/login'>
+              <Login />
           </Route>
 
         </Switch>
