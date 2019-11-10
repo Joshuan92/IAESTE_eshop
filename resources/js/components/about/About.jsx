@@ -19,7 +19,7 @@ export default class About extends React.Component {
               <div className="col-md-6 skills-bar">
               {
                 dataScale.map(scale => 
-                  <Scale 
+                  <Scale key={scale.id}
                     name={ scale.name }
                     data={ scale.data }
                     />)

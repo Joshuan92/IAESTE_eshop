@@ -24,7 +24,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Router
-        basename={'/'}  >
+        basename={'/react'}  >
            
         <Topbar />
         <Navbar />
