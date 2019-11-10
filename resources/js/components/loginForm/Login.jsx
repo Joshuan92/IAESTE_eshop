@@ -75,10 +75,9 @@ export default class App extends React.Component {
         }
 
         return (
-            <main>
-                <h1>Application</h1>
+            <>
                  { content }
-            </main>
+            </>
         )
     }
 }

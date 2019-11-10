@@ -1,11 +1,6 @@
 import React from 'react';
 import Logo from './../../../public/img/iaeste_ikariera.png';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 
 export default class Navbar extends React.Component {
@@ -37,13 +32,7 @@ export default class Navbar extends React.Component {
               <li className="nav-item">
               <Link to='/project_info' className="nav-link">Project information</Link>
               </li>
-             {/*  <li>
-                <button type="button" className="btn btn-primary">Sign in</button>
-              </li>
-              <li>
-                <button type="button" className="btn btn-primary">Register</button>
-              </li> */}
-              </ul>
+            </ul>
             
           </div>
         </nav>

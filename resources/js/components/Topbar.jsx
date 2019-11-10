@@ -13,7 +13,7 @@ export default class Topbar extends React.Component {
           <div className="container">
             <div className="row d-flex align-items-center">
               <div className="col-md-6 d-md-block d-none">
-                <p>Contact us on +420 777 555 333 or hello@universal.com.</p>
+                <p>Contact us on +420 220 443 068 or vscht@iaeste.cz</p>
               </div>
               <div className="col-md-6">
                 <div className="d-flex justify-content-md-end justify-content-between">
