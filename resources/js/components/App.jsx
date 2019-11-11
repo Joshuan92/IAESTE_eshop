@@ -10,6 +10,7 @@ import CareerFair from './../components/careerFair/CareerFair.jsx';
 import ReadMore from './ReadMore.jsx';
 import Partnership from './../components/partnership/Partnership.jsx';
 import Freshman from './../components/freshman/Freshman.jsx';
+import Project from './../components/projectInfo/Project.jsx';
 import Internship from './Internship.jsx';
 import Login from './../components/loginForm/Login.jsx';
 import Event from './../components/event/Event.jsx';
@@ -63,6 +64,9 @@ export default class App extends React.Component {
 
           <Route path='/login'>
               <Login />
+          </Route>    
+          <Route path='/projectinfo' >
+            <Project />
           </Route>
 
         </Switch>
