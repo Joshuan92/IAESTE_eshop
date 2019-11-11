@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User; 
+use App\Company;
 
 class CompanyController extends Controller
 {
     public function index () {
 
-        $companies = User::orderBy('id')
-                        ->with('company')
+        $companies = Company::orderBy('id')
+                        ->with('users')
                         ->limit(20)
                         ->get();
 
