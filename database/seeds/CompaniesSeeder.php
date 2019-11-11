@@ -18,11 +18,8 @@ class CompaniesSeeder extends Seeder
     {
 
         $faker = Faker::create('cs_CZ');
-        
-        
-        for ($i = 0; $i < 100; $i++) {
 
-            $emails = ['@seznam.cz', '@centrum.cz', '@gmail.com', '@email.cz'];
+        $emails = ['@seznam.cz', '@centrum.cz', '@gmail.com', '@email.cz'];
 
             $czechToEnglish = [
                 'ä'=>'a',
@@ -110,6 +107,9 @@ class CompaniesSeeder extends Seeder
                 'ź'=>'z',
                 'Ź'=>'Z'
             ];
+        
+        
+        for ($i = 0; $i < 100; $i++) {
 
             $ico = $faker->ico;
             $firstName = $faker->firstName; 
@@ -131,6 +131,8 @@ class CompaniesSeeder extends Seeder
                 'contact_phone' => $phoneNumber,
                 'created_at' => Carbon::now()
             ]);
+
+            
             
             DB::table('users')->insert([
                 'email' => $email,
@@ -145,8 +147,34 @@ class CompaniesSeeder extends Seeder
             
             DB::table('company_user')->insert([
                 'company_id' => $i+1,
-                'user_id' => $i+1
-	        ]);
+                'user_id' => $i*4+1
+            ]);
+
+            for ($j=0; $j<3; $j++) {
+                
+                $firstName = $faker->firstName; 
+                $lastName = $faker->lastName;
+                $email = strtr($firstName, $czechToEnglish). '.'. strtr($lastName, $czechToEnglish).$emails[floor(rand(0,3.9))];
+                $phoneNumber = $faker->phoneNumber;
+
+                DB::table('users')->insert([
+                    'email' => $email,
+                    'email_verified_at' => Carbon::now(),
+                    'password' => bcrypt('secret'),
+                    'first_name' => $firstName,
+                    'last_name' => $lastName,
+                    'phone_number' => $phoneNumber,
+                    'confirmed' => 1,
+                    'created_at' => Carbon::now()
+                ]);
+                
+                DB::table('company_user')->insert([
+                    'company_id' => $i+1,
+                    'user_id' => ($i*4)+1+$j+1
+                ]);
+            }
+
+            
         
         }
     }
