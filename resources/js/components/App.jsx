@@ -10,6 +10,7 @@ import CareerFair from './../components/careerFair/CareerFair.jsx';
 import ReadMore from './ReadMore.jsx';
 import Partnership from './../components/partnership/Partnership.jsx';
 import Freshman from './../components/freshman/Freshman.jsx';
+import Project from './../components/projectInfo/Project.jsx';
 import Internship from './Internship.jsx';
 import Event from './../components/event/Event.jsx';
 import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom';
@@ -58,6 +59,10 @@ export default class App extends React.Component {
 
           <Route path='/about' >
             <ReadMore />
+          </Route>
+
+          <Route path='/projectinfo' >
+            <Project />
           </Route>
 
         </Switch>

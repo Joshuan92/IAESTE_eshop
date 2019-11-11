@@ -35,7 +35,7 @@ export default class Navbar extends React.Component {
               <Link to='/partnership' className="nav-link">Partnership</Link>
               </li>
               <li className="nav-item">
-              <Link to='/project_info' className="nav-link">Project information</Link>
+              <Link to='/projectinfo' className="nav-link">Project information</Link>
               </li>
              {/*  <li>
                 <button type="button" className="btn btn-primary">Sign in</button>
