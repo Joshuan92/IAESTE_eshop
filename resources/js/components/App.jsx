@@ -64,7 +64,8 @@ export default class App extends React.Component {
 
           <Route path='/login'>
               <Login />
-          </Route>    
+          </Route>   
+           
           <Route path='/projectinfo' >
             <Project />
           </Route>
