@@ -14,7 +14,7 @@ import Project from './projectInfo/Project.jsx';
 import Internship from './Internship.jsx';
 import Login from './loginForm/Login.jsx';
 import Event from './event/Event.jsx';
-import CompanyForm from './companyForm/CompanyForm';
+import NewCompanyForm from './companyForm/NewCompanyForm';
 import UserForm from './userForm/UserForm';
 import ExistingCompanyForm from './existingCompanyForm/ExistingCompanyForm';
 import HooksForm from './0_withHooks/HooksForm.jsx'
@@ -77,7 +77,7 @@ export default class App extends React.Component {
           </Route>
 
           <Route path='/companyForm' >
-            <CompanyForm />
+            <NewCompanyForm />
           </Route>
 
           <Route path='/userForm' >

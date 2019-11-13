@@ -30,8 +30,15 @@ class CompanyController extends Controller
 
         $company = Company::create([
             'company_name' => $request->company_name, 
-            'address_street' => $request->address_street, 
-            'contact_email' => $request->contact_email 
+            'address_street' => $request->address_street,
+            'address_zip_code' => $request->address_zip_code,
+            'address_city' => $request->address_city,
+            'address_country' => $request->address_country,
+            'ICO' => $request->ICO,
+            'DICO' => $request->DICO,
+            'contact_person' => $request->contact_person,
+            'contact_email' => $request->contact_email,
+            'contact_phone' => $request->contact_phone
             ])->save();
         
 
