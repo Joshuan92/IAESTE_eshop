@@ -21,13 +21,29 @@ const UserRegistration = () => {
    const handleButtonClick = (e) => {
      e.preventDefault()
      console.log('click', formInputValues)
-     fetch('/company')
-     .then(()=> {
-       setFormSubmitSuccess(true)
-     })
-     .catch((e)=> {
-       setFormSubmitSuccess(false)
-     })
+
+     fetch('/user-create', {
+            method: 'POST',
+            headers: {
+                'Accept':       'application/json',
+                'Content-type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+
+            body: JSON.stringify({
+              "first_name": formInputValues.first_name,
+              "last_name": formInputValues.last_name,
+              "email": formInputValues.email,
+              "password": formInputValues.password,
+              "phone_number": formInputValues.phone_number,
+              })
+          })
+            .then(()=> {
+              setFormSubmitSuccess(true)
+            })
+            .catch((e)=> {
+              setFormSubmitSuccess(false)
+            })
    }
 
    return (

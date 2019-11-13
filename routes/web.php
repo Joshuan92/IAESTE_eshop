@@ -17,3 +17,5 @@ Route::get('/react/{anything?}', function () {
 Route::get('/user', 'CompanyController@index');
 
 Route::post('/company', 'CompanyController@store');
+
+Route::post('/user-create', 'UserController@store');
