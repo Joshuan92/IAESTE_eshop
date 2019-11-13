@@ -15,3 +15,5 @@ Route::get('/react/{anything?}', function () {
 })->where('anything', '.*');
 
 Route::get('/user', 'CompanyController@index');
+
+Route::post('/company', 'CompanyController@store');

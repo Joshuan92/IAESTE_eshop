@@ -1,12 +1,22 @@
 import React from 'react';
-import { Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 export default class CompanyForm extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            company: null, // is 'company' ok here?
+            company_name: '',
+            address_street: '',
+            address_zip_code: '',
+            address_city: '',
+            address_country: '',
+            ico: '',
+            dico: '',
+            contact_person: '',
+            contact_phone: '',
+            contact_email: '',
+            message: '',
             redirect: false
         };
     }
@@ -30,28 +40,29 @@ export default class CompanyForm extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        fetch('http://www.laravel.test/api/movies/favorite/toggle', { // change this
+        fetch('/company', { // change this
             method: 'POST',
             headers: {
-                'Content-type': 'application/json'
+                'Accept':       'application/json',
+                'Content-type': 'application/json',
             },
             body: JSON.stringify({ // is this function ok?
-                "company_name": this.props.company_name,
-                "address_street": this.props.address_street,
-                "address_zip_code": this.props.address_zip_code,
-                "address_city": this.props.address_city,
+                "company_name": this.state.company_name,
+                "address_street": this.state.address_street,
+                "address_zip_code": this.state.address_zip_code,
+                "address_city": this.state.address_city,
                 "address_country": this.state.address_country,
-                "ico": this.props.ico,
-                "dico": this.props.dico,
-                "contact_person": this.props.contact_person,
-                "contact_phone": this.props.contact_phone,
-                "contact_email": this.props.contact_email,
+                "ico": this.state.ico,
+                "dico": this.state.dico,
+                "contact_person": this.state.contact_person,
+                "contact_phone": this.state.contact_phone,
+                "contact_email": this.state.contact_email
                 })
         })
             .then(response => response.json())
-            .then(json_data => {
+            .then(data => {
                 this.setState({
-                    company: json_data.data.company // is 'company' ok here
+                    message: data.message
                 })
             })
     }
@@ -61,7 +72,7 @@ export default class CompanyForm extends React.Component {
             <>
                 <h1>Company Registration Form</h1>
                 <div className="container">
-                <form action="" method="post" onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="companyName">Company Name</label>
                         <input type="text" className="form-control" id="companyName" placeholder="" />
