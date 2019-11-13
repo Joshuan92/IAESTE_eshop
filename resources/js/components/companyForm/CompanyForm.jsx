@@ -1,12 +1,20 @@
 import React from 'react';
+import { Redirect} from 'react-router-dom';
 
 export default class CompanyForm extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            company: null // is 'company' ok here?
+            company: null, // is 'company' ok here?
+            redirect: false
         };
+    }
+
+    setRedirect = () => {
+        this.setState({
+            redirect: true
+        })
     }
 
     componentDidMount = () => {
@@ -52,6 +60,7 @@ export default class CompanyForm extends React.Component {
         return (
             <>
                 <h1>Company Registration Form</h1>
+                <div className="container">
                 <form action="" method="post" onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="companyName">Company Name</label>
@@ -59,18 +68,18 @@ export default class CompanyForm extends React.Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="streetAddress">Address (Street)</label>
-                        <input type="text" className="form-control" id="streetAddress" placeholder="1234 Main St" />
+                        <input type="text" className="form-control" id="streetAddress" placeholder="" />
                     </div>
                     <div className="form-group col-md-2">
                         <label htmlFor="zipCode">Zip</label>
                         <input type="text" className="form-control" id="zipCode" />
                     </div>
-                    <div clasNames="form-row">
-                        <div class="form-group col-md-6">
+                    <div>
+                        <div className="form-group col-md-6">
                             <label htmlFor="city">City</label>
                             <input type="text" className="form-control" id="city" />
                         </div>
-                        <div className="form-group col-md-4">
+                        <div className="form-group col-md-6">
                             <label htmlFor="country">Country</label>
                             <select id="country" className="form-control">
                                 <option selected>Czech Republic</option>
@@ -102,8 +111,10 @@ export default class CompanyForm extends React.Component {
                             <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button className="btn btn-primary btn-lg" onClick={this.setRedirect}>Submit and then register a new User for this Company.</button>
+                    {this.state.redirect && <Redirect to="/userform" /> }
                 </form>
+                </div>
             </>
         )
     }

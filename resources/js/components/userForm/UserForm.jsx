@@ -1,4 +1,6 @@
 import React from 'react';
+import { Redirect} from 'react-router-dom';
+
 
 export default class UserForm extends React.Component {
     constructor(props) {
@@ -47,6 +49,7 @@ export default class UserForm extends React.Component {
         return (
             <>
                 <h1>User Registration Form</h1>
+                <div className="container">
                 <form action="" method="post" onSubmit={ this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="email">Email address</label>
@@ -59,7 +62,7 @@ export default class UserForm extends React.Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="passwordVerify">Repeat Password</label>
-                        <input type="text" className="form-control" id="passwordVerify" placeholder="" />
+                        <input type="password" className="form-control" id="passwordVerify" placeholder="" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="firstName">First Name</label>
@@ -74,8 +77,8 @@ export default class UserForm extends React.Component {
                         <input type="number" className="form-control" id="phoneNumber" placeholder="" />
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
-
                 </form>
+                </div>
             </>
         )
     }
