@@ -18,10 +18,12 @@ import CompanyForm from './companyForm/CompanyForm';
 import UserForm from './userForm/UserForm';
 import ExistingCompanyForm from './existingCompanyForm/ExistingCompanyForm';
 import HooksForm from './0_withHooks/HooksForm.jsx'
+import UserRegistration from './registerUser/UserRegistration.jsx';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import './../../sass/app.scss';
+
 
 export default class App extends React.Component {
   render() {
@@ -82,6 +84,10 @@ export default class App extends React.Component {
 
           <Route path='/userForm' >
             <UserForm />
+          </Route>
+
+          <Route path='/user-registration'>
+            <UserRegistration />
           </Route>
 
           <Route path='/hooks' >
