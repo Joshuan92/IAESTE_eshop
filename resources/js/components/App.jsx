@@ -2,21 +2,22 @@ import React from 'react';
 import Navbar from './Navbar.jsx';
 import NewCarousel from './NewCarousel.jsx';
 import Topbar from './Topbar.jsx';
-import About from "./../components/about/About.jsx";
+import About from "./about/About.jsx";
 import Testimonials from './Testimonials.jsx';
-import Clients from './../components/clients/Clients.jsx';
+import Clients from './clients/Clients.jsx';
 import Footer from './Footer.jsx';
-import CareerFair from './../components/careerFair/CareerFair.jsx';
+import CareerFair from './careerFair/CareerFair.jsx';
 import ReadMore from './ReadMore.jsx';
-import Partnership from './../components/partnership/Partnership.jsx';
-import Freshman from './../components/freshman/Freshman.jsx';
-import Project from './../components/projectInfo/Project.jsx';
+import Partnership from './partnership/Partnership.jsx';
+import Freshman from './freshman/Freshman.jsx';
+import Project from './projectInfo/Project.jsx';
 import Internship from './Internship.jsx';
-import Login from './../components/loginForm/Login.jsx';
-import Event from './../components/event/Event.jsx';
-import CompanyForm from './../components/companyForm/CompanyForm';
-import UserForm from './../components/userForm/UserForm';
-import ExistingCompanyForm from './../components/existingCompanyForm/ExistingCompanyForm';
+import Login from './loginForm/Login.jsx';
+import Event from './event/Event.jsx';
+import CompanyForm from './companyForm/CompanyForm';
+import UserForm from './userForm/UserForm';
+import ExistingCompanyForm from './existingCompanyForm/ExistingCompanyForm';
+import HooksForm from './0_withHooks/HooksForm.jsx'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -66,9 +67,6 @@ export default class App extends React.Component {
           <Route path='/login'>
               <Login />
           </Route>   
-           
-            <Login />
-          </Route>
 
           <Route path='/existingCompanyForm'>
             <ExistingCompanyForm />
@@ -84,6 +82,10 @@ export default class App extends React.Component {
 
           <Route path='/userForm' >
             <UserForm />
+          </Route>
+
+          <Route path='/hooks' >
+            <HooksForm />
           </Route>
 
         </Switch>
