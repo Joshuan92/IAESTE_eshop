@@ -64,9 +64,6 @@ export default class App extends React.Component {
           </Route>
 
           <Route path='/login'>
-              <Login />
-          </Route>   
-           
             <Login />
           </Route>
 
