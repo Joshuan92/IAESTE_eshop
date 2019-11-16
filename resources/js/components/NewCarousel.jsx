@@ -19,17 +19,7 @@ export default class NewCarousel extends React.Component {
 
     return (
       <div className="intro-image">
-        {/* <div className="container p-50">
-          <Slider {...settings} className="karussel">
-              <div className="item d-flex"><img src={ Intern1 } alt="" className="img_fluid"/><h1 style={{color: '#fff' }}>Become our member today!</h1></div>
-              
-              <div className="item d-flex"><img src={ Intern2 }  alt="" className="img_fluid"/><h1>Have time of your life with IAESTE!</h1></div>
-              
-              <div className="item d-flex"><img src={ Intern3 }  alt="" className="img_fluid"/><h1>With IAESTE, you will never be alone!</h1></div>
-              
-              <div className="item d-flex"><img src={ Intern4 }  alt="" className="img_fluid"/><h1>IAESTE, experience for life.</h1></div>
-          </Slider>
-        </div> */}
+        
       </div>
       )
     }
