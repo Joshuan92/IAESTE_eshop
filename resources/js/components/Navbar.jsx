@@ -4,7 +4,6 @@ import { BrowserRouter as Switch,
   Route,
   Link } from "react-router-dom";
 
-
 export default class Navbar extends React.Component {
   render(){
     return(

@@ -13,6 +13,7 @@ import Freshman from './freshman/Freshman.jsx';
 import Project from './projectInfo/Project.jsx';
 import Internship from './Internship.jsx';
 import Login from './loginForm/Login.jsx';
+import Navigation from './Navigation.jsx';
 import Event from './event/Event.jsx';
 import NewCompanyForm from './companyForm/NewCompanyForm';
 import UserForm from './userForm/UserForm';
@@ -32,7 +33,7 @@ export default class App extends React.Component {
         basename={'/react'}  >
 
         <Topbar />
-        <Navbar />
+        <Navigation />
 
         <Switch >
           <Route exact path='/'>

@@ -22,10 +22,10 @@ export default class Topbar extends React.Component {
                   <li className="list-inline-item"><a href="#"><i className="fa fa-envelope"></i></a></li>
                 </ul>
                 <div className="login">
-                  <Link to='/login' className="login-btn"><i className="fa fa-sign-in"></i>
-                    <span className="d-none d-md-inline-block">Sign In</span></Link>
-                  <Link to='/existingCompanyForm' className="signup-btn"><i className="fa fa-user"></i>
-                  <span className="d-none d-md-inline-block">Sign Up</span></Link>
+                  <Link to='/login' className="login-btn">
+                    <span className="d-md-inline-block">Sign In</span></Link>
+                  <Link to='/existingCompanyForm' className="signup-btn">
+                  <span className="d-md-inline-block">Sign Up</span></Link>
                 </div>
                 <ul className="social-custom list-inline">
                   <li className="list-inline-item"><a href="#"><i className="fa fa-facebook"></i></a></li>
