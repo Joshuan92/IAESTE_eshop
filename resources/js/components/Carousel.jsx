@@ -4,7 +4,6 @@ import Lisbon from './../../../../img/lisbon.jpg';
 import Brussels from './../../../../img/brussels.jpg';
 
 
-
 export default class Carousel extends React.Component {
   render(){
     return (

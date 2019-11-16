@@ -1,15 +1,24 @@
 .intro-image {
   background-image: linear-gradient(rgba(248, 248, 248, 0.8),rgba(132, 169, 230, 0.8)), url('./../../public/img/world.jpg');
   background-repeat: no-repeat;
-  
   width: 100vw; 
   height: 75vh;
+
+  @media (max-width: 1024px) {
+    height: 44vh; 
+  }
+
+  @media (max-width: 767px) {
+    height: 70vh;
+
+  }
 }
 
 
 .img_fluid {
   width: 50vw;
-
+  //padding: 100px;
 }
+
 
 

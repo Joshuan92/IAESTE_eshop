@@ -75,7 +75,7 @@ const UserRegistration = () => {
             <label htmlFor="email">E-mail</label>
               <input className="form-control"
                 id="email"
-                name="email"
+                type="email"
                 value={formInputValues.email}
                 onChange={handleNameInputChange}
                 />
@@ -85,7 +85,7 @@ const UserRegistration = () => {
               <label htmlFor="password">Password</label>
                 <input className="form-control"
                   id="password"
-                  name="password"
+                  type="password"
                   value={formInputValues.password}
                   onChange={handleNameInputChange}
                   />
@@ -95,7 +95,7 @@ const UserRegistration = () => {
             <label htmlFor="phone_number">Phone number</label>
               <input className="form-control"
                 id="phone_number"
-                name="phone_number"
+                type="phone_number"
                 value={formInputValues.phone_number}
                 onChange={handleNameInputChange}
                 />
