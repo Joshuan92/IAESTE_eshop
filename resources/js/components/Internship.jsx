@@ -1,10 +1,5 @@
 import React from 'react';
-import Intern1 from './../../../public/img/internship1.jpeg';
-import Intern2 from './../../../public/img/internship2.jpeg';
-import Intern3 from './../../../public/img/internship3.jpeg';
-import Intern4 from './../../../public/img/internship4.jpeg';
-
-import Slider from "react-slick";
+import InternKar from './InternKar.jsx'
 
 export default class Internship extends React.Component {
   render(){
@@ -21,16 +16,7 @@ export default class Internship extends React.Component {
           <div className="container">
        
             <div className="row portfolio-project">
-              <div className="col-sm-8">
-                <Slider {...settings}>
-                    <div className="item"><img src={ Intern1 } alt="" className="img_fluid"/></div>
-                    
-                    <div className="item"><img src={ Intern2 }  alt="" className="img_fluid"/></div>
-                    
-                    <div className="item"><img src={ Intern3 }  alt="" className="img_fluid"/></div>
-                    
-                    <div className="item"><img src={ Intern4 }  alt="" className="img_fluid"/></div>
-                </Slider>
+              <InternKar />
               
               </div>
               
@@ -42,7 +28,7 @@ export default class Internship extends React.Component {
                     <p>To sorry world an at do spoil along. Incommode he depending do frankness remainder to. Edward day almost active him friend thirty piqued. People as period twenty my extent as. Set was better abroad ham plenty secure had horses. Admiration has sir decisively excellence say everything inhabiting acceptance. Sooner settle add put you sudden him.</p>
                 </div>
           </div>
-       </div>
+       
     )
   }
 }

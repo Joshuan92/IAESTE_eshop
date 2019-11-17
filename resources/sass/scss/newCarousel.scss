@@ -2,16 +2,23 @@
   background-image: linear-gradient(rgba(248, 248, 248, 0.8),rgba(132, 169, 230, 0.8)), url('./../../public/img/world.jpg');
   background-repeat: no-repeat;
   width: 100vw; 
-  height: 75vh;
-
-  @media (max-width: 1024px) {
-    height: 44vh; 
-  }
 
   @media (max-width: 767px) {
     height: 70vh;
-
   }
+  @media (max-width: 1024px) {
+    height: 42vh; 
+  }
+
+  @media (max-width: 1439px) {
+    height: 75vh;
+  }
+
+  @media (min-width: 1440px) {
+    height: 60vh; 
+  }
+
+  
 }
 
 

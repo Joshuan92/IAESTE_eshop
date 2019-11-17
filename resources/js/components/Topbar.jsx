@@ -18,8 +18,7 @@ export default class Topbar extends React.Component {
             <div className="col-md-6">
               <div className="d-flex justify-content-md-end justify-content-between">
                 <ul className="list-inline contact-info d-block d-md-none">
-                  <li className="list-inline-item"><a href="#"><i className="fa fa-phone"></i></a></li>
-                  <li className="list-inline-item"><a href="#"><i className="fa fa-envelope"></i></a></li>
+  
                 </ul>
                 <div className="login">
                   <Link to='/login' className="login-btn">
@@ -27,12 +26,6 @@ export default class Topbar extends React.Component {
                   <Link to='/existingCompanyForm' className="signup-btn">
                   <span className="d-md-inline-block">Sign Up</span></Link>
                 </div>
-                <ul className="social-custom list-inline">
-                  <li className="list-inline-item"><a href="#"><i className="fa fa-facebook"></i></a></li>
-                  <li className="list-inline-item"><a href="#"><i className="fa fa-google-plus"></i></a></li>
-                  <li className="list-inline-item"><a href="#"><i className="fa fa-twitter"></i></a></li>
-                  <li className="list-inline-item"><a href="#"><i className="fa fa-envelope"></i></a></li>
-                </ul>
               </div>
             </div>
           </div>
