@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import {
   Collapse,
-  Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+   } from 'reactstrap';
 import Logo from './../../../public/img/iaeste_ikariera.png';
 import { BrowserRouter as Switch,
   Route,
