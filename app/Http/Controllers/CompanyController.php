@@ -40,6 +40,7 @@ class CompanyController extends Controller
             'contact_email' => $request->contact_email,
             'contact_phone' => $request->contact_phone
             ])->save();
+            
         
 
         return [

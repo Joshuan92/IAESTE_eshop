@@ -18,11 +18,19 @@ const NewCompanyForm = props => {
   const [message, setMessage] = useState();
  
   const changeValue = (e) => {
-    setFormInputValue({
-      ...formInputValues,
-      [e.target.id]: e.target.value
-      
-    })
+    const id = e.target.id
+    const val = e.target.value
+
+
+    setFormInputValue(prevValues => { 
+
+      return {
+
+        ...prevValues,
+            [id]: val
+
+      }
+      })
   }
 
   const handleSubmitButtonClick = (e) => {
@@ -176,8 +184,8 @@ const NewCompanyForm = props => {
 
       <div className="form-group">
         <button className="form-control" onClick={handleSubmitButtonClick} style={{border: '1px solid blue', margin: '5px'}}>Submit</button>
-        {formSubmitSuccess === true && <h3>Congrats!</h3>}
-        {formSubmitSuccess === false && <h3 style={{ color: 'red'}}>Error Occurred, try again later</h3>}
+        {message && <h3 style={{ color: 'red'}}>{message}</h3>}
+      
       </div>
       </div>
 
