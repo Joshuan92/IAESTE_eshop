@@ -2,6 +2,7 @@
 const fairInfo = [
   {
     id: 1,
+    route: '/developer-expo',
     name: 'Developer Expo',
     text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
     venue: 'BVV, Brno',
@@ -11,6 +12,7 @@ const fairInfo = [
   },
   {
     id: 2,
+    route: '/developer-exhibition',
     name: 'Developer Expo',
     text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
     venue: 'BVV, Brno',
@@ -20,6 +22,7 @@ const fairInfo = [
   },
   { 
     id: 3,
+    route: '/developer-science',
     name: 'Developer Expo',
     text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
     venue: 'BVV, Brno',
@@ -28,6 +31,7 @@ const fairInfo = [
   },
   {
     id: 4,
+    route: '/developer-builders',
     name: 'Developer Expo',
     text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
     venue: 'BVV, Brno',
@@ -36,6 +40,7 @@ const fairInfo = [
   },
   {
     id: 5,
+    route: '/developer-soft',
     name: 'Developer Expo',
     text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
     venue: 'BVV, Brno',
@@ -44,6 +49,7 @@ const fairInfo = [
   },
   {
     id: 6,
+    route: '/developer-urban',
     name: 'Developer Expo',
     text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
     venue: 'BVV, Brno',

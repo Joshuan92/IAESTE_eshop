@@ -1,31 +1,59 @@
-import React from 'react';
-import fairInfo from './fairInfo.js';
-import SingleFair from './SingleFair.jsx';
+import React, {useState} from "react";
+import fairInfo from "./fairInfo.js";
+import SingleFair from "./SingleFair.jsx";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import FairDetail from "./FairDetail.jsx";
 
-export default class CareerFair extends React.Component {
-    render() {
-      return (
-        <>
-        <h1>Carrier fairs</h1>
-        <section className="container">
-            
-            <div className="tables">
-              <div className="row">
-                  {
-                    fairInfo.map(fair => 
-                      <SingleFair key={ fair.id }
-                          name={ fair.name }
-                          text={ fair.text }
-                          venue={ fair.venue }
-                          date={ fair.date }
-                          img={ fair.img }
-                      />)
-                  }
-                </div>
-            </div>
-        </section>
+const CareerFair = () => {
         
-        </>
-      )
-    } 
-}
+        const [detail, setDetail] = useState([])
+    
+
+    
+        return (
+            <>
+                <h1>Career fairs</h1>
+                <section className="container">
+                    <Router basename="/react/career">
+                        <Switch>
+                            <Route>
+                                <div className="tables">
+                                    <div className="row">
+                                        {fairInfo.map(fair => {
+                                            //console.log(fair);
+                                            return (
+                                                <Link to={fair.route}>
+                                                    <SingleFair
+                                                        key={fair.id}
+                                                        name={fair.name}
+                                                        //text={ fair.text }
+                                                        venue={fair.venue}
+                                                        date={fair.date}
+                                                        img={fair.img}
+                                                    />
+                                                </Link>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                            </Route>
+
+                            {/* <Route exact path={fair.route}>
+                                <FairDetail
+                                    key={fair.id}
+                                    name={fair.name}
+                                    //text={ fair.text }
+                                    venue={fair.venue}
+                                    date={fair.date}
+                                    img={fair.img}
+                                />
+                            </Route> */}
+                        </Switch>
+                    </Router>
+                </section>
+            </>
+        );
+    }
+
+
+export default CareerFair
