@@ -4,19 +4,27 @@ import SingleFair from './SingleFair.jsx';
 import { BrowserRouter as Router, Switch, Link } from 'react-router-dom';
 
 const FairDetail = (props) => {
-  
-  //const { name, venue, date, img, text } = props
 
-  console.log('props', props)
+
+  
+  const { id, name, venue, date, img, text } = props
+
+  console.log('something');
+  
+
+  
   
   return (
     <div className="row">
 
-      {/*       <p>{ name }</p>
+
+
+            <p>{ id }</p>
+            <p>{ name }</p>
             <p>{ text }</p>
             <p>{ venue }</p>
             <p>{ date }</p>
-            <p>{ img }</p> */}
+            <p>{ img }</p>
             
             
               

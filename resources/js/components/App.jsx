@@ -18,10 +18,10 @@ import Event from "./event/Event.jsx";
 import NewCompanyForm from "./companyForm/NewCompanyForm";
 import UserForm from "./userForm/UserForm";
 import ExistingCompanyForm from "./existingCompanyForm/ExistingCompanyForm";
-import HooksForm from "./0_withHooks/HooksForm.jsx";
 import UserRegistration from "./registerUser/UserRegistration.jsx";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import history from "./history.js";
 
 import "./../../sass/app.scss";
 import FairDetail from "./careerFair/FairDetail.jsx";
@@ -29,72 +29,64 @@ import FairDetail from "./careerFair/FairDetail.jsx";
 export default class App extends React.Component {
     render() {
         return (
-            <Router basename={"/react"}>
+            <Router history={history}>
                 <Topbar />
                 <Navigation />
 
                 <Switch>
-                    <Route exact path="/">
+                    <Route exact path="/react">
                         <NewCarousel />
                         <About />
                         <Testimonials />
                         <Clients />
                     </Route>
 
-                    <Route path="/partnership">
+                    <Route path="/react/partnership">
                         <Partnership />
                     </Route>
 
-                    <Route path="/career/:route">
-                        <FairDetail />
-                    </Route>
-
-                    <Route path="/freshman">
+                    <Route path="/react/freshman">
                         <Freshman />
                     </Route>
 
-                    <Route path="/career">
+                    <Route path="/react/career">
                         <CareerFair />
                     </Route>
 
-                    <Route path="/events">
+                    <Route path="/react/events">
                         <Event />
                     </Route>
 
-                    <Route path="/internship">
+                    <Route path="/react/internship">
                         <Internship />
                     </Route>
 
-                    <Route path="/about">
+                    <Route path="/react/about">
                         <ReadMore />
                     </Route>
 
-                    <Route path="/login">
+                    <Route path="/react/login">
                         <Login />
                     </Route>
 
-                    <Route path="/existingCompanyForm">
+                    <Route path="/react/existingCompanyForm">
                         <ExistingCompanyForm />
                     </Route>
 
-                    <Route path="/projectinfo">
+                    <Route path="/react/projectinfo">
                         <Project />
                     </Route>
 
-                    <Route path="/companyForm">
+                    <Route path="/react/companyForm">
                         <NewCompanyForm />
                     </Route>
 
-                    <Route path="/userForm">
+                    <Route path="/react/userForm">
                         <UserForm />
                     </Route>
 
-                    <Route path="/user-registration">
+                    <Route path="/react/user-registration">
                         <UserRegistration />
-                    </Route>
-
-                    <Route path="/hooks">
-                        <HooksForm />
                     </Route>
                 </Switch>
 
