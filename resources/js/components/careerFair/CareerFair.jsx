@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from "react";
-import fairInfo from "./fairInfo.js";
+import React, { useState, useEffect } from "react";
 import SingleFair from "./SingleFair.jsx";
 import { Router, Route, Switch, Link } from "react-router-dom";
 import FairDetail from "./FairDetail.jsx";
@@ -7,71 +6,76 @@ import FairDetail from "./FairDetail.jsx";
 import history from "./../history.js";
 
 const CareerFair = () => {
-        
-        const [chosen, setChosen] = useState(1);
+    const [fairs, setFairs] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-         useEffect(() => {
-            console.log('chosen', chosen)
-        }, [chosen]);
+    useEffect(() => {
+        fetch("/projects")
+            .then(resp => resp.json())
+            .then(data => {
+                setFairs(data);
+                setLoading(false);
+            });
+    }, []);
 
-                
-        return (
+    //console.log("data", fairs);
+
+    let pagination = "";
+    let content = "";
+
+    if (loading) {
+        content = <div>Loading...</div>;
+    } else {
+        content = (
             <>
-                <h1>Career fairs</h1>
                 <section className="container">
-                    <Router history={history}>
-                        <Switch>
-                            <Route exact path='/react/career'>
-                                <div className="tables">
-                                    <div className="row">
+                    <h1>Career fairs</h1>
+                </section>
+                <Router history={history}>
+                    <Switch>
+                        <Route exact path="/react/career">
+                            <div className="tables">
+                                <div className="row">
+                                    {fairs.length &&
+                                        fairs.map(fair => {
+                                            let url = `${fair.id}`;
 
-                                    
-                                        {fairInfo.map(fair => {
+                                            //console.log(url);
 
-
-                                            let url = `${fair.route}`;
-
-                                            console.log(url);
-                                            
                                             return (
-                                                
-                                                <Link to={`/react/career${url}`}>
+                                                <Link
+                                                    to={`/react/career/${url}`}
+                                                >
                                                     <SingleFair
-                                                        setChosen={setChosen}
-
                                                         key={fair.id}
                                                         id={fair.id}
                                                         name={fair.name}
-                                                        text={ fair.text }
-                                                        venue={fair.venue}
-                                                        date={fair.date}
-                                                        img={fair.img}
+                                                        text={
+                                                            fair.short_description
+                                                        }
+                                                        venue={fair.place}
+                                                        date={fair.event_date}
                                                     />
                                                 </Link>
-                                                
                                             );
                                         })}
-                                    </div>
                                 </div>
-                            </Route>
-
-                            <Route exact path={`/react/career${fairInfo[chosen - 1].route}`}>
-                                <FairDetail
-                                    key={fairInfo[chosen - 1].id}
-                                    id={fairInfo[chosen - 1].id}
-                                    name={fairInfo[chosen - 1].name}
-                                    //text={ fairInfo[chosen - 1].text }
-                                    venue={fairInfo[chosen - 1].venue}
-                                    date={fairInfo[chosen - 1].date}
-                                    img={fairInfo[chosen - 1].img}
-                                />
-                            </Route>
-                        </Switch>
-                    </Router>
-                </section>
+                            </div>
+                        </Route>
+                        <Route exact path={`/react/career/:id`}>
+                            <FairDetail fairs={fairs} />
+                        </Route>
+                    </Switch>
+                </Router>
             </>
         );
     }
 
+    return (
+        <>
+            {content}
+        </>
+    );
+};
 
-export default CareerFair
+export default CareerFair;
