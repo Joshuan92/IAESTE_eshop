@@ -21,7 +21,7 @@ export default class Topbar extends React.Component {
   
                 </ul>
                 <div className="login">
-                  <Link to='/login' className="login-btn">
+                  <Link to='/react/login' className="login-btn">
                     <span className="d-md-inline-block">Sign In</span></Link>
                   <Link to='/existingCompanyForm' className="signup-btn">
                   <span className="d-md-inline-block">Sign Up</span></Link>

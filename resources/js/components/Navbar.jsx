@@ -1,8 +1,5 @@
 import React from 'react';
 import Logo from './../../../public/img/iaeste_ikariera.png';
-import { BrowserRouter as Switch,
-  Route,
-  Link } from "react-router-dom";
 
 export default class Navbar extends React.Component {
   render(){

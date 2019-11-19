@@ -13,8 +13,7 @@ class UserController extends Controller
     {
        
         $user = User::create([
-            'first_name'=>$request->first_name,
-            'last_name'=>$request->last_name,
+            'name'=>$request->name,
             'email'=>$request->email,
             'password'=>$request->password,
             'phone_number'=>$request->phone_number
@@ -24,5 +23,15 @@ class UserController extends Controller
             'status' => 'success',
             'message' => 'The data was successfully saved on the server.'
      ];
+    }
+
+    public function index() {
+
+        return User::query()
+            ->orderBy('name', 'asc')
+            ->limit(20)
+            ->get();
+
+
     }
 }

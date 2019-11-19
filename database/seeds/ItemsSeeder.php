@@ -7,8 +7,6 @@ use Carbon\Carbon;
 
 class ItemsSeeder extends Seeder
 {
-
-    $faker = Faker::create('cs_CZ');
     
     /**
      * Run the database seeds.
