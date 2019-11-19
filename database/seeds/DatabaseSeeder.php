@@ -15,6 +15,10 @@ class DatabaseSeeder extends Seeder
         $this->call(LocalCommiteesSeeder::class);
         $this->call(TypesSeeder::class);
         $this->call(ProjectsSeeder::class);
+        // $this->call(ItemsSeeder::class);
+        
+
+        
 
     }
 }

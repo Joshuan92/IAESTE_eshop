@@ -2,7 +2,6 @@
 require_once 'vendor/autoload.php';
 
 use Illuminate\Database\Seeder;
-use App\Company;
 
 use Faker\Factory as Faker;
 use Carbon\Carbon;
@@ -32,15 +31,12 @@ class ProjectsSeeder extends Seeder
 
                 DB::table('projects')->insert([
                     'name' => $names[$i].' '.$cities[$j],
+                    'project_type_id' => $i+1,
                     'short_description' => $faker->catchPhrase,
                     'place' => $cities[$j],
+                    'price' => floor(rand(20,35))*1000,
                     'event_date' => Carbon::createFromDate(2019, 1),
                     'created_at' => Carbon::now()
-                ]);
-
-                DB::table('project_type')->insert([
-                    'project_id' => $i+1,
-                    'type_id' => ($i*$howManyCities)+$j+1
                 ]);
             }
         }

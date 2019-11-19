@@ -119,6 +119,7 @@ class CompaniesSeeder extends Seeder
             
 
             DB::table('companies')->insert([
+                'local_commitee_id' => floor(rand(1,7.9)),
                 'company_name' => $faker->company,
                 'address_street' => $faker->streetAddress,
                 'address_zip_code' => $faker->postcode,
@@ -126,29 +127,28 @@ class CompaniesSeeder extends Seeder
                 'address_country' => 'Czech Republic',
                 'ICO' => $ico,
                 'DICO' => 'CZ'.$ico,
-                'contact_person' => $firstName . ' ' . $lastName,
+                'primary_contact' => $firstName . ' ' . $lastName,
                 'contact_email' => $email,
                 'contact_phone' => $phoneNumber,
+                'web' => $faker->url,
                 'created_at' => Carbon::now()
             ]);
 
             
-            
             DB::table('users')->insert([
+                'company_id' => $i+1,
                 'email' => $email,
                 'email_verified_at' => Carbon::now(),
                 'password' => bcrypt('secret'),
-                'first_name' => $firstName,
-                'last_name' => $lastName,
+                'name' => $firstName . ' ' . $lastName,
+                'contact_function' => $faker->jobTitle,
                 'phone_number' => $phoneNumber,
+                'mobile_number' => $faker->phoneNumber,
+                'mailing_address' => $faker->streetAddress . " ". $faker->postcode . " ". $faker->city . " Czech Republic",
                 'confirmed' => 1,
                 'created_at' => Carbon::now()
             ]);
             
-            DB::table('company_user')->insert([
-                'company_id' => $i+1,
-                'user_id' => $i*4+1
-            ]);
 
             for ($j=0; $j<3; $j++) {
                 
@@ -158,19 +158,17 @@ class CompaniesSeeder extends Seeder
                 $phoneNumber = $faker->phoneNumber;
 
                 DB::table('users')->insert([
+                    'company_id' => $i+1,
                     'email' => $email,
                     'email_verified_at' => Carbon::now(),
                     'password' => bcrypt('secret'),
-                    'first_name' => $firstName,
-                    'last_name' => $lastName,
+                    'name' => $firstName . ' ' . $lastName,
+                    'contact_function' => $faker->jobTitle,
                     'phone_number' => $phoneNumber,
+                    'mobile_number' => $faker->phoneNumber,
+                    'mailing_address' => $faker->streetAddress . " ". $faker->postcode . " ". $faker->city . " Czech Republic",
                     'confirmed' => 1,
                     'created_at' => Carbon::now()
-                ]);
-                
-                DB::table('company_user')->insert([
-                    'company_id' => $i+1,
-                    'user_id' => ($i*4)+1+$j+1
                 ]);
             }
 

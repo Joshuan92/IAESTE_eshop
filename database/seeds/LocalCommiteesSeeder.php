@@ -133,7 +133,7 @@ class LocalCommiteesSeeder extends Seeder
                 'address_country' => 'Czech Republic',
                 'ICO' => $ico,
                 'DICO' => 'CZ'.$ico,
-                'contact_person' => $firstName . ' ' . $lastName,
+                'primary_contact' => $firstName . ' ' . $lastName,
                 'contact_email' => $email,
                 'contact_phone' => $phoneNumber,
                 'created_at' => Carbon::now()
