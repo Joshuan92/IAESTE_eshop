@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const NewCompanyForm = props => {
+const NewCompanyForm = () => {
   
   const [formInputValues, setFormInputValue] = useState({
                                                     company_name: '',
@@ -29,15 +29,15 @@ const NewCompanyForm = props => {
         ...prevValues,
             [id]: val
 
-      }
+      };
       })
-  }
+  };
 
   const handleSubmitButtonClick = (e) => {
 
-    e.preventDefault()
+    e.preventDefault();
 
-    console.log("clicked", formInputValues)
+    console.log("clicked", formInputValues);
 
     fetch('/company', {
             method: 'POST',
@@ -47,7 +47,7 @@ const NewCompanyForm = props => {
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
 
             },
-            body: JSON.stringify({ // is this function ok?
+            body: JSON.stringify({
                 "company_name": formInputValues.company_name,
                 "address_street": formInputValues.address_street,
                 "address_zip_code": formInputValues.address_zip_code,
@@ -63,9 +63,9 @@ const NewCompanyForm = props => {
             .then(response => response.json())
             .then(data => {
                 setMessage(data.message
-                )
-            })
-    }
+                );
+            });
+    };
 
   
 

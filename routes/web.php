@@ -14,4 +14,5 @@ Route::get('/react/{anything?}', function () {
     return view('welcome');
 })->where('anything', '.*');
 
+Route::post('/login', 'Api\LoginController@login');
 
