@@ -3,11 +3,6 @@ import React from "react";
 const SingleFair = props => {
     const { name, place, event_date, short_description } = props;
 
-    const handleClick = () => {
-        
-    }
-
-
     return (
         <div className="col-md-4 col-12 mb-4">
             <div className="card" style={{ width: "18rem", height: "30rem" }}>

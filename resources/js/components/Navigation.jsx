@@ -18,7 +18,7 @@ const Navigation = (props) => {
   return (
     <section id="nav-bar">
        <nav className="navbar navbar-expand-lg navbar-light" color="light" expand="md">
-        <Link to='/' className="navbar-brand"><img src={ Logo }/></Link>
+        <Link to='/react' className="navbar-brand"><img src={ Logo }/></Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>

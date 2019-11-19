@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./Navbar.jsx";
 import NewCarousel from "./NewCarousel.jsx";
 import Topbar from "./Topbar.jsx";
 import About from "./about/About.jsx";
@@ -24,7 +23,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import history from "./history.js";
 
 import "./../../sass/app.scss";
-import FairDetail from "./careerFair/FairDetail.jsx";
+
 
 export default class App extends React.Component {
     render() {
