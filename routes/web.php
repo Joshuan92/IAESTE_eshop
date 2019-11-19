@@ -14,10 +14,4 @@ Route::get('/react/{anything?}', function () {
     return view('welcome');
 })->where('anything', '.*');
 
-Route::get('/user', 'CompanyController@index');
 
-Route::post('/company', 'CompanyController@store');
-
-Route::post('/user-create', 'UserController@store');
-
-Route::get('/projects', 'ProjectController@index');

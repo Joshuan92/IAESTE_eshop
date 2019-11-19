@@ -22,10 +22,12 @@ class CreateLocalCommiteesTable extends Migration
             $table->string('address_country')->nullable();
             $table->string('ICO')->nullable();
             $table->string('DICO')->nullable();
-            $table->string('contact_person')->nullable();
+            $table->string('primary_contact')->nullable();
             $table->string('contact_email')->nullable();
             $table->timestamp('contact_email_verified_at')->nullable();
             $table->string('contact_phone')->nullable();
+            $table->string('web')->nullable();
+            $table->string('ares')->nullable();
             $table->timestamps();
         });
     }

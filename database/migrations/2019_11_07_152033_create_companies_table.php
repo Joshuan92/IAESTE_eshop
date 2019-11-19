@@ -15,17 +15,23 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('local_commitee_id');
             $table->string('company_name')->nullable();
+            $table->string('alias')->nullable();
+            $table->string('parent_account')->nullable();
+            $table->string('branch')->nullable();
             $table->string('address_street')->nullable();
             $table->string('address_zip_code')->nullable();
             $table->string('address_city')->nullable();
             $table->string('address_country')->nullable();
             $table->string('ICO')->nullable();
             $table->string('DICO')->nullable();
-            $table->string('contact_person')->nullable();
+            $table->string('primary_contact')->nullable();
             $table->string('contact_email')->nullable();
-            $table->timestamp('contact_email_verified_at')->nullable();
             $table->string('contact_phone')->nullable();
+            $table->string('web')->nullable();
+            $table->string('ares')->nullable();
+            $table->string('account_owner')->nullable();
             $table->boolean('confirmed')->nullable()->default(false);
             $table->timestamps();
         });

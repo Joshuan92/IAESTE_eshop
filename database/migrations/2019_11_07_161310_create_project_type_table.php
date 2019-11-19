@@ -14,10 +14,9 @@ class CreateProjectTypeTable extends Migration
     public function up()
     {
         Schema::create('project_type', function (Blueprint $table) {
-            $table->unsignedBigInteger('project_id');
-            $table->unsignedBigInteger('type_id');
-
-            $table->primary(['project_id', 'type_id']);
+            $table->bigIncrements('id');
+            $table->string('name')->nullable();
+            $table->timestamps();
         });
     }
 
