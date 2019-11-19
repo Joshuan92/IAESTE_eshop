@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Basket from './../../../public/images/shopping-basket-24.png';
 
 export default class Topbar extends React.Component {
   render() {
@@ -25,6 +26,7 @@ export default class Topbar extends React.Component {
                     <span className="d-md-inline-block">Sign In</span></Link>
                   <Link to='/react/existingCompanyForm' className="signup-btn">
                   <span className="d-md-inline-block">Sign Up</span></Link>
+                  <span className="d-md-inline-block ml-20"><img src={Basket} alt=""/></span>
                 </div>
               </div>
             </div>
