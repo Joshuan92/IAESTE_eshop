@@ -10,7 +10,7 @@ const CareerFair = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("/projects")
+        fetch("/api/projects")
             .then(resp => resp.json())
             .then(data => {
                 setFairs(data);
