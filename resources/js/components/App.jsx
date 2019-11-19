@@ -11,7 +11,6 @@ import Partnership from "./partnership/Partnership.jsx";
 import Freshman from "./freshman/Freshman.jsx";
 import Project from "./projectInfo/Project.jsx";
 import Internship from "./Internship.jsx";
-import Login from "./loginForm/Login.jsx";
 import Navigation from "./Navigation.jsx";
 import Event from "./event/Event.jsx";
 import NewCompanyForm from "./companyForm/NewCompanyForm";
@@ -24,9 +23,28 @@ import history from "./history.js";
 import Basket from "./Basket.jsx";
 
 import "./../../sass/app.scss";
-
+import FairDetail from "./careerFair/FairDetail.jsx";
+import LoginForm from "./loginForm/LoginForm.jsx";
 
 export default class App extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            token: null,
+            logged_in: null
+        }
+    }
+
+    getToken = () => {
+        return window.localStorage.getItem('_token');
+    }
+
+    setToken = (token) => {
+        window.localStorage.setItem('_token', token);
+    }
+    
     render() {
         return (
             <Router history={history}>
@@ -66,7 +84,7 @@ export default class App extends React.Component {
                     </Route>
 
                     <Route path="/react/login">
-                        <Login />
+                        <LoginForm/>
                     </Route>
 
                     <Route path="/react/existingCompanyForm">

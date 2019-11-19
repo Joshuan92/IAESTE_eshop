@@ -1,93 +1,64 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-export default class LoginForm extends React.Component {
-    constructor(props) {
-        super(props);
+const LoginForm = () => {
 
-        this.state = {
-            email: "",
-            password: ""
-        };
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [data, setdata] = useState([]);
 
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleEmailChange = this.handleEmailChange.bind(this);
-        this.handlePasswordChange = this.handlePasswordChange.bind(this);
+
+    useEffect(()=>{
+
+    },[])
+
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value)
     }
 
-    handleEmailChange(event) {
-        this.setState({
-            email: event.target.value
-        });
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value)
     }
 
-    handlePasswordChange(event) {
-        this.setState({
-            password: event.target.value
-        });
-    }
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
 
-    handleSubmit(event) {
-        event.preventDefault();
-
-        fetch("/api/login", {
-            method: "POST",
+        fetch('/api/login', {
+            method: 'POST',
             headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
+                'Accept':       'application/json',
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+
             },
-            body: JSON.stringify({
-                email: this.state.email,
-                password: this.state.password
+            body: JSON.stringify({          
+                // stringfy takes object and creates a string
+                email: email,
+                password: password
             })
         })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === "success") {
-                    this.props.onLoginSuccess(data.data.token);
-                }
-            });
+        .then (response => response.json())
+        .then(data => {
+
+            setdata(data)
+            
+            
+        })
     }
 
-    render() {
-        return (
-            <div className="loginForm">
-                <h1>Login form</h1>
-                <form action="" method="post" onSubmit={this.handleFormSubmit}>
-                    <label htmlFor="email"></label>
-                    <div className="form-group">
-                        <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Your email"
-                            type="email"
-                            name="email"
-                            value={this.state.email}
-                            onChange={this.handleEmailChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="password"></label>
+    return (
+        <>
+            <h1>Login form</h1>
+            <form action="" method="post">
+                Email:<br />
+                <input type="text" name="email" value={email } onChange={handleEmailChange}/><br />
+                Password:<br />
+                <input type="password" name="password" value={password} onChange={handlePasswordChange}/><br />
+                <input type="submit" value="Log in" />
+            </form>
+        </>
+    )
 
-                        <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Your password"
-                            type="password"
-                            name="password"
-                            value={this.state.password}
-                            onChange={this.handlePasswordChange}
-                        />
-                    </div>
-                    <input
-                        className="form-control"
-                        type="submit"
-                        value="Log in"
-                    />
-                    <div className="form-group">
-                        <a href="#">Forgot Password?</a>
-                    </div>
-                </form>
-            </div>
-        );
-    }
 }
+
+export default LoginForm;
