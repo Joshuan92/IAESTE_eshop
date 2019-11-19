@@ -24,3 +24,5 @@ Route::group(['middleware' => ['auth:api']], function ($group) {
     Route::get('/person', 'Api\PersonController@index');
  
 });
+
+

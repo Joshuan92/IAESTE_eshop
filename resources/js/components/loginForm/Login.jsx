@@ -33,7 +33,7 @@ export default class App extends React.Component {
                 headers: {
                     'Accept':       'application/json',
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' +this.getToken()
+                    'Authorization': 'Bearer ' + this.getToken()
                 }
             })
             .then(response => response.json())
