@@ -8,7 +8,13 @@ const FairDetail = props => {
     console.log(props.fairs);
     console.log(id);
     console.log(fair);
-    const { name, place, event_date, short_description } = fair;
+    const { name, place, event_date, short_description, price } = fair;
+
+    const handleClick = () => {
+        props.setInCart(prevState => prevState.concat(id));
+    };
+
+
     return (
         <div className="row center-block text-center">
             <div className="card center-block" style={{ width: "25rem", height: "25rem" }}>
@@ -17,11 +23,11 @@ const FairDetail = props => {
                     <p>{short_description}</p>
                     <h3>{place}</h3>
                     <h3>{event_date}</h3>
+                    <h3>{price} CZK</h3>
                     <button
                         className="form-control"
-                        style={{ border: "1px solid blue", margin: "5px" }}
-                    >
-                        Order this fair
+                        style={{ border: "1px solid blue", margin: "5px" }} onClick={handleClick}> {/* event as a parameter and product as an argument */}
+                        Add to cart
                     </button>
                 </div>
             </div>

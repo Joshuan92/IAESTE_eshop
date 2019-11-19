@@ -21,6 +21,7 @@ import UserRegistration from "./registerUser/UserRegistration.jsx";
 import { Router, Switch, Route } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import history from "./history.js";
+import Basket from "./Basket.jsx";
 
 import "./../../sass/app.scss";
 
@@ -82,6 +83,10 @@ export default class App extends React.Component {
 
                     <Route path="/react/userForm">
                         <UserForm />
+                    </Route>
+
+                    <Route path="/react/basket">
+                        <Basket />
                     </Route>
 
                     <Route path="/react/user-registration">

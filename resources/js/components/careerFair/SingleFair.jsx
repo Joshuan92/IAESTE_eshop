@@ -1,7 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SingleFair = props => {
-    const { name, place, event_date, short_description } = props;
+    const { name, text, venue, date, price, id, setInCart } = props;
+
+    const handleClick = () => {
+        setInCart(prevState => prevState.concat(id));
+    };
 
     return (
         <div className="col-md-4 col-12 mb-4">
@@ -9,16 +14,25 @@ const SingleFair = props => {
                 {/* <img src={img} className="card-img-top" alt={name} /> */}
                 <div className="card-body">
                     <h2>{name}</h2>
-                    <p className="card-text">{short_description}</p>
-                    <h3>{place}</h3>
-                    <h3>{event_date}</h3>
-
+                    <p className="card-text">{text}</p>
+                    <h3>{venue}</h3>
+                    <h3>{date}</h3>
+                    <h3>{price} CZK</h3>
                     <button
                         className="form-control"
                         style={{ border: "1px solid blue", margin: "5px" }}
+                        onClick={handleClick}
                     >
-                        More info
+                        Add to cart
                     </button>
+                    <Link to={`/react/career/${id}`}>
+                        <button
+                            className="form-control"
+                            style={{ border: "1px solid blue", margin: "5px" }}
+                        >
+                            More info
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

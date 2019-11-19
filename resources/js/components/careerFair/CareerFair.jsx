@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SingleFair from "./SingleFair.jsx";
-import { Router, Route, Switch, Link } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import FairDetail from "./FairDetail.jsx";
 
 import history from "./../history.js";
@@ -8,6 +8,7 @@ import history from "./../history.js";
 const CareerFair = () => {
     const [fairs, setFairs] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [inCart, setInCart] = useState([]);
 
     useEffect(() => {
         fetch("/api/projects")
@@ -18,7 +19,9 @@ const CareerFair = () => {
             });
     }, []);
 
-    //console.log("data", fairs);
+    useEffect(() => {
+        console.log(inCart);
+    }, [inCart]);
 
     let pagination = "";
     let content = "";
@@ -31,6 +34,7 @@ const CareerFair = () => {
                 <section className="container">
                     <h1>Career fairs</h1>
                 </section>
+
                 <Router history={history}>
                     <Switch>
                         <Route exact path="/react/career">
@@ -38,14 +42,8 @@ const CareerFair = () => {
                                 <div className="row">
                                     {fairs.length &&
                                         fairs.map(fair => {
-                                            let url = `${fair.id}`;
-
-                                            //console.log(url);
-
                                             return (
-                                                <Link
-                                                    to={`/react/career/${url}`}
-                                                >
+                                                <>
                                                     <SingleFair
                                                         key={fair.id}
                                                         id={fair.id}
@@ -55,15 +53,19 @@ const CareerFair = () => {
                                                         }
                                                         venue={fair.place}
                                                         date={fair.event_date}
+                                                        price={fair.price}
+                                                        setInCart={setInCart}
                                                     />
-                                                </Link>
+                                                </>
                                             );
                                         })}
                                 </div>
                             </div>
                         </Route>
                         <Route exact path={`/react/career/:id`}>
-                            <FairDetail fairs={fairs} />
+                            <FairDetail 
+                            fairs={fairs}
+                            setInCart={setInCart} />
                         </Route>
                     </Switch>
                 </Router>
@@ -71,11 +73,7 @@ const CareerFair = () => {
         );
     }
 
-    return (
-        <>
-            {content}
-        </>
-    );
+    return <>{content}</>;
 };
 
 export default CareerFair;
