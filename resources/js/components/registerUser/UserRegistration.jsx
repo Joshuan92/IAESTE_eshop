@@ -3,11 +3,12 @@ import React, { useState }  from 'react'
 const UserRegistration = () => {
 
   const [formInputValues, setFormInputValues] = useState(
-                      { first_name: '', 
+                      { name: '', 
                         email: '', 
-                        password:'', 
-                        last_name:'', 
-                        phone_number: '', 
+                        password:'',
+                        password_confirmation: '', 
+                        phone_number: '',
+                        company_id: '', 
                       });
    const [formSubmitSuccess, setFormSubmitSuccess] = useState();
 
@@ -22,7 +23,7 @@ const UserRegistration = () => {
      e.preventDefault()
      console.log('click', formInputValues)
 
-     fetch('/user-create', {
+     fetch('/register', {
             method: 'POST',
             headers: {
                 'Accept':       'application/json',
@@ -31,11 +32,12 @@ const UserRegistration = () => {
             },
 
             body: JSON.stringify({
-              "first_name": formInputValues.first_name,
-              "last_name": formInputValues.last_name,
+              "name": formInputValues.name,
               "email": formInputValues.email,
               "password": formInputValues.password,
+              "password_confirmation": formInputValues.password_confirmation,
               "phone_number": formInputValues.phone_number,
+              "company_id": formInputValues.company_id,
               })
           })
             .then(()=> {
@@ -52,21 +54,11 @@ const UserRegistration = () => {
         <div className="loginForm">
           <h1>User registration</h1>
             <div className="form-group">
-            <label htmlFor="first_name">First name</label>
+            <label htmlFor="first_name">Name</label>
               <input className="form-control"
-                id="first_name"
+                id="name"
                 type="text"
-                value={formInputValues.first_name}
-                onChange={handleNameInputChange}
-                />
-            </div>
-          
-            <div className="form-group">
-              <label htmlFor="last_name">Last name</label>
-              <input className="form-control"
-                id="last_name"
-                type="text"
-                value={formInputValues.last_name}
+                value={formInputValues.name}
                 onChange={handleNameInputChange}
                 />
             </div>
@@ -75,8 +67,18 @@ const UserRegistration = () => {
             <label htmlFor="email">E-mail</label>
               <input className="form-control"
                 id="email"
-                type="email"
+                type="text"
                 value={formInputValues.email}
+                onChange={handleNameInputChange}
+                />
+            </div>
+
+             <div className="form-group">
+            <label htmlFor="company_id">Company id</label>
+              <input className="form-control"
+                id="company_id"
+                type="number"
+                value={formInputValues.company_id}
                 onChange={handleNameInputChange}
                 />
             </div>
@@ -91,11 +93,22 @@ const UserRegistration = () => {
                   />
               </div>
 
+              <div className="form-group">
+              <label htmlFor="password_confirmation">Password confirmation</label>
+                <input className="form-control"
+                  id="password_confirmation"
+                  type="password"
+                  value={formInputValues.password_confirmation}
+                  onChange={handleNameInputChange}
+                  />
+              </div>
+
+            
             <div className="form-group">    
             <label htmlFor="phone_number">Phone number</label>
               <input className="form-control"
                 id="phone_number"
-                type="phone_number"
+                type="text"
                 value={formInputValues.phone_number}
                 onChange={handleNameInputChange}
                 />

@@ -11,13 +11,14 @@ class UserController extends Controller
 
     public function store(Request $request) 
     {
-       
         $user = User::create([
+            'company_id'=>$request->company_id,
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=>$request->password,
             'phone_number'=>$request->phone_number
         ])->save();
+
 
         return [
             'status' => 'success',
