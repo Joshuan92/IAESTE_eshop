@@ -14,7 +14,6 @@ import Internship from "./Internship.jsx";
 import Navigation from "./Navigation.jsx";
 import Event from "./event/Event.jsx";
 import NewCompanyForm from "./companyForm/NewCompanyForm";
-import UserForm from "./userForm/UserForm";
 import ExistingCompanyForm from "./existingCompanyForm/ExistingCompanyForm";
 import UserRegistration from "./registerUser/UserRegistration.jsx";
 import { Router, Switch, Route } from "react-router-dom";
@@ -100,7 +99,7 @@ export default class App extends React.Component {
                     </Route>
 
                     <Route path="/react/userForm">
-                        <UserForm />
+                        <UserRegistration />
                     </Route>
 
                     <Route path="/react/basket">

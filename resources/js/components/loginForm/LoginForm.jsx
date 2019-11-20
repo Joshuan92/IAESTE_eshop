@@ -23,8 +23,8 @@ const LoginForm = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
-        fetch('/api/login', {
-            method: 'POST',
+        fetch('/login', {
+            method: 'post',
             headers: {
                 'Accept':       'application/json',
                 'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const LoginForm = () => {
     return (
         <>
             <h1>Login form</h1>
-            <form action="" method="post">
+            <form action="" method="post" onClick={handleFormSubmit}>
                 Email:<br />
                 <input type="text" name="email" value={email } onChange={handleEmailChange}/><br />
                 Password:<br />
