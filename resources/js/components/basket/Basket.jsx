@@ -3,15 +3,11 @@ import Layout from "./Layout.jsx";
 import BasketItem from "./BasketItem.jsx";
 
 const Basket = props => {
-    const { inCart, removeFromCart } = props;
-
-    const basketItem = inCart;
-
-    console.log("basket", basketItem);
+    const { inCart, removeFromCart } = props;  
 
     let content = "";
 
-    if (basketItem.length === null) {
+    if (inCart.length === null) {
         content = <div>Nothing in your shopping cart...</div>;
     } else {
         content = (
@@ -19,14 +15,11 @@ const Basket = props => {
                 <div className="container-fluid text-center d-lg-block">
                     <h1>Your picks</h1>
                     <Layout />
-                    {basketItem.map(item => {
+                    {inCart.map(item => {
                         return (
                             <BasketItem
                                 key={item.id}
-                                name={item.name}
-                                place={item.place}
-                                price={item.price}
-                                event_date={item.event_date}
+                                item={item}
                                 removeFromCart={removeFromCart}
                             />
                         );
