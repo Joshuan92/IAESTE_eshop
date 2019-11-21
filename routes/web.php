@@ -20,6 +20,6 @@ Route::get('/{anything?}', function () {
 //Login routes
 Auth::routes();
 
-Route::post('/login', 'Api\LoginController@login');
+// Route::post('/login', 'Api\LoginController@login');
 
 
