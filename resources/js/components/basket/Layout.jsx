@@ -1,6 +1,9 @@
 import React from 'react'
 
-const Layout = () => {
+const Layout = (props) => {
+
+  const { name, text, venue, date, price, id } = props;
+
   return (
     <div className="container-fluid text-center d-lg-block">
       <h1>Your picks</h1>
