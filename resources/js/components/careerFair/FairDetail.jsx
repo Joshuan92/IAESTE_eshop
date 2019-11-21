@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { DateTime } from 'luxon';
+import { DateTime } from "luxon";
 
 const FairDetail = props => {
     let { id } = useParams(); // params jsou všechny informace, které přišly na exact path
@@ -11,13 +11,23 @@ const FairDetail = props => {
     const { name, place, event_date, short_description, price } = fair;
 
     const handleClick = () => {
-        props.setInCart(prevState => prevState.concat(name, place, event_date, short_description, price, id));
+        const item = {
+            name,
+            place,
+            event_date,
+            short_description,
+            price,
+            id
+        };
+        props.setInCart(prevState => prevState.concat(item));
     };
-
 
     return (
         <div className="row center-block text-center">
-            <div className="card center-block" style={{ width: "25rem", height: "25rem" }}>
+            <div
+                className="card center-block"
+                style={{ width: "25rem", height: "25rem" }}
+            >
                 <div className="card-body">
                     <h2>{name}</h2>
                     <p>{short_description}</p>
@@ -26,7 +36,11 @@ const FairDetail = props => {
                     <h3>{price} CZK</h3>
                     <button
                         className="form-control"
-                        style={{ border: "1px solid blue", margin: "5px" }} onClick={handleClick}> {/* event as a parameter and product as an argument */}
+                        style={{ border: "1px solid blue", margin: "5px" }}
+                        onClick={handleClick}
+                    >
+                        {" "}
+                        {/* event as a parameter and product as an argument */}
                         Add to cart
                     </button>
                 </div>

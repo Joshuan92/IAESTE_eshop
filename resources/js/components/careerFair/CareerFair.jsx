@@ -2,36 +2,20 @@ import React, { useState, useEffect } from "react";
 import SingleFair from "./SingleFair.jsx";
 import { Router, Route, Switch } from "react-router-dom";
 import FairDetail from "./FairDetail.jsx";
-import Basket from './../basket/Basket.jsx';
-import useLocalStorage from './../useLocalStorage';
+//import useLocalStorage from "./../useLocalStorage";
 
 import history from "./../history.js";
 
-const CareerFair = () => {
-    const [fairs, setFairs] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [inCart, setInCart] = useLocalStorage('basket',[]);
-    const [count, setCount] = useState(0)
-    
+const CareerFair = props => {
+    const { fairs, setInCart, inCart, loading } = props;
 
-    useEffect(() => {
-        fetch("/api/projects")
-            .then(resp => resp.json())
-            .then(data => {
-                setFairs(data);
-                setLoading(false);
-            });
-    }, []);
+    console.log("incart", inCart);
 
-    useEffect(() => {
-        //window.localStorage.setItem('inCart', JSON.stringify(inCart));
-    }, [inCart]);
+    const [count, setCount] = useState(0);
 
-    useEffect(()=> {
-        console.log(count)
-    }, [count]);
-
-    
+    /* useEffect(() => {
+        console.log(count);
+    }, [count]); */
 
     let pagination = "";
     let content = "";
@@ -53,34 +37,27 @@ const CareerFair = () => {
                                     {fairs.length &&
                                         fairs.map(fair => {
                                             return (
-                                                <>
+                                                <div key={fair.id}>
                                                     <SingleFair
-                                                        key={fair.id}
                                                         id={fair.id}
                                                         name={fair.name}
-                                                        text={
+                                                        short_description={
                                                             fair.short_description
                                                         }
-                                                        venue={fair.place}
-                                                        date={fair.event_date}
+                                                        place={fair.place}
+                                                        event_date={fair.event_date}
                                                         price={fair.price}
                                                         setInCart={setInCart}
                                                         setCount={setCount}
                                                     />
-                                                </>
+                                                </div>
                                             );
                                         })}
                                 </div>
                             </div>
                         </Route>
                         <Route exact path={`/react/career/:id`}>
-                            <FairDetail 
-                            fairs={fairs}
-                            setInCart={setInCart} />
-                        </Route>
-
-                        <Route path='/react/basket'>
-                            <Basket  />
+                            <FairDetail fairs={fairs} setInCart={setInCart} />
                         </Route>
                     </Switch>
                 </Router>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NewCarousel from "./NewCarousel.jsx";
 import Topbar from "./Topbar.jsx";
 import About from "./about/About.jsx";
@@ -20,31 +20,53 @@ import { Router, Switch, Route } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import history from "./history.js";
 import Basket from "./basket/Basket.jsx";
+import useLocalStorage from "./useLocalStorage";
 
 import "./../../sass/app.scss";
 import LoginForm from "./loginForm/LoginForm.jsx";
 
-export default class App extends React.Component {
+const App = () => {
+    const [fairs, setFairs] = useState([]);
 
-    constructor(props) {
-        super(props);
+    const [token, setToken] = useState(null);
+    const [loggedIn, setLoggedIn] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [inCart, setInCart] = useLocalStorage("basket", []);
 
-        this.state = {
-            token: null,
-            logged_in: null
-        }
-    }
+    useEffect(() => {
+        fetch("/api/projects")
+            .then(resp => resp.json())
+            .then(data => {
+                setFairs(data);
+                setLoading(false);
 
-    getToken = () => {
+                console.log("data", data);
+            });
+    }, []);
+    const removeFromCart = e => {
+        console.log(e.target);
+        console.log(e.target.dataset);
+    };
+    useEffect(() => {}, [inCart]);
+
+    useEffect(() => {
+        setLoading(true);
+    }, []);
+
+    /*   useEffect(() => {
+        console.log(count);
+    }, [count]); */
+
+    /*  getToken = () => {
         return window.localStorage.getItem('_token');
     }
 
     setToken = (token) => {
         window.localStorage.setItem('_token', token);
-    }
-    
-    render() {
-        return (
+    } */
+
+    return (
+        <>
             <Router history={history}>
                 <Topbar />
                 <Navigation />
@@ -66,7 +88,13 @@ export default class App extends React.Component {
                     </Route>
 
                     <Route path="/react/career">
-                        <CareerFair />
+                        <CareerFair
+                            fairs={fairs}
+                            setInCart={setInCart}
+                            inCart={inCart}
+                            loading={loading}
+
+                        />
                     </Route>
 
                     <Route path="/react/events">
@@ -82,7 +110,7 @@ export default class App extends React.Component {
                     </Route>
 
                     <Route path="/react/login">
-                        <LoginForm/>
+                        <LoginForm />
                     </Route>
 
                     <Route path="/react/existingCompanyForm">
@@ -102,7 +130,10 @@ export default class App extends React.Component {
                     </Route>
 
                     <Route path="/react/basket">
-                        <Basket />
+                        <Basket
+                            removeFromCart={removeFromCart}
+                            inCart={inCart}
+                        />
                     </Route>
 
                     <Route path="/react/user-registration">
@@ -112,6 +143,8 @@ export default class App extends React.Component {
 
                 <Footer />
             </Router>
-        );
-    }
-}
+        </>
+    );
+};
+
+export default App;
