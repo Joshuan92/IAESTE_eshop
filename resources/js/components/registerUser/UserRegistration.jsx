@@ -36,7 +36,7 @@ const UserRegistration = () => {
             .then((data)=> {
               console.log('data', data)
              
-              if(data.redirect)setFormSubmitSuccess(true)
+              setFormSubmitSuccess(true)
             })
             .catch((e)=> {
               console.log('e', e)
