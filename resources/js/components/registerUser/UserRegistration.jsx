@@ -31,19 +31,15 @@ const UserRegistration = () => {
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             },
 
-            body: JSON.stringify({
-              "name": formInputValues.name,
-              "email": formInputValues.email,
-              "password": formInputValues.password,
-              "password_confirmation": formInputValues.password_confirmation,
-              "phone_number": formInputValues.phone_number,
-              "company_id": formInputValues.company_id,
-              })
+            body: JSON.stringify(formInputValues)
           })
-            .then(()=> {
-              setFormSubmitSuccess(true)
+            .then((data)=> {
+              console.log('data', data)
+             
+              if(data.redirect)setFormSubmitSuccess(true)
             })
             .catch((e)=> {
+              console.log('e', e)
               setFormSubmitSuccess(false)
             })
    }

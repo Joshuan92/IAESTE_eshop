@@ -10,9 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 */
 
-Route::get('/react/{anything?}', function () {
+Route::get('/{anything?}', function () {
     return view('welcome');
 })->where('anything', '.*');
+
+
 
 
 //Login routes
