@@ -1,8 +1,9 @@
 import React from "react";
-import Trash from './../../../../public/img/trash-can-icon.png'
+import Trash from './../../../../public/img/trash-can-icon.png';
+import { useParams } from "react-router-dom";
 
 const BasketItem = props => {
-    const { name, place, event_date, price, id, removeFromCart } = props;
+    const { item, removeFromCart } = props;
 
     return (
         <div className="row">
@@ -10,20 +11,20 @@ const BasketItem = props => {
                 <p></p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <p>{name}</p>
+                <p>{item.name}</p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <p>{price} CZK</p>
+                <p>{item.price} CZK</p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <p>{place}</p>
+                <p>{item.place}</p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <p>{event_date}</p>
+                <p>{item.event_date}</p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
               <p>
-                <img className="trash" id={id} data-id={id} src={Trash} alt={id} onClick={removeFromCart} />
+                <img className="trash" id={item.id} data-id={item.id} src={Trash} alt={item.id} onClick={removeFromCart} />
               </p>
             </div>
         </div>

@@ -32,6 +32,8 @@ const App = () => {
     const [loggedIn, setLoggedIn] = useState(null);
     const [loading, setLoading] = useState(true);
     const [inCart, setInCart] = useLocalStorage("basket", []);
+    const [newCart, setNewCart] = useState();
+
 
     useEffect(() => {
         fetch("/api/projects")
@@ -39,14 +41,36 @@ const App = () => {
             .then(data => {
                 setFairs(data);
                 setLoading(false);
-
-                console.log("data", data);
             });
     }, []);
+
     const removeFromCart = e => {
-        console.log(e.target);
-        console.log(e.target.dataset);
+
+        let item = [];
+
+
+        for (let i = 0; i < inCart.length; i++)
+        {
+            item = inCart.filter(f => f.id != e.target.dataset.id);
+
+        }
+        console.log('item', item);
+        async function save(ITEM){
+
+            await setNewCart(ITEM);
+            console.log('haf');
+            
+
+        }
+
+        save(item);
+        
+        console.log('newCart', newCart);
+        
+        
+
     };
+
     useEffect(() => {}, [inCart]);
 
     useEffect(() => {
