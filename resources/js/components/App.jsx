@@ -20,10 +20,9 @@ import UserRegistration from "./registerUser/UserRegistration.jsx";
 import { Router, Switch, Route } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import history from "./history.js";
-import Basket from "./Basket.jsx";
+import Basket from "./basket/Basket.jsx";
 
 import "./../../sass/app.scss";
-import FairDetail from "./careerFair/FairDetail.jsx";
 import LoginForm from "./loginForm/LoginForm.jsx";
 
 export default class App extends React.Component {
