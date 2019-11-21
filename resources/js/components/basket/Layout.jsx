@@ -1,34 +1,28 @@
-import React from 'react'
+import React from "react";
 
-const Layout = (props) => {
+const Layout = () => {
+    return (
+        <div className="row ">
+            <div className="col-10 mx-auto col-lg-2">
+                <p>Products:</p>
+            </div>
+            <div className="col-10 mx-auto col-lg-2">
+                <p>Name of product</p>
+            </div>
+            <div className="col-10 mx-auto col-lg-2">
+                <p>Price</p>
+            </div>
+            <div className="col-10 mx-auto col-lg-2">
+                <p>Venue</p>
+            </div>
+            <div className="col-10 mx-auto col-lg-2">
+                <p>Date</p>
+            </div>
+            <div className="col-10 mx-auto col-lg-2">
+                <p>Remove</p>
+            </div>
+        </div>
+    );
+};
 
-  const { name, text, venue, date, price, id } = props;
-
-  return (
-    <div className="container-fluid text-center d-lg-block">
-      <h1>Your picks</h1>
-      <div className="row ">
-        <div className="col-10 mx-auto col-lg-2">
-          <p>Products:</p>
-        </div>
-        <div className="col-10 mx-auto col-lg-2">
-          <p>Name of product {name}</p>
-        </div>
-        <div className="col-10 mx-auto col-lg-2">
-          <p>Price {price}</p>
-        </div>
-        <div className="col-10 mx-auto col-lg-2">
-          <p>Venue {venue}</p>
-        </div>
-        <div className="col-10 mx-auto col-lg-2">
-          <p>Remove</p>
-        </div>
-        <div className="col-10 mx-auto col-lg-2">
-          <p>Total</p>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default Layout
+export default Layout;

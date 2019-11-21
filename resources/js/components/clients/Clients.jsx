@@ -26,8 +26,8 @@ export default class Clients extends React.Component {
               <div className="partners ">
                 <div className="row party">
                   {
-                    this.state.url.map(url =>
-                      <a className="items col-md-2 col-sm-12"><img src={ url } alt="" className="fluid"/></a>
+                    this.state.url.map((url, index) =>
+                      <a key={`clientImage-${index}`}className="items col-md-2 col-sm-12"><img src={ url } alt="" className="fluid"/></a>
                   )
                   }
             </div>
