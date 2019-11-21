@@ -11,7 +11,7 @@ const FairDetail = props => {
     const { name, place, event_date, short_description, price } = fair;
 
     const handleClick = () => {
-        props.setInCart(prevState => prevState.concat(id));
+        props.setInCart(prevState => prevState.concat(name, place, event_date, short_description, price, id));
     };
 
 

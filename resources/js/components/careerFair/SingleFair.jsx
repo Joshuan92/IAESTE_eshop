@@ -2,10 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SingleFair = props => {
-    const { name, text, venue, date, price, id, setInCart } = props;
+    const { name, text, venue, date, price, id, setInCart, setCount } = props;
+
+    //console.log('price', price)
 
     const handleClick = () => {
-        setInCart(prevState => prevState.concat(id));
+        const item = {
+            name,
+            text,
+            venue,
+            date,
+            price,
+            id
+        }
+        setInCart(prevState => prevState.concat(item));
+        //setCount(prevState => ({count: prevState.price + 1}))
     };
 
     return (

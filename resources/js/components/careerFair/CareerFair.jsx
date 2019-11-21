@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import SingleFair from "./SingleFair.jsx";
 import { Router, Route, Switch } from "react-router-dom";
 import FairDetail from "./FairDetail.jsx";
+import Basket from './../basket/Basket.jsx';
+import useLocalStorage from './../useLocalStorage';
 
 import history from "./../history.js";
 
 const CareerFair = () => {
     const [fairs, setFairs] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [inCart, setInCart] = useState([]);
+    const [inCart, setInCart] = useLocalStorage('basket',[]);
+    const [count, setCount] = useState(0)
+    
 
     useEffect(() => {
         fetch("/api/projects")
@@ -20,8 +24,14 @@ const CareerFair = () => {
     }, []);
 
     useEffect(() => {
-        console.log(inCart);
+        //window.localStorage.setItem('inCart', JSON.stringify(inCart));
     }, [inCart]);
+
+    useEffect(()=> {
+        console.log(count)
+    }, [count]);
+
+    
 
     let pagination = "";
     let content = "";
@@ -55,6 +65,7 @@ const CareerFair = () => {
                                                         date={fair.event_date}
                                                         price={fair.price}
                                                         setInCart={setInCart}
+                                                        setCount={setCount}
                                                     />
                                                 </>
                                             );
@@ -66,6 +77,10 @@ const CareerFair = () => {
                             <FairDetail 
                             fairs={fairs}
                             setInCart={setInCart} />
+                        </Route>
+
+                        <Route path='/react/basket'>
+                            <Basket  />
                         </Route>
                     </Switch>
                 </Router>
