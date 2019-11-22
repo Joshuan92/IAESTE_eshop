@@ -54,22 +54,22 @@ const App = () => {
             item = inCart.filter(f => f.id != e.target.dataset.id);
 
         }
-        console.log('item', item);
+      /*   console.log('item', item);
         async function save(ITEM){
 
             await setNewCart(ITEM);
-            console.log('haf');
+            console.log('haf'); */
             
-
+            setInCart(item)
         }
 
-        save(item);
+    
+
+        /* save(item);
         
-        console.log('newCart', newCart);
-        
+        console.log('newCart', newCart); */
         
 
-    };
 
     useEffect(() => {}, [inCart]);
 
