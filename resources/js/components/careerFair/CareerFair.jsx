@@ -13,10 +13,6 @@ const CareerFair = props => {
 
     const [count, setCount] = useState(0);
 
-    /* useEffect(() => {
-        console.log(count);
-    }, [count]); */
-
     let pagination = "";
     let content = "";
 
@@ -45,10 +41,11 @@ const CareerFair = props => {
                                                             fair.short_description
                                                         }
                                                         place={fair.place}
-                                                        event_date={fair.event_date}
+                                                        event_date={
+                                                            fair.event_date
+                                                        }
                                                         price={fair.price}
                                                         setInCart={setInCart}
-                                                        setCount={setCount}
                                                     />
                                                 </div>
                                             );

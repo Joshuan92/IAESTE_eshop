@@ -21,7 +21,7 @@ export default class Footer extends React.Component {
                   </form>
                 </div>
                 <div className="col-lg-3">
-                  <h4 className="h6">Blog</h4>
+                  <h4 className="h6">Internship</h4>
                   <ul className="list-unstyled footer-blog-list">
                     <li className="d-flex align-items-center">
                       <div className="image"><img src="img/detailsquare.jpg" alt="..." className="img-fluid"/></div>
@@ -45,7 +45,7 @@ export default class Footer extends React.Component {
                   <hr className="d-block d-lg-none"></hr>
               </div>
               <div className="col-lg-3">
-              <h4 className="h6">Blog</h4>
+              <h4 className="h6">Experience abroad</h4>
               <ul className="list-unstyled footer-blog-list">
                 <li className="d-flex align-items-center">
                   <div className="image"><img src="img/detailsquare.jpg" alt="..." className="img-fluid"/></div>
@@ -75,12 +75,9 @@ export default class Footer extends React.Component {
               </div>
             <div className="col-lg-3">
                   <ul className="list-inline photo-stream">
-                    <li className="list-inline-item"><a href="#"><img src="img/detailsquare2.jpg" alt="..." className="img-fluid" /></a></li>
-                    <li className="list-inline-item"><a href="#"><img src="img/detailsquare.jpg" alt="..." className="img-fluid" /></a></li>
-                    <li className="list-inline-item"><a href="#"><img src="img/detailsquare3.jpg" alt="..." className="img-fluid" /></a></li>
-                    <li className="list-inline-item"><a href="#"><img src="img/detailsquare3.jpg" alt="..." className="img-fluid" /></a></li>
-                    <li className="list-inline-item"><a href="#"><img src="img/detailsquare2.jpg" alt="..." className="img-fluid" /></a></li>
-                    <li className="list-inline-item"><a href="#"><img src="img/detailsquare.jpg" alt="..." className="img-fluid" /></a></li>
+                    <li className="list-inline-item"><a href="#"></a></li>
+                    <li className="list-inline-item"><a href="#"></a></li>
+                    <li className="list-inline-item"><a href="#"></a></li>
                   </ul>
                 </div>
             </div>

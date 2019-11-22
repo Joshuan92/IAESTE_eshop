@@ -1,11 +1,10 @@
-import React from 'react'
+import React from "react";
 
-const TotalPrice = (props) => {
+const TotalPrice = props => {
+    const { totalPrice } = props;
 
-  const { totalPrice} = props;
-
-  return (
-  <div className="row ">
+    return (
+        <div className="row ">
             <div className="col-10 mx-auto col-lg-2">
                 <p></p>
             </div>
@@ -25,9 +24,7 @@ const TotalPrice = (props) => {
                 <p></p>
             </div>
         </div>
-  )
-}
+    );
+};
 
-
-
-export default TotalPrice
+export default TotalPrice;

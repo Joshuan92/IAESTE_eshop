@@ -32,7 +32,6 @@ const App = () => {
     const [loggedIn, setLoggedIn] = useState(null);
     const [loading, setLoading] = useState(true);
     const [inCart, setInCart] = useLocalStorage("basket", []);
-    const [newCart, setNewCart] = useState();
 
     useEffect(() => {
         fetch("/api/projects")
@@ -43,21 +42,20 @@ const App = () => {
             });
     }, []);
 
-  /*   const increaseCountinCart = () => {
-        if (id === id) {
-            count + 1 && prevPrice => prevPrice. 
-        }
-    } */
+    const totalCount = () => {
+        let countOfItems = inCart.length;
+
+        return countOfItems;
+    };
 
     const totalPrice = () => {
         let totalPrice = 0;
-           
+
         for (let i = 0; i < inCart.length; i++) {
-           totalPrice += inCart[i].price;
-       
+            totalPrice += inCart[i].price * inCart[i].quantity;
         }
-        return totalPrice
-    }
+        return totalPrice;
+    };
 
     const removeFromCart = e => {
         const clickedItemID = e.target.id;
@@ -73,10 +71,6 @@ const App = () => {
         setLoading(true);
     }, []);
 
-    /*   useEffect(() => {
-        console.log(count);
-    }, [count]); */
-
     /*  getToken = () => {
         return window.localStorage.getItem('_token');
     }
@@ -88,7 +82,7 @@ const App = () => {
     return (
         <>
             <Router history={history}>
-                <Topbar />
+                <Topbar totalCount={totalCount} />
                 <Navigation />
 
                 <Switch>

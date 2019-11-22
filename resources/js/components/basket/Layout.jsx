@@ -4,9 +4,6 @@ const Layout = () => {
     return (
         <div className="row ">
             <div className="col-10 mx-auto col-lg-2">
-                <p>Product count:</p>
-            </div>
-            <div className="col-10 mx-auto col-lg-2">
                 <p>Name of product</p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
@@ -20,6 +17,9 @@ const Layout = () => {
             </div>
             <div className="col-10 mx-auto col-lg-2">
                 <p>Remove</p>
+            </div>
+            <div className="col-10 mx-auto col-lg-2">
+                <p>Quantity</p>
             </div>
         </div>
     );
