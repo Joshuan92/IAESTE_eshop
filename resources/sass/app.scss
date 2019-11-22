@@ -31,3 +31,14 @@ h1 {
 .trash {
   width: 1rem
 }
+
+.totalCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: green;
+  border-radius: 50%;
+  color: #fff;
+}

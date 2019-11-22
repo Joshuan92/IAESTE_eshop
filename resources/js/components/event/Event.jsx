@@ -24,6 +24,7 @@ export default class Event extends React.Component {
               {
                 dataEvents.map(event => 
                   <SingleEvent 
+                    key={`event-${event.id}`}
                     id ={ event.id }
                     name ={event.name }
                     img = { event.img }

@@ -1,25 +1,41 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { DateTime } from "luxon";
+//import { DateTime } from "luxon";
 
 const FairDetail = props => {
     let { id } = useParams(); // params jsou všechny informace, které přišly na exact path
     let fair = props.fairs.filter(f => f.id == id)[0]; // mapujeme skrze fairs -–> filtrujeme - filter bere jako parametr funkci a jako argument v našem případě ID. Dvě rovnítka jsou proto, že dostáváme číslo na druhé straně je string.
     console.log(props.fairs);
     console.log(id);
-    console.log(fair);
+    console.log('text',fair);
     const { name, place, event_date, short_description, price } = fair;
 
     const handleClick = () => {
-        const item = {
-            name,
-            place,
-            event_date,
-            short_description,
-            price,
-            id
-        };
-        props.setInCart(prevState => prevState.concat(item));
+        console.log('short', short_description)
+        props.setInCart(prevState => {
+            const item = {
+                name,
+                short_description,
+                place,
+                event_date,
+                price,
+                id,
+                quantity: 1
+            };
+            //is item in cart
+            console.log("prevCart", prevState);
+            const hasItem = !!prevState.find(oldItem => oldItem.id === item.id);
+            let newCart;
+            if (hasItem) {
+                newCart = prevState.reduce((acc, oldItem) => {
+                    if (+oldItem.id == +item.id) oldItem.quantity += 1;
+                    return acc.concat(oldItem);
+                }, []);
+            } else {
+                newCart = prevState.concat(item);
+            }
+            return newCart;
+        });
     };
 
     return (
