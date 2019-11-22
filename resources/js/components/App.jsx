@@ -34,7 +34,6 @@ const App = () => {
     const [inCart, setInCart] = useLocalStorage("basket", []);
     const [newCart, setNewCart] = useState();
 
-
     useEffect(() => {
         fetch("/api/projects")
             .then(resp => resp.json())
@@ -44,32 +43,29 @@ const App = () => {
             });
     }, []);
 
+  /*   const increaseCountinCart = () => {
+        if (id === id) {
+            count + 1 && prevPrice => prevPrice. 
+        }
+    } */
+
+    const totalPrice = () => {
+        let totalPrice = 0;
+           
+        for (let i = 0; i < inCart.length; i++) {
+           totalPrice += inCart[i].price;
+       
+        }
+        return totalPrice
+    }
+
     const removeFromCart = e => {
+        const clickedItemID = e.target.id;
 
-        let item = [];
+        const filterItem = item => clickedItemID != item.id;
 
-
-        for (let i = 0; i < inCart.length; i++)
-        {
-            item = inCart.filter(f => f.id != e.target.dataset.id);
-
-        }
-      /*   console.log('item', item);
-        async function save(ITEM){
-
-            await setNewCart(ITEM);
-            console.log('haf'); */
-            
-            setInCart(item)
-        }
-
-    
-
-        /* save(item);
-        
-        console.log('newCart', newCart); */
-        
-
+        setInCart(prevCart => prevCart.filter(filterItem));
+    };
 
     useEffect(() => {}, [inCart]);
 
@@ -117,7 +113,6 @@ const App = () => {
                             setInCart={setInCart}
                             inCart={inCart}
                             loading={loading}
-
                         />
                     </Route>
 
@@ -157,6 +152,7 @@ const App = () => {
                         <Basket
                             removeFromCart={removeFromCart}
                             inCart={inCart}
+                            totalPrice={totalPrice}
                         />
                     </Route>
 

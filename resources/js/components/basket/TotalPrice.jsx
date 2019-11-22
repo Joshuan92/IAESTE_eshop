@@ -1,28 +1,33 @@
-import React from "react";
+import React from 'react'
 
-const Layout = () => {
-    return (
-        <div className="row ">
+const TotalPrice = (props) => {
+
+  const { totalPrice} = props;
+
+  return (
+  <div className="row ">
             <div className="col-10 mx-auto col-lg-2">
-                <p>Product count:</p>
+                <p></p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <p>Name of product</p>
+                <p></p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <p>Price</p>
+                <p>Total: {totalPrice()} CZK </p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <p>Venue</p>
+                <p></p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <p>Date</p>
+                <p></p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <p>Remove</p>
+                <p></p>
             </div>
         </div>
-    );
-};
+  )
+}
 
-export default Layout;
+
+
+export default TotalPrice

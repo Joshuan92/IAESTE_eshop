@@ -8,7 +8,7 @@ const BasketItem = props => {
     return (
         <div className="row">
             <div className="col-10 mx-auto col-lg-2">
-                <p></p>
+                <p>{item.count}</p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
                 <p>{item.name}</p>
@@ -24,7 +24,7 @@ const BasketItem = props => {
             </div>
             <div className="col-10 mx-auto col-lg-2">
               <p>
-                <img className="trash" id={item.id} data-id={item.id} src={Trash} alt={item.id} onClick={removeFromCart} />
+                <img className="trash" id={item.id} src={Trash} alt={item.id} onClick={removeFromCart} />
               </p>
             </div>
         </div>
