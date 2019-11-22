@@ -28,12 +28,11 @@ import LoginForm from "./loginForm/LoginForm.jsx";
 const App = () => {
     const [fairs, setFairs] = useState([]);
 
-    const [token, setToken] = useState(null);
+    const [loginData, setLoginData] = useState(null);
     const [loggedIn, setLoggedIn] = useState(null);
     const [loading, setLoading] = useState(true);
     const [inCart, setInCart] = useLocalStorage("basket", []);
     const [newCart, setNewCart] = useState();
-    const [token, setToken] = useState();
 
     useEffect(() => {
         fetch("/api/projects")
@@ -73,6 +72,10 @@ const App = () => {
     useEffect(() => {
         setLoading(true);
     }, []);
+
+    useEffect(() => {
+        console.log('loginData', loginData);
+    }, [loginData]);
 
     /*   useEffect(() => {
         console.log(count);
@@ -130,7 +133,10 @@ const App = () => {
                     </Route>
 
                     <Route path="/react/login">
-                        <LoginForm setToken={setToken} />
+                        <LoginForm
+                        loginData={loginData} 
+                        setLoginData={setLoginData}
+                         />
                     </Route>
 
                     <Route path="/react/existingCompanyForm">
