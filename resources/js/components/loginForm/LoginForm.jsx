@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const LoginForm = (props) => {
 
-    const { setToken } = props;
+    const { setLoginData, loginData } = props;
 
     const [formOutputValues, setFormOutputValues] = useState(
                       { email: '', 
@@ -18,13 +18,6 @@ const LoginForm = (props) => {
      })
    }
 
-
-    useEffect(()=> {
-     console.log('props', props);
-     
-   },[props])
-
-
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
@@ -39,7 +32,21 @@ const LoginForm = (props) => {
             body: JSON.stringify(formOutputValues)
         })
         .then (response => response.json())
-        .then (data => setToken(data.data.token))
+        .then (data => setLoginData(data))
+        
+    }
+
+
+    let content = '';
+
+
+    if(loginData && loginData.status === 'fail')
+    {
+
+      content = <div class="alert alert-danger" role="alert">
+                  This is a danger alert—check it out!
+                </div>;
+      
     }
 
     return (
@@ -71,6 +78,9 @@ const LoginForm = (props) => {
             <div className="form-group">  
             <input  onClick={handleFormSubmit} className="form-control" type="submit" value="Login" />
             </div>
+             
+            {content}
+
           </div>  
        </form>
     </div>
