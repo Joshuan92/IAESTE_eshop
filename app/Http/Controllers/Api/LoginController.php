@@ -27,6 +27,7 @@ class LoginController extends Controller
     
     protected function sendLoginResponse(Request $request)
     {
+
         $token = Str::random(80);
     
         $this->guard()->user()->forceFill([

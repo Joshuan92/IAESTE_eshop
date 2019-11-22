@@ -7,6 +7,10 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
+// use Illuminate\Notifications\Notifiable;
+// use App\Notifications\UserRegistered;
 
 class RegisterController extends Controller
 {
@@ -28,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = '/react';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -63,13 +67,29 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'company_id' => $data['company_id'],
             'phone_number' => $data['phone_number'],
             'password' => Hash::make($data['password']),
         ]);
-        return $user;
+        
+    }
+
+    public function register(Request $request)
+    {
+        
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        // $user->notify(new UserRegistered($user->name));
+        return $this->registered($request, $user)
+                        ?: [
+                            "registered" => true,
+                        ];
     }
 }

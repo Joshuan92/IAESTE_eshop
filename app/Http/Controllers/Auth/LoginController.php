@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Str;
+
 
 class LoginController extends Controller
 {
@@ -25,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -36,20 +39,41 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    
+    protected function sendFailedLoginResponse(Request $request)
+    {
 
+        return [
+            'status' => 'fail',
+            'message' => 'Wrong login credentials',
+            'data' => []
+        ];
+    }
+    
     protected function sendLoginResponse(Request $request)
     {
 
-        dd($request);
-        
-        $request->session()->regenerate();
-
-        $this->clearLoginAttempts($request);
-
-        return $this->authenticated($request, $this->guard()->user())
-                ?: [
-                    "logged" => true,
-                    "intended" => $request->session()->pull('url.intended', '/')
-                ];
+        $token = Str::random(80);
+    
+        $this->guard()->user()->forceFill([
+            'api_token' => hash('sha256', $token),
+        ])->save();
+    
+        return [
+            'status' => 'success',
+            'message' => 'Login successful',
+            'data' => [
+                'token' => $token
+            ]
+        ];
+    }
+    
+    protected function loggedOut(Request $request)
+    {
+        return [
+            'status' => 'fail',
+            'message' => 'Successfully logged out',
+            'data' => []
+        ];
     }
 }
