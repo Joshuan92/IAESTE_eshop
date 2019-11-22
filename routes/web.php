@@ -14,12 +14,8 @@ Route::get('/{anything?}', function () {
     return view('welcome');
 })->where('anything', '.*');
 
-
-
-
 //Login routes
 Auth::routes();
 
-// Route::post('/login', 'Api\LoginController@login');
 
 

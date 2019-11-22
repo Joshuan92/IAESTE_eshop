@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React, { useState, useEffect }  from 'react'
 
 const UserRegistration = () => {
 
@@ -10,7 +10,14 @@ const UserRegistration = () => {
                         phone_number: '',
                         company_id: '', 
                       });
+
+   const [data, setData] = useState(null);
    const [formSubmitSuccess, setFormSubmitSuccess] = useState();
+
+   useEffect(()=> {
+     console.log('saved data', data);
+     
+   },[data])
 
    const handleNameInputChange = e => {
      setFormInputValues({
@@ -33,13 +40,13 @@ const UserRegistration = () => {
 
             body: JSON.stringify(formInputValues)
           })
+            .then(response => response.json())
             .then((data)=> {
-              console.log('data', data)
+              setData(data)
              
               setFormSubmitSuccess(true)
             })
             .catch((e)=> {
-              console.log('e', e)
               setFormSubmitSuccess(false)
             })
    }

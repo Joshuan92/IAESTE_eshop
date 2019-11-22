@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-const LoginForm = () => {
+const LoginForm = (props) => {
+
+    const { setToken } = props;
 
     const [formOutputValues, setFormOutputValues] = useState(
                       { email: '', 
                         password:'' 
-                      });
-    const [data, setdata] = useState([]);
+    });
+
 
 
     const handleOutputChange = e => {
@@ -17,16 +19,17 @@ const LoginForm = () => {
    }
 
 
-    useEffect(()=>{
-
-    },[])
+    useEffect(()=> {
+     console.log('props', props);
+     
+   },[props])
 
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
         fetch('/login', {
-            method: 'post',
+            method: 'POST',
             headers: {
                 'Accept':       'application/json',
                 'Content-Type': 'application/json',
@@ -35,19 +38,8 @@ const LoginForm = () => {
             },
             body: JSON.stringify(formOutputValues)
         })
-        .then (response => {
-            response.json()
-            console.log(response);
-            })
-        .then(data => {
-
-            console.log(data)
-            
-
-            setdata(data)
-            
-            
-        })
+        .then (response => response.json())
+        .then (data => setToken(data.data.token))
     }
 
     return (

@@ -33,6 +33,7 @@ const App = () => {
     const [loading, setLoading] = useState(true);
     const [inCart, setInCart] = useLocalStorage("basket", []);
     const [newCart, setNewCart] = useState();
+    const [token, setToken] = useState();
 
 
     useEffect(() => {
@@ -134,7 +135,7 @@ const App = () => {
                     </Route>
 
                     <Route path="/react/login">
-                        <LoginForm />
+                        <LoginForm setToken={setToken} />
                     </Route>
 
                     <Route path="/react/existingCompanyForm">
