@@ -14,7 +14,7 @@ import Internship from "./Internship.jsx";
 import Navigation from "./Navigation.jsx";
 import Event from "./event/Event.jsx";
 import NewCompanyForm from "./companyForm/NewCompanyForm";
-import ExistingCompanyForm from "./existingCompanyForm/ExistingCompanyForm";
+import SignUpNavigation from "./SignUpNavigation/SignUpNavigation";
 import UserRegistration from "./registerUser/UserRegistration.jsx";
 import { Router, Switch, Route } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -129,19 +129,19 @@ const App = () => {
                          />
                     </Route>
 
-                    <Route path="/react/existingCompanyForm">
-                        <ExistingCompanyForm />
+                    <Route path="/react/signUp">
+                        <SignUpNavigation />
                     </Route>
 
                     <Route path="/react/projectinfo">
                         <Project />
                     </Route>
 
-                    <Route path="/react/companyForm">
+                    <Route path="/react/companyform">
                         <NewCompanyForm />
                     </Route>
 
-                    <Route path="/react/userForm">
+                    <Route path="/react/userform">
                         <UserRegistration />
                     </Route>
 

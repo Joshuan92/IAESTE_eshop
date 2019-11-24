@@ -23,7 +23,7 @@ const Topbar = props => {
                                     </span>
                                 </Link>
                                 <Link
-                                    to="/react/existingCompanyForm"
+                                    to="/react/signUp"
                                     className="signup-btn"
                                 >
                                     <span className="d-md-inline-block">

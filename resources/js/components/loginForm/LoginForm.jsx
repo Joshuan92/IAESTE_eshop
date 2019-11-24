@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 
 const LoginForm = (props) => {
 
@@ -44,9 +45,20 @@ const LoginForm = (props) => {
     {
 
       content = <div class="alert alert-danger" role="alert">
-                  This is a danger alert—check it out!
+                  {loginData.message}
                 </div>;
       
+    }
+    // not necessary to have message on succes, there will be redirect
+
+    else if(loginData && loginData.status === 'success')
+    {
+      content = <div class="alert alert-success" role="alert">
+                  {loginData.message}
+                </div>;
+
+      return <Redirect to='/react/career'/>
+
     }
 
     return (
