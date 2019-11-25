@@ -3,12 +3,11 @@ import Trash from "./../../../../public/img/trash-can-icon.png";
 import { useState, useEffect } from "react";
 
 const BasketItem = props => {
-    const { item, removeFromCart, incrementQuantityInBasket } = props;
+    const { item, removeFromCart } = props;
 
-    /*  useEffect(() => {
-        console.log("basket_item", item.quantity);
-    }, [item]); */
+    
 
+    console.log(item);
     return (
         <div className="row">
             <div className="col-10 mx-auto col-lg-2">
@@ -36,11 +35,9 @@ const BasketItem = props => {
             </div>
             <div className="col-10 mx-auto col-lg-2">
                 <p>
-                    <button id={item.id}>
-                        +
-                    </button>
+                    <button onClick={() => props.handleIncrement(item.id)} id={item.id}>+</button>
                     {item.quantity}
-                    <button>-</button>
+                    <button onClick={() => props.handleDecrement(item.id)}>-</button>
                 </p>
             </div>
         </div>
