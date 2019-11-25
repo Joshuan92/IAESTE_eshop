@@ -39,7 +39,7 @@ const SignUpNavigation = () =>  {
     
 
     const changeMarginClassName = (isSmallerThan500px) => {
-        return isSmallerThan500px ? 'card col-lg-6 text-center mr-3' : 'card col-lg-6 text-center mb-3'
+        return isSmallerThan500px ? 'card border-primary col-lg-6 text-center mr-3' : 'card border-primary col-lg-6 text-center mb-3'
         };
 
     return (
@@ -54,16 +54,16 @@ const SignUpNavigation = () =>  {
                     <div className={changeMarginClassName(matches)}>
                 
                         <div className="card-body">
-                            <h5 className="card-title">Yes, it is!</h5>
-                            <p className="card-text">I want to register as a new user at already registered company and I know our company IČO.</p>
+                            <h3 className="card-title">Yes, it is!</h3>
+                            <p className="card-text">I want to register as a new user at already registered company and I know our company VAT.</p>
                             <button className="btn btn-primary btn-md" onClick={redirectToUserRegistrationOnly}>Submit</button>
                         </div>
                         
                     </div>
 
-                    <div className="card col-lg-6 text-center">
+                    <div className="card border-primary col-lg-6 text-center">
                         <div className="card-body">
-                            <h5 className="card-title">Not yet.</h5>
+                            <h3 className="card-title">Not yet.</h3>
                             <p className="card-text">I want to register our company and participate on IAESTE projects and events.</p>
                             <button className="btn btn-primary btn-md" onClick={redirectToCompanyRegistration}>Submit</button>
                         </div>

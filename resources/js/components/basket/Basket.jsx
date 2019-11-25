@@ -6,8 +6,6 @@ import TotalPrice from "./TotalPrice.jsx";
 const Basket = props => {
     const { inCart, removeFromCart, totalPrice } = props;
 
-    console.log("inShopping cart", inCart);
-
     let content = "";
 
     if (inCart.length === null) {
