@@ -31,14 +31,23 @@ const App = () => {
     const [loggedIn, setLoggedIn] = useState(null);
     const [loading, setLoading] = useState(true);
     const [inCart, setInCart] = useLocalStorage("basket", []);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(36);
+
+    //let url = `?per_page=${postsPerPage}&page=${currentPage}`;
+
+   /*  useEffect(() => {
+        //console.log("url", url);
+    }, [url]); */
 
     useEffect(() => {
-        fetch("/api/projects")
+        fetch('/api/projects')
             .then(resp => resp.json())
             .then(data => {
                 setFairs(data);
                 setLoading(false);
             });
+            
     }, []);
 
     const totalCount = () => {
