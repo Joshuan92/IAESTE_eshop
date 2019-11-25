@@ -21,6 +21,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
  
 import Basket from "./basket/Basket.jsx";
 import useLocalStorage from "./useLocalStorage";
+import history from './history.js';
 
 import "./../../sass/app.scss";
 import LoginForm from "./loginForm/LoginForm.jsx";
