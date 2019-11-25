@@ -18,7 +18,7 @@ import SignUpNavigation from "./SignUpNavigation/SignUpNavigation";
 import UserRegistration from "./registerUser/UserRegistration.jsx";
 import { Router, Switch, Route } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import history from "./history.js";
+ 
 import Basket from "./basket/Basket.jsx";
 import useLocalStorage from "./useLocalStorage";
 
