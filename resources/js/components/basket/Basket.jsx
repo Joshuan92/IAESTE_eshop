@@ -4,9 +4,35 @@ import BasketItem from "./BasketItem.jsx";
 import TotalPrice from "./TotalPrice.jsx";
 
 const Basket = props => {
-    const { inCart, removeFromCart, totalPrice } = props;
+    const { inCart, setInCart, removeFromCart, totalPrice } = props;
 
     let content = "";
+
+
+    const handleIncrement = (id) => {
+        console.log("inc", id);
+
+        setInCart(inCart.map((item, i)=>{
+            if(+item.id === +id){
+                return Object.assign({}, item, {quantity: item.quantity + 1} );
+            }
+
+            return item;
+        })
+        )
+    }
+
+    const handleDecrement = (id) => {
+        console.log("dec", id);
+        setInCart(inCart.map((item, i)=>{
+            if(+item.id === +id){
+                return Object.assign({}, item, {quantity: item.quantity - 1} );
+            }
+
+            return item;
+        }).filter((item) => item.quantity > 0)
+        )
+    }
 
     if (inCart.length === null) {
         content = <div>Nothing in your shopping cart...</div>;
@@ -21,6 +47,8 @@ const Basket = props => {
                             <BasketItem
                                 key={item.id}
                                 item={item}
+                                handleIncrement={handleIncrement}
+                                handleDecrement={handleDecrement}
                                 removeFromCart={removeFromCart}
                             />
                         );

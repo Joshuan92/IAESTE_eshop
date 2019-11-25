@@ -13,7 +13,7 @@ const Topbar = props => {
                     <div className="col-md-6 d-md-block d-none">
                         <p>Contact us on +420 220 443 068 or vscht@iaeste.cz</p>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 right">
                         <div className="d-flex justify-content-md-end justify-content-between">
                             <ul className="list-inline contact-info d-block d-md-none"></ul>
                             <div className="login">
@@ -35,7 +35,7 @@ const Topbar = props => {
                                     <span className="d-md-inline-block ml-20">
                                         <div className="totalCount">
                                             <div>{totalCount()}</div>
-                                        </div>{" "}
+                                        </div>
                                     </span>
                                 </Link>
                             </div>
