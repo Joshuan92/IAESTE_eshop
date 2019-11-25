@@ -6,12 +6,12 @@ export default class Clients extends React.Component {
     super(props)
     this.state = {
       url: [
-        './../images/customer-1.png',
-        './../images/customer-2.png',
-        './../images/customer-3.png',
-        './../images/customer-4.png',
-        './../images/customer-5.png',
-        './../images/customer-6.png',
+        './../img/pilsner.png',
+        './../img/Accenture.png',
+        './../img/cez.png',
+        './../img/images.png',
+        './../img/skoda.png',
+        './../img/bosch.png',
       ]
     }
   }

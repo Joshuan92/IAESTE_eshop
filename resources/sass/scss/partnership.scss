@@ -16,7 +16,7 @@
 }
 
 .price-head {
-  background-color: #2196f3;
+  background-color: #0E4064;;
   display: inline;
   float: left;
   padding: 10px 5px;
@@ -72,20 +72,23 @@ ul li:last-child {
   padding: 15px 15px 30px;
   text-align: center;
   width: 100%;
+  
 }
 .buy-btn {
-  background-color: #2196f3;
+  background-color: #0E4064;;
   border-radius: 3px;
   display: inline-block;
   font-size: 18px;
   padding: 15px 50px;
   transition: 0.5s;
+  color: #ccc;
 }
 .buy-btn:hover {
   border-color: 1px solid #fff;
-  background-color: #3f51b5;
+  color: #fff;
+  //background-color: #3f51b5;
 }
 a {
   text-decoration: none;
-  color: #fff;
+  color: #ccc;
 }

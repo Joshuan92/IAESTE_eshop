@@ -27,7 +27,6 @@ import LoginForm from "./loginForm/LoginForm.jsx";
 
 const App = () => {
     const [fairs, setFairs] = useState([]);
-
     const [loginData, setLoginData] = useState(null);
     const [loggedIn, setLoggedIn] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -149,6 +148,7 @@ const App = () => {
                         <Basket
                             removeFromCart={removeFromCart}
                             inCart={inCart}
+                            setInCart={setInCart}
                             totalPrice={totalPrice}
                         />
                     </Route>
