@@ -27,6 +27,8 @@ Route::group(['middleware' => ['auth:api']], function ($group) {
 
 Route::get('/user', 'CompanyController@index');
 
+Route::post('/findCompany', 'CompanyController@findCompany');
+
 Route::post('/company', 'CompanyController@store');
 
 Route::post('/user-create', 'UserController@store');

@@ -11,7 +11,6 @@ class CompanyController extends Controller
     public function index () {
 
         $companies = Company::orderBy('id')
-                        ->with('users')
                         ->limit(20)
                         ->get();
 
@@ -47,5 +46,31 @@ class CompanyController extends Controller
             'status' => 'success',
             'message' => 'The data was successfully saved on the server.'
      ];
+    }
+
+    public function findCompany(Request $request) {
+        
+        $company = false;
+
+        $company = Company::where('ICO', '=', $request[0])
+                            ->first();
+
+        if($company)
+        {
+
+            return $company;
+
+        }
+        else{
+            
+            return [
+                'status' => 'fail',
+                'message' => 'There is no registered company in our database with such a VAT number.'
+            ];
+
+        }
+    
+        
+
     }
 }
