@@ -41,7 +41,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        //$this->middleware('guest');
     }
 
     /**
@@ -89,14 +89,15 @@ class RegisterController extends Controller
         
         $this->validator($request->all())->validate();
 
-        event(new Registered($user = $this->create($request->all())));
+        //event(new Registered();
+        $user = $this->create($request->all());
 
         $this->guard()->login($user);
 
         // $user->notify(new UserRegistered($user->name));
-        return $this->registered($request, $user)
-                        ?: [
-                            "registered" => true,
-                        ];
+        return [
+                    "registered" => true,
+                    "user_id" => $user->id
+                ];
     }
 }

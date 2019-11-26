@@ -8,9 +8,7 @@ const Basket = props => {
 
     let content = "";
 
-
     const handleIncrement = (id) => {
-        console.log("inc", id);
 
         setInCart(inCart.map((item, i)=>{
             if(+item.id === +id){
@@ -23,7 +21,7 @@ const Basket = props => {
     }
 
     const handleDecrement = (id) => {
-        console.log("dec", id);
+
         setInCart(inCart.map((item, i)=>{
             if(+item.id === +id){
                 return Object.assign({}, item, {quantity: item.quantity - 1} );
