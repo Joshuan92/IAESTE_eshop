@@ -5,7 +5,6 @@ import Basket from "./../../../public/img/shopping-basket-24.png";
 const Topbar = props => {
     const { totalCount } = props;
 
-    console.log("count", props);
     return (
         <div className="top-bar">
             <div className="container">

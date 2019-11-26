@@ -4,10 +4,10 @@ import history from "./../history.js";
 
 import SuccesfulRegistrationOfUser from './SuccesfulRegistrationOfUser.jsx';
 import UserRegistration from './UserRegistration.jsx';
+import useLocalStorage from "./../useLocalStorage";
 
 const UserRegistrationRouter = () => {
 
-  const [existingCompany, setExistingCompany] = useState(false);
   const [formInputValues, setFormInputValues] = useState(
                       { name: 'Martin', 
                         email: 'pedro.gonszales@vaginas.pussy', 
@@ -17,27 +17,14 @@ const UserRegistrationRouter = () => {
                         company_identification_number: '37432923', 
                         contact_function: 'Analyst',
                         mailing_address: 'Mrdalova 15',
-                        company_id: undefined
+                        company_id: undefined,
+                        user_id: null
                       });
 
-   const [data, setData] = useState(null);
+   const [data, setData] = useState(false);
    const [redirect, setRedirect] = useState();
 
-   //updating company id in "formInputValues", after the first fetch
-
-   useEffect(()=> {
-     setFormInputValues(prevVals => {
-
-          return {
-            ...prevVals,
-            company_id: existingCompany.id
-          }
-
-        })
-      
-   },[existingCompany])
-
-   //fetching the "formInputValues" inc. the company to the database
+   //fetching the "formInputValues" inc. the company_id to the database
 
    useEffect(()=> {
 
@@ -55,14 +42,26 @@ const UserRegistrationRouter = () => {
       })
         .then(response => response.json())
         .then((data)=> {
-          setData(data)
+          if(data.errors)
+          {
+            setData(data)
+            console.log('errors', data.errors);
+            
+          }
+          else
+          {
+            window.localStorage.setItem('user_data', JSON.stringify({
+              user_id: data.user_id,
+              company_id: formInputValues.company_id
+            }))
+            setRedirect(<Redirect to="/react/userform/success" />)
+          }
         }) 
-        .then(() => {
-          setRedirect(<Redirect to="/react/userform/success" />)
-        })
-         
+        //saves user_id and company_id into the local storage     
     }
    },[formInputValues])
+
+   //changes the shown values in the input field
 
    const handleNameInputChange = e => {
      setFormInputValues({
@@ -89,7 +88,12 @@ const UserRegistrationRouter = () => {
     })
       .then(response => response.json())
       .then((data)=> {
-        setExistingCompany(data)
+        setFormInputValues(prevVals => {
+          return {
+            ...prevVals,
+            company_id: data.id
+          }
+        })
       })
     
   }
@@ -113,7 +117,6 @@ const UserRegistrationRouter = () => {
             <Route path="/react/userform/success">
                 <SuccesfulRegistrationOfUser
                 formInputValues={formInputValues} 
-                existingCompany={existingCompany}
                 />
             </Route>
         </Switch>

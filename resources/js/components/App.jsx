@@ -49,8 +49,6 @@ const App = () => {
             });
     }, [postsPerPage, sort, currentPage]);
 
-    console.log('fairs', fairs)
-
     const totalCount = () => {
         let countOfItems = inCart.length;
 

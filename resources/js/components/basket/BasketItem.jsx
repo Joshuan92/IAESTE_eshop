@@ -4,10 +4,7 @@ import { useState, useEffect } from "react";
 
 const BasketItem = props => {
     const { item, removeFromCart } = props;
-
     
-
-    console.log(item);
     return (
         <div className="row">
             <div className="col-10 mx-auto col-lg-2">

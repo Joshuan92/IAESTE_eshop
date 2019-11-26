@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Collapse,
-  NavbarToggler,
-  Nav,
-  NavItem,
+          Collapse,
+          NavbarToggler,
+          Nav,
+          NavItem,
    } from 'reactstrap';
 import Logo from './../../../public/img/iaeste_ikariera.png';
 import { BrowserRouter as Switch,

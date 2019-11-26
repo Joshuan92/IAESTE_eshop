@@ -2,9 +2,6 @@ import React, { useState, useEffect }  from 'react';
 
 const UserRegistration = (props) => {
 
-  console.log('formInputValues', props);
-  
-
   const { formInputValues,  handleNameInputChange, handleButtonClick, redirect } = props;
 
    return (
@@ -101,7 +98,6 @@ const UserRegistration = (props) => {
               {redirect ? redirect : null }
             </div>  
         </form>
-        
       </div>
     </>
    )
