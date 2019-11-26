@@ -15,7 +15,6 @@ import Navigation from "./Navigation.jsx";
 import Event from "./event/Event.jsx";
 import NewCompanyForm from "./companyForm/NewCompanyForm";
 import SignUpNavigation from "./SignUpNavigation/SignUpNavigation";
-import UserRegistration from "./registerUser/UserRegistration.jsx";
 import { Router, Switch, Route } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
  
@@ -25,6 +24,7 @@ import history from './history.js';
 
 import "./../../sass/app.scss";
 import LoginForm from "./loginForm/LoginForm.jsx";
+import UserRegistrationRouter from "./registerUser/UserRegisterRouter.jsx";
 
 const App = () => {
     const [fairs, setFairs] = useState([]);
@@ -142,7 +142,7 @@ const App = () => {
                     </Route>
 
                     <Route path="/react/userform">
-                        <UserRegistration />
+                        <UserRegistrationRouter />
                     </Route>
 
                     <Route path="/react/basket">
@@ -154,9 +154,6 @@ const App = () => {
                         />
                     </Route>
 
-                    <Route path="/react/user-registration">
-                        <UserRegistration />
-                    </Route>
                 </Switch>
 
                 <Footer />

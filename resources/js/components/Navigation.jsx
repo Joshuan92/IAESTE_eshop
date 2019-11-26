@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Collapse,
   NavbarToggler,
@@ -13,11 +13,41 @@ import { BrowserRouter as Switch,
 const Navigation = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  };
+
+  let lastScroll = 0;
+  useEffect(()=>{
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    
+    if(lastScroll !== 0) {
+
+
+      if (currentScroll > lastScroll + 30) {
+
+        setIsOpen(false)
+        
+      } else if (currentScroll < lastScroll - 30) {
+        
+        setIsOpen(false)
+      }
+    }
+    
+    lastScroll = currentScroll;
+  });
+
+ },[])
+  
+
+  
+  
 
   return (
     <section id="nav-bar">
-       <nav className="navbar navbar-expand-lg navbar-light" color="light" expand="md">
+       <nav className="navbar navbar-expand-lg navbar-light" color="light" expand="lg">
         <Link to='/react' className="navbar-brand"><img src={ Logo }/></Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
