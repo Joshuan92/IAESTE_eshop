@@ -18,10 +18,9 @@ import SignUpNavigation from "./SignUpNavigation/SignUpNavigation";
 import UserRegistration from "./registerUser/UserRegistration.jsx";
 import { Router, Switch, Route } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
- 
+import history from "./history.js";
 import Basket from "./basket/Basket.jsx";
 import useLocalStorage from "./useLocalStorage";
-import history from './history.js';
 
 import "./../../sass/app.scss";
 import LoginForm from "./loginForm/LoginForm.jsx";
@@ -32,24 +31,25 @@ const App = () => {
     const [loggedIn, setLoggedIn] = useState(null);
     const [loading, setLoading] = useState(true);
     const [inCart, setInCart] = useLocalStorage("basket", []);
+    const [postsPerPage, setPostsPerPage] = useState(6);
+    const [sort, setSort] = useState("ASC");
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(36);
+    const [lastPage, setLastPage] = useState()
+    
 
-    //let url = `?per_page=${postsPerPage}&page=${currentPage}`;
-
-   /*  useEffect(() => {
-        //console.log("url", url);
-    }, [url]); */
+    let url = `/api/projects?per_page=${postsPerPage}&page=${currentPage}&sort=${sort}`;
 
     useEffect(() => {
-        fetch('/api/projects')
+        fetch(url)
             .then(resp => resp.json())
             .then(data => {
-                setFairs(data);
+                setFairs(data.data);
+                setLastPage(data.last_page)
                 setLoading(false);
             });
-            
-    }, []);
+    }, [postsPerPage, sort, currentPage]);
+
+    console.log('fairs', fairs)
 
     const totalCount = () => {
         let countOfItems = inCart.length;
@@ -116,6 +116,13 @@ const App = () => {
                             setInCart={setInCart}
                             inCart={inCart}
                             loading={loading}
+                            postsPerPage={postsPerPage}
+                            setPostsPerPage={setPostsPerPage}
+                            sort={sort}
+                            setSort={setSort}
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrentPage}
+                            lastPage={lastPage}
                         />
                     </Route>
 

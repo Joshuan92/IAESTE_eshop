@@ -34,3 +34,5 @@ Route::post('/company', 'CompanyController@store');
 Route::post('/user-create', 'UserController@store');
 
 Route::get('/projects', 'ProjectController@index');
+
+

@@ -7,20 +7,19 @@ use App\Project;
 
 class ProjectController extends Controller
 {
-    public function index () {
+    public function index (Request $request)
+    {
 
         $projectsQuery = Project::query();
 
         if($request->has("sort"))
         {
-            $projects = $projectsQuery->orderBy("name", $request->input("sort"))->paginate($request->input("per_page"));
-            
-            return $projects;
-
+            $projectsQuery->orderBy("name", $request->input("sort"));
         } else {
-            $projects = $projectsQuery->orderBy("name", 'ASC')->paginate($request->input("per_page"), 36);
-        
-            return $projects;
+            $$projectsQuery->orderBy("name", 'ASC');
+    
         }
+
+        return $projectsQuery->paginate($request->input("per_page", 6));
     }
 }

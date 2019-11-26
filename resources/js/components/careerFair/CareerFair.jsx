@@ -2,18 +2,51 @@ import React, { useState, useEffect } from "react";
 import SingleFair from "./SingleFair.jsx";
 import { Router, Route, Switch } from "react-router-dom";
 import FairDetail from "./FairDetail.jsx";
-//import useLocalStorage from "./../useLocalStorage";
-
+import { Button } from "reactstrap";
+import { Form, FormGroup, Input, ButtonGroup } from "reactstrap";
 import history from "./../history.js";
 
 const CareerFair = props => {
-    const { fairs, setInCart, inCart, loading } = props;
+    const {
+        fairs,
+        setInCart,
+        inCart,
+        loading,
+        postsPerPage,
+        setPostsPerPage,
+        sort,
+        setSort,
+        currentPage,
+        setCurrentPage,
+        lastPage
+    } = props;
 
-    console.log("incart", inCart);
+    useEffect(() => {
+        console.log("post", postsPerPage);
+    }, [postsPerPage]);
+    const [dropdownOpen, setOpen] = useState(false);
 
-    const [count, setCount] = useState(0);
+    const toggle = () => setOpen(!dropdownOpen);
 
-    let pagination = "";
+    const handleBackBtn = () => {
+        setCurrentPage(Math.max(currentPage - 1, 1));
+    };
+    const handleNextBtn = () => {
+        setCurrentPage(Math.min(currentPage + 1, lastPage));
+    };
+
+    const handleAscending = () => {
+        setSort("ASC");
+    };
+
+    const handleDescending = () => {
+        setSort("DESC");
+    };
+
+    const onButtonClick = e => {
+        setPostsPerPage(e.currentTarget.children[0].value);
+    };
+
     let content = "";
 
     if (loading) {
@@ -23,41 +56,93 @@ const CareerFair = props => {
             <>
                 <section className="container">
                     <h1>Career fairs</h1>
-                </section>
 
-                <Router history={history}>
-                    <Switch>
-                        <Route exact path="/react/career">
-                            <div className="tables">
-                                <div className="row">
-                                    {fairs.length &&
-                                        fairs.map(fair => {
-                                            return (
-                                                <div key={fair.id}>
-                                                    <SingleFair
-                                                        id={fair.id}
-                                                        name={fair.name}
-                                                        short_description={
-                                                            fair.short_description
-                                                        }
-                                                        place={fair.place}
-                                                        event_date={
-                                                            fair.event_date
-                                                        }
-                                                        price={fair.price}
-                                                        setInCart={setInCart}
-                                                    />
-                                                </div>
-                                            );
-                                        })}
+                    <Button
+                        color="primary"
+                        value={sort}
+                        onClick={handleAscending}
+                    >
+                        Ascending
+                    </Button>
+
+                    <Button
+                        color="primary"
+                        value={sort}
+                        onClick={handleDescending}
+                    >
+                        Descending
+                    </Button>
+
+                    <Router history={history}>
+                        <Switch>
+                            <Route exact path="/react/career">
+                                <div className="tables">
+                                    <div className="row">
+                                        {fairs.length &&
+                                            fairs.map(fair => {
+                                                return (
+                                                    <div key={fair.id}>
+                                                        <SingleFair
+                                                            id={fair.id}
+                                                            name={fair.name}
+                                                            short_description={
+                                                                fair.short_description
+                                                            }
+                                                            place={fair.place}
+                                                            event_date={
+                                                                fair.event_date
+                                                            }
+                                                            price={fair.price}
+                                                            setInCart={
+                                                                setInCart
+                                                            }
+                                                        />
+                                                    </div>
+                                                );
+                                            })}
+                                    </div>
                                 </div>
-                            </div>
-                        </Route>
-                        <Route exact path={`/react/career/:id`}>
-                            <FairDetail fairs={fairs} setInCart={setInCart} />
-                        </Route>
-                    </Switch>
-                </Router>
+                            </Route>
+                            <Route exact path={`/react/career/:id`}>
+                                <FairDetail
+                                    fairs={fairs}
+                                    setInCart={setInCart}
+                                />
+                            </Route>
+                        </Switch>
+                    </Router>
+                    
+                    <div className="button-group">
+                    <div className="pagination">
+                        <Button
+                            color="primary"
+                            onClick={handleBackBtn}
+                            id="backBtn"
+                        >
+                            Back
+                        </Button>
+                        <span style={{ padding: "1rem" }}>{currentPage}</span>
+                        <Button 
+                            color="primary"
+                            onClick={handleNextBtn}
+                            id="nextBtn"
+                        >
+                            Next
+                        </Button>
+                    </div>
+                        <ButtonGroup>
+                            <Button color="primary" onClick={onButtonClick}>
+                                <li value="6">6</li>
+                            </Button>
+                            <Button color="primary" onClick={onButtonClick}>
+                                <li value="12">12</li>
+                            </Button>
+                            <Button color="primary" onClick={onButtonClick}>
+                                <li value="24">24</li>
+                            </Button>
+                        </ButtonGroup>
+                    </div>
+                </section>
             </>
         );
     }
