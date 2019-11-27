@@ -1,11 +1,8 @@
-import React, { useState, useEffect }  from 'react';
+import React from 'react';
 
 const UserRegistration = (props) => {
 
   const { formInputValues,  handleNameInputChange, handleButtonClick, redirect, data } = props;
-
-  console.log('errors', data.errors);
-
 
   let content = '';
 

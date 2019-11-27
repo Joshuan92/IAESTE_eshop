@@ -13,6 +13,7 @@ use Illuminate\Auth\Events\Registered;
 // use App\Notifications\UserRegistered;
 
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -99,6 +100,7 @@ class RegisterController extends Controller
     
         $user->forceFill([
             'api_token' => hash('sha256', $token),
+            'api_token_timestamp' => Carbon::now()->add(12,'hour')
             
         ])->save();
 

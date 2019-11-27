@@ -29,7 +29,7 @@ Route::get('/user', 'CompanyController@index');
 
 Route::post('/findCompany', 'CompanyController@findCompany');
 
-Route::post('/findUser', 'USerController@findUSer');
+Route::post('/findUser', 'UserController@findUSer');
 
 Route::post('/company', 'CompanyController@store');
 

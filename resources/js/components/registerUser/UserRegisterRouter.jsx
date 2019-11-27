@@ -2,21 +2,21 @@ import React, { useState, useEffect }  from 'react';
 import { Router, Route, Redirect, Switch } from "react-router-dom";
 import history from "./../history.js";
 
-import SuccesfulRegistrationOfUser from './SuccesfulRegistrationOfUser.jsx';
+import UserInformationPage from './UserInformationPage.jsx';
 import UserRegistration from './UserRegistration.jsx';
-import useLocalStorage from "./../useLocalStorage";
+
 
 const UserRegistrationRouter = () => {
 
   const [formInputValues, setFormInputValues] = useState(
-                      { name: 'Martin', 
-                        email: 'pedro.gonszales@vaginas.pussy', 
+                      { name: 'Martin Hanzlik', 
+                        email: 'pedro.gonszales@tree.com', 
                         password:'123456789',
                         password_confirmation: '123456789', 
                         phone_number: '123456789',
-                        company_identification_number: '37432923', 
-                        contact_function: 'Analyst',
-                        mailing_address: 'Mrdalova 15',
+                        company_identification_number: '123456789', 
+                        contact_function: 'HR',
+                        mailing_address: 'Lesna 15',
                         company_id: undefined,
                         user_id: null
                       });
@@ -53,7 +53,7 @@ const UserRegistrationRouter = () => {
               user_id: data.user_id,
               company_id: formInputValues.company_id
             }))
-            setRedirect(<Redirect to="/react/userform/success" />)
+            setRedirect(<Redirect to="/react/user-information-page" />)
           }
         }) 
         //saves user_id and company_id into the local storage     
@@ -113,11 +113,6 @@ const UserRegistrationRouter = () => {
                 />
             </Route>
 
-
-            <Route path="/react/userform/success">
-                <SuccesfulRegistrationOfUser
-                />
-            </Route>
         </Switch>
       </Router>
     </>

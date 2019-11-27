@@ -3,24 +3,25 @@ import React, { useState } from "react";
 const NewCompanyForm = () => {
   
   const [formInputValues, setFormInputValue] = useState({
-                                                    company_name: '',
-                                                    address_street: '', 
-                                                    address_zip_code: '', 
-                                                    address_city: '', 
-                                                    address_country: '', 
-                                                    ICO: '', 
-                                                    DICO: '', 
-                                                    contact_person: '', 
-                                                    contact_email: '',
-                                                    contact_phone: ''});
+                                                    company_name: 'jhbfdsnbdfsbn',
+                                                    address_street: 'dsggddgs', 
+                                                    address_zip_code: 'dgsgds', 
+                                                    address_city: 'sdggds', 
+                                                    address_country: 'sgdsg', 
+                                                    ICO: '123456789', 
+                                                    DICO: 'CZ123456789', 
+                                                    primary_contact: 'Martin', 
+                                                    contact_email: 'awesome@great.cz',
+                                                    contact_phone: '123456789',
+                                                    web: 'www.lesoparky.cz'});
 
-  const [formSubmitSuccess, setFormSubmitSuccess] = useState();
   const [message, setMessage] = useState();
+  const [redirect, setRedirect] = useState();
+
  
   const changeValue = (e) => {
     const id = e.target.id
     const val = e.target.value
-
 
     setFormInputValue(prevValues => { 
 
@@ -37,9 +38,7 @@ const NewCompanyForm = () => {
 
     e.preventDefault();
 
-    console.log("clicked", formInputValues);
-
-    fetch('/company', {
+    fetch('/api/company', {
             method: 'POST',
             headers: {
                 'Accept':       'application/json',
@@ -47,18 +46,7 @@ const NewCompanyForm = () => {
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
 
             },
-            body: JSON.stringify({
-                "company_name": formInputValues.company_name,
-                "address_street": formInputValues.address_street,
-                "address_zip_code": formInputValues.address_zip_code,
-                "address_city": formInputValues.address_city,
-                "address_country": formInputValues.address_country,
-                "ICO": formInputValues.ICO,
-                "DICO": formInputValues.DICO,
-                "contact_person": formInputValues.contact_person,
-                "contact_email": formInputValues.contact_email,
-                "contact_phone": formInputValues.contact_phone,
-                })
+            body: JSON.stringify(formInputValues)
         })
             .then(response => response.json())
             .then(data => {
@@ -131,7 +119,7 @@ const NewCompanyForm = () => {
         </div>  
 
         <div className="form-group">  
-          <label htmlFor="ICO">IČO:</label>
+          <label htmlFor="ICO">Company identification number:</label>
           <input className="form-control"
             id="ICO"
             type="text"
@@ -141,7 +129,7 @@ const NewCompanyForm = () => {
         </div>
 
         <div className="form-group">  
-          <label htmlFor="DICO">DIČO:</label>
+          <label htmlFor="DICO">Company VAT number:</label>
           <input className="form-control"
             id="DICO"
             type="text"
@@ -153,11 +141,11 @@ const NewCompanyForm = () => {
         <h3>Credentials of your contact person: </h3>
 
       <div className="form-group">  
-        <label htmlFor="contact_person">Name of the contact person:</label>
+        <label htmlFor="primary_contact">Name of the contact person:</label>
         <input className="form-control"
-          id="contact_person"
+          id="primary_contact"
           type="text"
-          value={formInputValues.contact_person}
+          value={formInputValues.primary_contact}
           onChange={changeValue}
         />
       </div>
@@ -178,6 +166,16 @@ const NewCompanyForm = () => {
           id="contact_phone"
           type="text"
           value={formInputValues.contact_phone}
+          onChange={changeValue}
+        />
+      </div>
+
+      <div className="form-group">  
+        <label htmlFor="web">Webpage address:</label>
+        <input className="form-control"
+          id="web"
+          type="text"
+          value={formInputValues.web}
           onChange={changeValue}
         />
       </div>

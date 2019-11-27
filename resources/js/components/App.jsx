@@ -17,6 +17,7 @@ import NewCompanyForm from "./companyForm/NewCompanyForm";
 import SignUpNavigation from "./SignUpNavigation/SignUpNavigation";
 import { Router, Switch, Route } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import UserInformationPage from './registerUser/UserInformationPage.jsx'
 import history from "./history.js";
 import Basket from "./basket/Basket.jsx";
 import useLocalStorage from "./useLocalStorage";
@@ -151,12 +152,16 @@ const App = () => {
                         <Project />
                     </Route>
 
-                    <Route path="/react/companyform">
+                    <Route path="/react/company-registration-form">
                         <NewCompanyForm />
                     </Route>
 
                     <Route path="/react/userform">
                         <UserRegistrationRouter />
+                    </Route>
+
+                    <Route exact path="/react/user-information-page" component={UserInformationPage}>
+                        {/* <UserInformationPage/> */}
                     </Route>
 
                     <Route path="/react/basket">

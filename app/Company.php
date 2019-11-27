@@ -17,7 +17,9 @@ class Company extends Model
     'DICO',
     'contact_person',
     'contact_email',
-    'contact_phone'];
+    'contact_phone',
+    'web'
+];
 
     public function users() {
         return $this->belongsToMany('App\User');
