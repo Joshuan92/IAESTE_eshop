@@ -45,7 +45,6 @@ const UserRegistrationRouter = () => {
           if(data.errors)
           {
             setData(data)
-            console.log('errors', data.errors);
             
           }
           else
@@ -84,7 +83,7 @@ const UserRegistrationRouter = () => {
           'Content-type': 'application/json'
       },
 
-      body: JSON.stringify(formInputValues.company_identification_number)
+      body: JSON.stringify(['ICO', formInputValues.company_identification_number])
     })
       .then(response => response.json())
       .then((data)=> {
@@ -110,13 +109,13 @@ const UserRegistrationRouter = () => {
                 handleNameInputChange={handleNameInputChange}
                 handleButtonClick={handleButtonClick}
                 redirect={redirect}
+                data={data}
                 />
             </Route>
 
 
             <Route path="/react/userform/success">
                 <SuccesfulRegistrationOfUser
-                formInputValues={formInputValues} 
                 />
             </Route>
         </Switch>

@@ -8,7 +8,7 @@ use App\Company;
 
 class CompanyController extends Controller
 {
-    public function index () {
+    public function index() {
 
         $companies = Company::orderBy('id')
                         ->limit(20)
@@ -52,7 +52,7 @@ class CompanyController extends Controller
         
         $company = false;
 
-        $company = Company::where('ICO', '=', $request[0])
+        $company = Company::where($request[0], '=', $request[1])
                             ->first();
 
         if($company)
