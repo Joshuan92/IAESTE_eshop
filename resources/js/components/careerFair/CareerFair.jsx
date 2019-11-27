@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import SingleFair from "./SingleFair.jsx";
 import { Router, Route, Switch } from "react-router-dom";
 import FairDetail from "./FairDetail.jsx";
-import { Button } from "reactstrap";
-import { Form, FormGroup, Input, ButtonGroup } from "reactstrap";
+import { Button, ButtonGroup } from "reactstrap";
 import history from "./../history.js";
 
 const CareerFair = props => {
@@ -44,7 +43,8 @@ const CareerFair = props => {
     };
 
     const onButtonClick = e => {
-        setPostsPerPage(e.currentTarget.children[0].value);
+        setPostsPerPage(e.currentTarget.children[0].value)
+        setCurrentPage(1);
     };
 
     let content = "";
@@ -54,11 +54,11 @@ const CareerFair = props => {
     } else {
         content = (
             <>
-                <section className="container">
+                <div className="container">
                     <h1>Career fairs</h1>
 
                     <Button
-                        color="primary"
+                        color="link"
                         value={sort}
                         onClick={handleAscending}
                     >
@@ -66,7 +66,7 @@ const CareerFair = props => {
                     </Button>
 
                     <Button
-                        color="primary"
+                        color="link"
                         value={sort}
                         onClick={handleDescending}
                     >
@@ -115,15 +115,15 @@ const CareerFair = props => {
                     <div className="button-group">
                     <div className="pagination">
                         <Button
-                            color="primary"
+                            color="link"
                             onClick={handleBackBtn}
                             id="backBtn"
                         >
                             Back
                         </Button>
-                        <span style={{ padding: "1rem" }}>{currentPage}</span>
+                        <span style={{ paddingLeft: "2rem", paddingRight: "2rem", paddingTop: "0.5rem" }}>{currentPage}</span>
                         <Button 
-                            color="primary"
+                            color="link"
                             onClick={handleNextBtn}
                             id="nextBtn"
                         >
@@ -131,18 +131,18 @@ const CareerFair = props => {
                         </Button>
                     </div>
                         <ButtonGroup>
-                            <Button color="primary" onClick={onButtonClick}>
+                            <Button color="link" onClick={onButtonClick}>
                                 <li value="6">6</li>
                             </Button>
-                            <Button color="primary" onClick={onButtonClick}>
+                            <Button color="link" onClick={onButtonClick}>
                                 <li value="12">12</li>
                             </Button>
-                            <Button color="primary" onClick={onButtonClick}>
+                            <Button color="link" onClick={onButtonClick}>
                                 <li value="24">24</li>
                             </Button>
                         </ButtonGroup>
                     </div>
-                </section>
+                </div>
             </>
         );
     }
