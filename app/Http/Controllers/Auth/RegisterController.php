@@ -12,6 +12,8 @@ use Illuminate\Auth\Events\Registered;
 // use Illuminate\Notifications\Notifiable;
 // use App\Notifications\UserRegistered;
 
+use Illuminate\Support\Str;
+
 class RegisterController extends Controller
 {
     /*
@@ -71,7 +73,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
+    
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -80,6 +82,7 @@ class RegisterController extends Controller
             'contact_function' => $data['contact_function'],
             'mailing_address' => $data['mailing_address'],
             'password' => Hash::make($data['password']),
+
         ]);
         
     }
@@ -92,12 +95,22 @@ class RegisterController extends Controller
         //event(new Registered();
         $user = $this->create($request->all());
 
+        $token = Str::random(80);
+    
+        $user->forceFill([
+            'api_token' => hash('sha256', $token),
+            
+        ])->save();
+
         $this->guard()->login($user);
 
         // $user->notify(new UserRegistered($user->name));
         return [
                     "registered" => true,
-                    "user_id" => $user->id
+                    "user_id" => $user->id,
+                    'data' => [
+                        'token' => $token
+                    ]
                 ];
     }
 }

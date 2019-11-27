@@ -2,7 +2,34 @@ import React, { useState, useEffect }  from 'react';
 
 const UserRegistration = (props) => {
 
-  const { formInputValues,  handleNameInputChange, handleButtonClick, redirect } = props;
+  const { formInputValues,  handleNameInputChange, handleButtonClick, redirect, data } = props;
+
+  console.log('errors', data.errors);
+
+
+  let content = '';
+
+
+    if(data.errors)
+    {
+
+      content = <>
+                  {Object.keys(data.errors).map(error => {
+                    return (
+                    
+                    
+                    <div className="alert alert-danger" role="alert">
+                    
+                      {data.errors[error][0]}
+
+                    </div>
+                    
+                    )
+                  })}
+                
+                </>
+      
+    }
 
    return (
 
@@ -96,6 +123,7 @@ const UserRegistration = (props) => {
               <input  onClick={handleButtonClick} className="form-control" type="submit" value="Register" />
               </div>
               {redirect ? redirect : null }
+              {content}
             </div>  
         </form>
       </div>

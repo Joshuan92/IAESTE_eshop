@@ -29,6 +29,8 @@ Route::get('/user', 'CompanyController@index');
 
 Route::post('/findCompany', 'CompanyController@findCompany');
 
+Route::post('/findUser', 'USerController@findUSer');
+
 Route::post('/company', 'CompanyController@store');
 
 Route::post('/user-create', 'UserController@store');

@@ -35,4 +35,30 @@ class UserController extends Controller
 
 
     }
+
+    public function findUser(Request $request) {
+        
+        $user = false;
+
+        $user = User::where($request[0], '=', $request[1])
+                            ->with('company')
+                            ->first();
+
+        if($user)
+        {
+
+            return $user;
+
+        }
+        else{
+            
+            return [
+                'status' => 'fail',
+                'message' => 'There is no registered user in our database with such a id.'
+            ];
+
+        }
+
+
+    }
 }
