@@ -37,4 +37,7 @@ Route::post('/user-create', 'UserController@store');
 
 Route::get('/projects', 'ProjectController@index');
 
+Route::post('/updateUser/{id}', 'UserController@update');
+
+Route::post('/updateCompany/{id}', 'CompanyController@update');
 
