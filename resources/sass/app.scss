@@ -9,9 +9,7 @@
 @import './scss/partnership.scss';
 @import './scss/login.scss';
 @import './scss/carrierFair.scss';
-
-
-
+@import './scss/userInformationEdit.scss';
 
 
 * {
@@ -33,6 +31,10 @@ h1 {
   width: 1rem
 }
 
+.pencil {
+  width: 1rem
+}
+
 .totalCount {
   display: flex;
   justify-content: center;
@@ -43,3 +45,4 @@ h1 {
   border-radius: 50%;
   color: #fff;
 }
+
