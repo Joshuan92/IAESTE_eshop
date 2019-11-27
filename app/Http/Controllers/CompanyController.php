@@ -26,6 +26,21 @@ class CompanyController extends Controller
         // $company = new Company;
         // $company->company_name = $request->input()
 
+        $this->validate($request, [
+            'company_name' => ['required', 'string', 'max:255'],
+            'address_street' => ['required', 'string', 'max:255'],
+            'address_zip_code' => ['required', 'string', 'max:255'],
+            'address_city' => ['required', 'string', 'max:255'],
+            'address_country' => ['required', 'string', 'max:255'],
+            'address_city' => ['required', 'string', 'max:255'],
+            'ICO' => ['required', 'string', 'max:255', 'unique:companies'],
+            'DICO' => ['required', 'string', 'max:255', 'unique:companies'],
+            'contact_email' => ['required', 'string', 'max:255'],
+            'contact_phone' => ['required', 'string', 'max:255'],
+            'web' => ['required', 'string', 'max:255']
+                
+        ]);
+
 
         $company = Company::create([
             'company_name' => $request->company_name, 
@@ -35,9 +50,10 @@ class CompanyController extends Controller
             'address_country' => $request->address_country,
             'ICO' => $request->ICO,
             'DICO' => $request->DICO,
-            'contact_person' => $request->contact_person,
+            'primary_contact' => $request->primary_contact,
             'contact_email' => $request->contact_email,
-            'contact_phone' => $request->contact_phone
+            'contact_phone' => $request->contact_phone,
+            'web' => $request->web,
             ])->save();
             
         

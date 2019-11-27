@@ -18,6 +18,10 @@ class AddApiTokenToUsers extends Migration
                 ->unique()
                 ->nullable()
                 ->default(null);
+            $table->timestamp('api_token_timestamp')->after('api_token')
+                ->nullable()
+                ->default(null);
+            
         });
     }
 
@@ -30,6 +34,7 @@ class AddApiTokenToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('api_token');
+            $table->dropColumn('api_token_timestamp');
         });
     }
 }

@@ -15,7 +15,7 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('local_commitee_id');
+            $table->unsignedBigInteger('local_commitee_id')->nullable();;
             $table->string('company_name')->nullable();
             $table->string('alias')->nullable();
             $table->string('parent_account')->nullable();

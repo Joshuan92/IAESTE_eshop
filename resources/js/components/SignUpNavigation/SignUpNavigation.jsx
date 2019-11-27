@@ -14,7 +14,7 @@ const SignUpNavigation = () =>  {
 
     const redirectToCompanyRegistration = () => {
 
-        setRedirect(<Redirect to="/react/companyform" />);
+        setRedirect(<Redirect to="/react/company-registration-form" />);
     }
 
     const mediaMatch = window.matchMedia('(min-width: 500px)');
