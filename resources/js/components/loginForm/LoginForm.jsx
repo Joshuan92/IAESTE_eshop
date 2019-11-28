@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 
 const LoginForm = (props) => {
 
-    const { setLoginData, loginData } = props;
+    const { setLoginData, loginData, setLoggedIn } = props;
 
     const [formOutputValues, setFormOutputValues] = useState(
                       { email: '', 
@@ -55,9 +55,22 @@ const LoginForm = (props) => {
     {
       content = <div class="alert alert-success" role="alert">
                   {loginData.message}
-                </div>;
+                </div>
+       
+      window.localStorage.setItem('user_data', JSON.stringify({
+        user_id: loginData.data.user_id,
+        company_id: loginData.data.company_id
+      }))
 
-      return <Redirect to='/react/career'/>
+
+      window.localStorage.setItem('_token', JSON.stringify({
+        token: loginData.data.token,
+        token_timestamp: loginData.data.token_timestamp
+      }));
+
+      setLoggedIn(true)
+
+      return <Redirect to='/react/user-information-page'/>
 
     }
 

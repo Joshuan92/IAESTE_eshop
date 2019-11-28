@@ -42,6 +42,7 @@ const App = () => {
     const [loggedIn, setLoggedIn] = useState(false);
     const [token, setToken] = useState(false);
 
+
     useEffect(()=>{
 
         setToken (()=>{
@@ -109,6 +110,7 @@ const App = () => {
                     totalCount={totalCount}
                     token={token} 
                     loggedIn={loggedIn}
+                    setLoggedIn={setLoggedIn}
                  />
                 <Navigation />
                 {/* <Page404/> */}
@@ -163,6 +165,7 @@ const App = () => {
                         <LoginForm
                         loginData={loginData} 
                         setLoginData={setLoginData}
+                        setLoggedIn={setLoggedIn}
                          />
                     </Route>
 
