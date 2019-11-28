@@ -1,7 +1,6 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState, useEffect } from "react";
 import { Router, Route, Redirect, Switch } from "react-router-dom";
 import history from "./../history.js";
-
 import UserRegistration from './UserRegistration.jsx';
 
 
@@ -94,38 +93,35 @@ const UserRegistrationRouter = (props) => {
 
       body: JSON.stringify(['ICO', formInputValues.company_identification_number])
     })
-      .then(response => response.json())
-      .then((data)=> {
+    .then(response => response.json())
+    .then((data)=> {
         setFormInputValues(prevVals => {
           return {
             ...prevVals,
             company_id: data.id
           }
         })
-      })
-    
-  }
+  });
 
-   return (
-
-     <>
-      <Router history={history}>
-        <Switch>
-
-            <Route exact path="/react/userform">
-                <UserRegistration
-                formInputValues={formInputValues} 
-                handleNameInputChange={handleNameInputChange}
-                handleButtonClick={handleButtonClick}
-                redirect={redirect}
-                data={data}
-                />
-            </Route>
-
-        </Switch>
-      </Router>
-    </>
-   )
 }
+
+    return (
+        <>
+            <Router history={history}>
+                <Switch>
+                    <Route exact path="/react/userform">
+                        <UserRegistration
+                            formInputValues={formInputValues}
+                            handleNameInputChange={handleNameInputChange}
+                            handleButtonClick={handleButtonClick}
+                            redirect={redirect}
+                            data={data}
+                        />
+                    </Route>
+                </Switch>
+            </Router>
+        </>
+    );
+};
 
 export default UserRegistrationRouter;

@@ -85,9 +85,32 @@ class CompanyController extends Controller
                 'status' => 'fail',
                 'message' => 'There is no registered company in our database with such a VAT number.'
             ];
-
         }
+    }
 
+    public function update(Request $request, $id)
+    {       
+        $this->validate($request, [
+            'company_name' => ['required', 'string', 'max:255'],
+            'address_street' => ['required', 'string', 'max:255'],
+            'address_zip_code' => ['required', 'string', 'max:255'],
+            'address_city' => ['required', 'string', 'max:255'],
+            'ICO' => ['required', 'string', 'max:255'],
+            'contact_email' => ['required', 'string', 'max:255'],
+            'contact_phone' => ['required', 'string', 'max:255']
+        ]);
 
+        $company = Company::findOrFail($id);
+        $company->company_name = $request->input('company_name');
+        $company->address_street = $request->input('address_street');
+        $company->address_zip_code = $request->input('address_zip_code');
+        $company->address_city = $request->input('address_city');
+        $company->contact_email = $request->input('contact_email');
+        $company->contact_phone = $request->input('contact_phone');
+        $company->ICO = $request->input('ICO');
+
+        $company->save();
+
+        return ['Company updated'];
     }
 }

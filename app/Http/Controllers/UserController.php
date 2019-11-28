@@ -58,7 +58,27 @@ class UserController extends Controller
             ];
 
         }
-
-
     }
+
+    public function update(Request $request, $id)
+    {      
+        $this->validate($request, [
+            'name' => 'required|max:127',
+            'email' => 'required|max:127',
+            'contact_function' => 'required|max:127',
+            'mailing_address' => 'required|max:127',
+            'phone_number' => 'required|max:127'
+        ]);
+
+        $user = User::findOrFail($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->contact_function = $request->input('contact_function');
+        $user->mailing_address = $request->input('mailing_address');
+        $user->phone_number = $request->input('phone_number');
+        $user->save();
+
+        return ['Update success'];
+    }
+    
 }
