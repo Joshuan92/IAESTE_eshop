@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Basket from "./../../../public/img/shopping-basket-24.png";
 
 const Topbar = props => {
@@ -15,9 +15,22 @@ const Topbar = props => {
 
     }
 
-    
-
     let loginBtns = ""
+
+    let content = ""
+
+    const logout = () => {
+
+        setLoggedIn(false)
+
+        window.localStorage.removeItem('_token')
+        window.localStorage.removeItem('user_data')
+        window.localStorage.removeItem('company_id')
+        // window.location.reload()
+
+        // content = <Redirect to="/react" />;
+        window.location.href = '/react'
+    }
 
     console.log(loggedIn);
     
@@ -27,16 +40,16 @@ const Topbar = props => {
 
         loginBtns =
             <div className="login">
-                <Link to="/react/login" className="login-btn">
+                <Link to="/react/user-information-page" className="login-btn">
                     <span className="d-md-inline-block">
                         Your profile
                     </span>
                 </Link>
                 <Link
-                    to="/react/signUp"
+                    to="/react/"
                     className="signup-btn"
                 >
-                    <span className="d-md-inline-block">
+                    <span onClick={logout} className="d-md-inline-block">
                         Logout
                     </span>
                 </Link>
@@ -48,6 +61,7 @@ const Topbar = props => {
                         </div>
                     </span>
                 </Link>
+                {content}
             </div>
 
 
@@ -80,9 +94,6 @@ const Topbar = props => {
                 </Link>
             </div>
 
-        setLoggedIn(false);
-
-        
         
     }
 
