@@ -54,8 +54,6 @@ const App = () => {
         })
 
     }, [loggedIn])
-
-    
     
 
     let url = `/api/projects?per_page=${postsPerPage}&page=${currentPage}&sort=${sort}`;

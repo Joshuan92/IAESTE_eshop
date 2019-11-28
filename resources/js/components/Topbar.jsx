@@ -39,7 +39,7 @@ const Topbar = props => {
     {
 
         loginBtns =
-            <div className="login">
+            <div className="login" style={{display: "flex", alignItems: "center"}}> 
                 <Link to="/react/user-information-page" className="login-btn">
                     <span className="d-md-inline-block">
                         Your profile
@@ -54,12 +54,14 @@ const Topbar = props => {
                     </span>
                 </Link>
                 <Link to="/react/basket" className="basket">
-                    <img src={Basket} alt="" />
-                    <span className="d-md-inline-block ml-20">
-                        <div className="totalCount">
-                            <div>{totalCount()}</div>
-                        </div>
-                    </span>
+                    <div style={{display: "flex"}}>
+                        <img src={Basket} alt="" />
+                        <span className="d-md-inline-block ml-20">
+                            <div className="totalCount">
+                                <div>{totalCount()}</div>
+                            </div>
+                        </span>
+                    </div>
                 </Link>
                 {content}
             </div>
@@ -70,7 +72,7 @@ const Topbar = props => {
     else
     {
         loginBtns = 
-            <div className="login">
+            <div className="login" style={{display: "flex", alignItems: "center"}}>
                 <Link to="/react/login" className="login-btn">
                     <span className="d-md-inline-block">
                         Sign In
@@ -85,12 +87,14 @@ const Topbar = props => {
                     </span>
                 </Link>
                 <Link to="/react/basket" className="basket">
+                <div style={{display: "flex"}}>
                     <img src={Basket} alt="" />
-                    <span className="d-md-inline-block ml-20">
+                    <span className="d-md-inline-block ml-1">
                         <div className="totalCount">
                             <div>{totalCount()}</div>
                         </div>
                     </span>
+                </div>
                 </Link>
             </div>
 
