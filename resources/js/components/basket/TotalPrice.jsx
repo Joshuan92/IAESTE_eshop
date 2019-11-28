@@ -15,7 +15,7 @@ const TotalPrice = props => {
                 <p>Total: {totalPrice()} CZK </p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <p></p>
+                <button className="btn btn-success">Finish order</button>
             </div>
             <div className="col-10 mx-auto col-lg-2">
                 <p></p>

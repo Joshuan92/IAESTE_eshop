@@ -43,7 +43,7 @@ const CareerFair = props => {
     };
 
     const onButtonClick = e => {
-        setPostsPerPage(e.currentTarget.children[0].value)
+        setPostsPerPage(e.currentTarget.children[0].value);
         setCurrentPage(1);
     };
 
@@ -56,12 +56,8 @@ const CareerFair = props => {
             <>
                 <div className="container">
                     <h1>Career fairs</h1>
-
-                    <Button
-                        color="link"
-                        value={sort}
-                        onClick={handleAscending}
-                    >
+                    <div className="asc-order">
+                    <Button color="link" value={sort} onClick={handleAscending}>
                         Ascending
                     </Button>
 
@@ -72,7 +68,7 @@ const CareerFair = props => {
                     >
                         Descending
                     </Button>
-
+                    </div>
                     <Router history={history}>
                         <Switch>
                             <Route exact path="/react/career">
@@ -111,26 +107,34 @@ const CareerFair = props => {
                             </Route>
                         </Switch>
                     </Router>
-                    
+
                     <div className="button-group">
-                    <div className="pagination">
-                        <Button
-                            color="link"
-                            onClick={handleBackBtn}
-                            id="backBtn"
-                        >
-                            Back
-                        </Button>
-                        <span style={{ paddingLeft: "2rem", paddingRight: "2rem", paddingTop: "0.5rem" }}>{currentPage}</span>
-                        <Button 
-                            color="link"
-                            onClick={handleNextBtn}
-                            id="nextBtn"
-                        >
-                            Next
-                        </Button>
-                    </div>
-                        <ButtonGroup>
+                        <div className="pagination">
+                            <Button
+                                color="link"
+                                onClick={handleBackBtn}
+                                id="backBtn"
+                            >
+                                Back
+                            </Button>
+                            <span
+                                style={{
+                                    paddingLeft: "2rem",
+                                    paddingRight: "2rem",
+                                    paddingTop: "0.5rem"
+                                }}
+                            >
+                                {currentPage}
+                            </span>
+                            <Button
+                                color="link"
+                                onClick={handleNextBtn}
+                                id="nextBtn"
+                            >
+                                Next
+                            </Button>
+                        </div>
+                        <ButtonGroup className="buttons">
                             <Button color="link" onClick={onButtonClick}>
                                 <li value="6">6</li>
                             </Button>

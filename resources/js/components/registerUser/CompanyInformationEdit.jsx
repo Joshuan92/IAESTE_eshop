@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const CompanyInformationEdit = props => {
-    const { userData, setEditOpen } = props;
+    const { userData, setEditCompanyOpen } = props;
 
     console.log("userdata", userData);
     const [updatedValues, setUpdatedValues] = useState({
@@ -43,21 +43,25 @@ const CompanyInformationEdit = props => {
     return (
         <>
             <div id="backPop"></div>
-            <div className="userInfo">
-               {/*  <form> */}
-                    <div className="form-group" id="popup">
-                        <button onClick={() => setEditOpen(false)}>
-                            Close
+            <div className="container userInfo">
+                <form>
+                    <div id="popup">
+                    <div className="close-btn">
+                        <button
+                            className="btn btn-outline-primary x-btn"
+                            onClick={() => setEditCompanyOpen(false)}
+                        >
+                            x
                         </button>
-
-                        <div className="loginForm">
-                            <h1>Update your profile information</h1>
-
+                        </div>
+                        <h1>Update your company information</h1>
+                        <div>
                             <div className="form-group">
                                 <label htmlFor="company_name">
                                     Company name:
                                 </label>
                                 <input
+                                    className="form-control"
                                     type="text"
                                     id="company_name"
                                     value={updatedValues.company_name}
@@ -70,6 +74,7 @@ const CompanyInformationEdit = props => {
                                     Company identification number:
                                 </label>
                                 <input
+                                    className="form-control"
                                     type="text"
                                     id="ICO"
                                     value={updatedValues.ICO}
@@ -82,6 +87,7 @@ const CompanyInformationEdit = props => {
                                     Contact email:
                                 </label>
                                 <input
+                                    className="form-control"
                                     type="text"
                                     id="contact_email"
                                     value={updatedValues.contact_email}
@@ -94,6 +100,7 @@ const CompanyInformationEdit = props => {
                                     Contact phone number:
                                 </label>
                                 <input
+                                    className="form-control"
                                     type="text"
                                     id="contact_phone"
                                     value={updatedValues.contact_phone}
@@ -106,6 +113,7 @@ const CompanyInformationEdit = props => {
                                     Street address:
                                 </label>
                                 <input
+                                    className="form-control"
                                     type="text"
                                     id="address_street"
                                     value={updatedValues.address_street}
@@ -117,6 +125,7 @@ const CompanyInformationEdit = props => {
                                     Street address:
                                 </label>
                                 <input
+                                    className="form-control"
                                     type="text"
                                     id="address_zip_code"
                                     value={updatedValues.address_zip_code}
@@ -125,8 +134,9 @@ const CompanyInformationEdit = props => {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="city">City</label>
+                                <label htmlFor="city">City:</label>
                                 <input
+                                    className="form-control"
                                     type="text"
                                     id="address_city"
                                     value={updatedValues.address_city}
@@ -134,10 +144,16 @@ const CompanyInformationEdit = props => {
                                 />
                             </div>
                         </div>
-
-                        <button onClick={handleUpdatedSave}>save</button>
+                        <div className="save-part">
+                        <button
+                            className="btn btn-success"
+                            onClick={handleUpdatedSave}
+                        >
+                            save
+                        </button>
+                        </div>
                     </div>
-               {/*  </form> */}
+                </form>
             </div>
         </>
     );
