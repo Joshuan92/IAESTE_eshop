@@ -2,11 +2,12 @@ import React, { useState, useEffect }  from 'react';
 import { Router, Route, Redirect, Switch } from "react-router-dom";
 import history from "./../history.js";
 
-import UserInformationPage from './UserInformationPage.jsx';
 import UserRegistration from './UserRegistration.jsx';
 
 
-const UserRegistrationRouter = () => {
+const UserRegistrationRouter = (props) => {
+
+  const setLoggedIn = props.setLoggedIn;
 
   const [formInputValues, setFormInputValues] = useState(
                       { name: 'Martin Hanzlik', 
@@ -53,6 +54,14 @@ const UserRegistrationRouter = () => {
               user_id: data.user_id,
               company_id: formInputValues.company_id
             }))
+
+            window.localStorage.setItem('_token', JSON.stringify({
+              token: data.data.token,
+              token_timestamp: data.data.token_timestamp
+            }));
+
+            setLoggedIn(true)
+
             setRedirect(<Redirect to="/react/user-information-page" />)
           }
         }) 

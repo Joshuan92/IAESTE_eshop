@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 
 const NewCompanyForm = () => {
   
   const [formInputValues, setFormInputValue] = useState({
-                                                    company_name: 'jhbfdsnbdfsbn',
+                                                    company_name: 'Skoda Auto',
                                                     address_street: 'dsggddgs', 
                                                     address_zip_code: 'dgsgds', 
                                                     address_city: 'sdggds', 
@@ -15,10 +16,8 @@ const NewCompanyForm = () => {
                                                     contact_phone: '123456789',
                                                     web: 'www.lesoparky.cz'});
 
-  const [message, setMessage] = useState();
-  const [redirect, setRedirect] = useState();
-
- 
+  const [data, setData] = useState(false);
+  
   const changeValue = (e) => {
     const id = e.target.id
     const val = e.target.value
@@ -50,10 +49,45 @@ const NewCompanyForm = () => {
         })
             .then(response => response.json())
             .then(data => {
-                setMessage(data.message
-                );
+                setData(data);
             });
     };
+
+  let content = '';
+
+
+  if(data.errors)
+  {
+
+    content = <>
+                {Object.keys(data.errors).map(error => {
+                  return (
+                  
+                  
+                  <div className="alert alert-danger" role="alert">
+                  
+                    {data.errors[error][0]}
+
+                  </div>
+                  
+                  )
+                })}
+              
+              </>
+    
+  }
+  else if (data.status)
+  {
+
+    window.localStorage.setItem('company_id', JSON.stringify({
+      company_id: data.company_id,
+      company_name: data.company_name,
+      company_identification_number: data.company_identification_number
+    }))
+    
+    
+    content = <Redirect to="/react/new-company/user-registration"/>
+  }
 
   
 
@@ -141,7 +175,7 @@ const NewCompanyForm = () => {
         <h3>Credentials of your contact person: </h3>
 
       <div className="form-group">  
-        <label htmlFor="primary_contact">Name of the contact person:</label>
+        <label htmlFor="primary_contact">Name of the primary contact:</label>
         <input className="form-control"
           id="primary_contact"
           type="text"
@@ -182,10 +216,12 @@ const NewCompanyForm = () => {
 
       <div className="form-group">
         <button className="form-control" onClick={handleSubmitButtonClick} style={{border: '1px solid blue', margin: '5px'}}>Submit</button>
-        {message && <h3 style={{ color: 'red'}}>{message}</h3>}
+
       
       </div>
+      
       </div>
+      {content}
 
       </div>
 

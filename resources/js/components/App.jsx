@@ -21,6 +21,8 @@ import UserInformationPage from './registerUser/UserInformationPage.jsx'
 import history from "./history.js";
 import Basket from "./basket/Basket.jsx";
 import useLocalStorage from "./useLocalStorage";
+import UserRegistrationForNewCompany from "./companyForm/UserRegistrationForNewCompany.jsx"
+import Page404 from "./Page404.jsx"
 
 import "./../../sass/app.scss";
 import LoginForm from "./loginForm/LoginForm.jsx";
@@ -29,13 +31,28 @@ import UserRegistrationRouter from "./registerUser/UserRegisterRouter.jsx";
 const App = () => {
     const [fairs, setFairs] = useState([]);
     const [loginData, setLoginData] = useState(null);
-    const [loggedIn, setLoggedIn] = useState(null);
     const [loading, setLoading] = useState(true);
     const [inCart, setInCart] = useLocalStorage("basket", []);
     const [postsPerPage, setPostsPerPage] = useState(6);
     const [sort, setSort] = useState("ASC");
     const [currentPage, setCurrentPage] = useState(1);
-    const [lastPage, setLastPage] = useState()
+    const [lastPage, setLastPage] = useState();
+
+
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [token, setToken] = useState(false);
+
+    useEffect(()=>{
+
+        setToken (()=>{
+      
+            return window.localStorage.getItem('_token');
+        
+        })
+
+    }, [loggedIn])
+
+    
     
 
     let url = `/api/projects?per_page=${postsPerPage}&page=${currentPage}&sort=${sort}`;
@@ -79,21 +96,26 @@ const App = () => {
         setLoading(true);
     }, []);
 
-    /*  getToken = () => {
-        return window.localStorage.getItem('_token');
-    }
+    // getToken = () => {
+    //     return window.localStorage.getItem('_token');
+    // }
 
-    setToken = (token) => {
-        window.localStorage.setItem('_token', token);
-    } */
+
 
     return (
         <>
             <Router history={history}>
-                <Topbar totalCount={totalCount} />
+                <Topbar 
+                    totalCount={totalCount}
+                    token={token} 
+                    loggedIn={loggedIn}
+                 />
                 <Navigation />
+                {/* <Page404/> */}
+
 
                 <Switch>
+
                     <Route exact path="/react">
                         <NewCarousel />
                         <About />
@@ -157,11 +179,15 @@ const App = () => {
                     </Route>
 
                     <Route path="/react/userform">
-                        <UserRegistrationRouter />
+                        <UserRegistrationRouter
+                            
+                            setLoggedIn={setLoggedIn}
+                        
+                        />
                     </Route>
 
                     <Route exact path="/react/user-information-page" component={UserInformationPage}>
-                        {/* <UserInformationPage/> */}
+                       
                     </Route>
 
                     <Route path="/react/basket">
@@ -173,6 +199,15 @@ const App = () => {
                         />
                     </Route>
 
+                    <Route exact path="/react/new-company/user-registration">
+
+                        <UserRegistrationForNewCompany
+                            setLoggedIn={setLoggedIn}
+                        
+                        />
+                    </Route>
+
+                    
                 </Switch>
 
                 <Footer />

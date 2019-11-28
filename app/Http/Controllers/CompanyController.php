@@ -32,9 +32,9 @@ class CompanyController extends Controller
             'address_zip_code' => ['required', 'string', 'max:255'],
             'address_city' => ['required', 'string', 'max:255'],
             'address_country' => ['required', 'string', 'max:255'],
-            'address_city' => ['required', 'string', 'max:255'],
             'ICO' => ['required', 'string', 'max:255', 'unique:companies'],
             'DICO' => ['required', 'string', 'max:255', 'unique:companies'],
+            'primary_contact' => ['required', 'string', 'max:255'],
             'contact_email' => ['required', 'string', 'max:255'],
             'contact_phone' => ['required', 'string', 'max:255'],
             'web' => ['required', 'string', 'max:255']
@@ -53,14 +53,16 @@ class CompanyController extends Controller
             'primary_contact' => $request->primary_contact,
             'contact_email' => $request->contact_email,
             'contact_phone' => $request->contact_phone,
-            'web' => $request->web,
-            ])->save();
+            'web' => $request->web
+            ]);
             
-        
 
         return [
             'status' => 'success',
-            'message' => 'The data was successfully saved on the server.'
+            'message' => 'The data was successfully saved on the server.',
+            'company_id' => $company->id,
+            'company_name' => $company->company_name,
+            'company_identification_number' => $company->ICO
      ];
     }
 

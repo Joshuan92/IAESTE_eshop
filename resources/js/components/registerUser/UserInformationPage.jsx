@@ -6,9 +6,7 @@ const UserInformationPage = () => {
     const [userData, setUserData] = useState(false);
 
     const ids = JSON.parse(window.localStorage.getItem('user_data'));
-    console.log('banana');
     
-
     useEffect(()=>{
 
         fetch('/api/findUser', {

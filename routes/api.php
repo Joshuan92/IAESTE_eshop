@@ -37,4 +37,3 @@ Route::post('/user-create', 'UserController@store');
 
 Route::get('/projects', 'ProjectController@index');
 
-

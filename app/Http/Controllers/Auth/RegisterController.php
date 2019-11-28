@@ -82,7 +82,7 @@ class RegisterController extends Controller
             'phone_number' => $data['phone_number'],
             'contact_function' => $data['contact_function'],
             'mailing_address' => $data['mailing_address'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($data['password'])
 
         ]);
         
@@ -111,8 +111,11 @@ class RegisterController extends Controller
                     "registered" => true,
                     "user_id" => $user->id,
                     'data' => [
-                        'token' => $token
+                        'token' => $token,
+                        'token_timestamp' => $user->api_token_timestamp
                     ]
                 ];
     }
+
+    
 }
