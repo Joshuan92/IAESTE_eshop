@@ -53,7 +53,7 @@ const LoginForm = (props) => {
 
     else if(loginData && loginData.status === 'success')
     {
-      content = <div class="alert alert-success" role="alert">
+      content = <div className="alert alert-success" role="alert">
                   {loginData.message}
                 </div>
        
