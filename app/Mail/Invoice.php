@@ -7,18 +7,22 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class TestEmail extends Mailable
+class Invoice extends Mailable
 {
     use Queueable, SerializesModels;
+
+    public $user = null;
+    public $order = null;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name)
+    public function __construct($user, $order)
     {
-        $this->user_name = $name;
+        $this->user = $user;
+        $this->order = $order;
     }
 
     /**
@@ -28,9 +32,6 @@ class TestEmail extends Mailable
      */
     public function build()
     {
-        return $this->from('example@example.com')
-        ->replyTo('reply@example.com', 'Reply Name')
-        ->view('emails.orders.shipped')
-        ->text('emails.orders.shipped_plain');
+        return $this->markdown('emails.invoice');
     }
 }
