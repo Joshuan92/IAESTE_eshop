@@ -9,8 +9,10 @@ export default class About extends React.Component {
         <section id="about">
           <div className="container">
             <div className="row">
-              <div className="col-md-6"><h2>About Us</h2>
-                <div className="about-content"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus rhoncus. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Integer tempor. Curabitur ligula sapien, pulvinar a vestibulum quis, facilisis vel sapien. Nullam dapibus fermentum ipsum. In dapibus augue non sapien. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Pellentesque pretium lectus id turpis. Cras pede libero, dapibus nec, pretium sit amet, tempor quis. Nulla est. Cras elementum. Nullam rhoncus aliquam metus. Nulla quis diam. Nullam dapibus fermentum ipsum. Etiam neque.
+              <div className="col-md-6 text-center"><h2>About Us</h2>
+                <div className="about-content"> IAESTE Czech Republic is a member of IAESTE a.s.b.l., an independent, non-for-profit organisation registered in Luxembourg, which was founded in 1948 and currently operates at least in 85 countries worldwide. Its main goal is to enable technical university students to travel abroad and gain professional experience through the IAESTE international traineeship programme. 
+                <br/>
+                In the Czech Republic, IAESTE also organizes HR projects, which are listed in the ESHOP. The organization is run by students of diverse study backgrounds, who do so on a voluntary basis in their free time. Their aim is to bring together universities and companies and facilitate new opportunities. 
               </div>
                 <Link to='/about'>
                   <button type="button" className="btn btn-primary">Read more</button>
