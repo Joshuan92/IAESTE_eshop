@@ -17,5 +17,6 @@ Route::get('/{anything?}', function () {
 //Login routes
 Auth::routes();
 
-
+//logout
+Auth::logout();
 

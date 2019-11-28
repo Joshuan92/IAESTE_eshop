@@ -24,6 +24,8 @@ import useLocalStorage from "./useLocalStorage";
 import UserRegistrationForNewCompany from "./companyForm/UserRegistrationForNewCompany.jsx"
 import Page404 from "./Page404.jsx"
 
+import Logout from "./Logout.jsx"
+
 import "./../../sass/app.scss";
 import LoginForm from "./loginForm/LoginForm.jsx";
 import UserRegistrationRouter from "./registerUser/UserRegisterRouter.jsx";
@@ -39,7 +41,7 @@ const App = () => {
     const [lastPage, setLastPage] = useState();
 
 
-    const [loggedIn, setLoggedIn] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(null);
     const [token, setToken] = useState(false);
 
 
@@ -181,6 +183,14 @@ const App = () => {
                         <NewCompanyForm />
                     </Route>
 
+                    <Route path="/react/new-company/user-registration">
+                        <UserRegistrationForNewCompany
+                            setLoggedIn={setLoggedIn}
+
+
+                         />
+                    </Route>
+
                     <Route path="/react/userform">
                         <UserRegistrationRouter
                             
@@ -202,13 +212,15 @@ const App = () => {
                         />
                     </Route>
 
-                    <Route exact path="/react/new-company/user-registration">
-
-                        <UserRegistrationForNewCompany
-                            setLoggedIn={setLoggedIn}
-                        
+                    <Route path="/react/basket">
+                        <Basket
+                            removeFromCart={removeFromCart}
+                            inCart={inCart}
+                            setInCart={setInCart}
+                            totalPrice={totalPrice}
                         />
                     </Route>
+
 
                     
                 </Switch>
