@@ -5,7 +5,7 @@ const TotalPrice = props => {
     const { totalPrice } = props;
 
     return (
-        <div className="row ">
+        <div className="row" style={{ margin: '10px' }}>
             <div className="col-10 mx-auto col-lg-2">
                 <p></p>
             </div>

@@ -81,7 +81,7 @@ const App = () => {
         return totalPrice;
     };
 
-    console.log('sum', sum)
+    console.log("sum", sum);
 
     const removeFromCart = e => {
         const clickedItemID = e.target.id;
@@ -203,10 +203,7 @@ const App = () => {
                     </Route>
 
                     <Route exact path="/react/basket/resume">
-                        <Resume
-                            inCart={inCart}
-                            sum={sum}
-                        />
+                        <Resume inCart={inCart} sum={sum} />
                     </Route>
                 </Switch>
 

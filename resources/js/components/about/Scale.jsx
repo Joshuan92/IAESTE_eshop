@@ -1,14 +1,14 @@
 import React from 'react'
 
-export default class Scale extends React.Component {
-  render() {
+const Scale = (props) => {
     return (
       <>
-        <p>{this.props.name}</p>
+        <p>{props.name}</p>
           <div className="progress">
-             <div className="progress-bar" style={{ width: this.props.data }}>{this.props.data}</div>
+             <div className="progress-bar" style={{ width: props.data }}>{props.data}</div>
           </div>
       </>
     )
   }
-}
+
+export default Scale

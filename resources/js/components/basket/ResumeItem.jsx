@@ -1,7 +1,7 @@
 import React from "react";
 
 const ResumeItem = props => {
-    const { name, place, event_date, price } = props;
+    const { name, place, price } = props;
 
     return (
         <div className="col-md-4 col-12 mb-4">
