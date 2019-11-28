@@ -7,18 +7,21 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class TestEmail extends Mailable
+class OrderInfo extends Mailable
 {
     use Queueable, SerializesModels;
 
+
+    protected $data;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name)
+    public function __construct($data)
     {
-        $this->user_name = $name;
+        $this->data = $data;
+
     }
 
     /**
@@ -28,9 +31,6 @@ class TestEmail extends Mailable
      */
     public function build()
     {
-        return $this->from('example@example.com')
-        ->replyTo('reply@example.com', 'Reply Name')
-        ->view('emails.orders.shipped')
-        ->text('emails.orders.shipped_plain');
+        return $this->from('michal@gazdik.com')->subject('New Customer Equiry')->view('welcome.blade.php');
     }
 }

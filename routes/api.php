@@ -41,3 +41,7 @@ Route::post('/updateUser/{id}', 'UserController@update');
 
 Route::post('/updateCompany/{id}', 'CompanyController@update');
 
+Route::get('/sendemail', 'SendEmailController@index');
+
+Route::post('/sendemail/send', 'SendEmailController@send');
+

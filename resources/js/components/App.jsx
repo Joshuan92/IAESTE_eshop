@@ -17,14 +17,15 @@ import NewCompanyForm from "./companyForm/NewCompanyForm";
 import SignUpNavigation from "./SignUpNavigation/SignUpNavigation";
 import { Router, Switch, Route } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import UserInformationPage from './registerUser/UserInformationPage.jsx'
+import UserInformationPage from "./registerUser/UserInformationPage.jsx";
 import history from "./history.js";
 import Basket from "./basket/Basket.jsx";
 import useLocalStorage from "./useLocalStorage";
-import UserRegistrationForNewCompany from "./companyForm/UserRegistrationForNewCompany.jsx"
-import Page404 from "./Page404.jsx"
+import UserRegistrationForNewCompany from "./companyForm/UserRegistrationForNewCompany.jsx";
+import Page404 from "./Page404.jsx";
+import Resume from "./basket/Resume.jsx";
 
-import Logout from "./Logout.jsx"
+import Logout from "./Logout.jsx";
 
 import "./../../sass/app.scss";
 import LoginForm from "./loginForm/LoginForm.jsx";
@@ -39,24 +40,16 @@ const App = () => {
     const [sort, setSort] = useState("ASC");
     const [currentPage, setCurrentPage] = useState(1);
     const [lastPage, setLastPage] = useState();
-
+    const [sum, setSum] = useState(null);
 
     const [loggedIn, setLoggedIn] = useState(null);
     const [token, setToken] = useState(false);
 
-
-    useEffect(()=>{
-
-        setToken (()=>{
-      
-            return window.localStorage.getItem('_token');
-        
-        })
-
-    }, [loggedIn])
-
-    
-    
+    useEffect(() => {
+        setToken(() => {
+            return window.localStorage.getItem("_token");
+        });
+    }, [loggedIn]);
 
     let url = `/api/projects?per_page=${postsPerPage}&page=${currentPage}&sort=${sort}`;
 
@@ -65,7 +58,7 @@ const App = () => {
             .then(resp => resp.json())
             .then(data => {
                 setFairs(data.data);
-                setLastPage(data.last_page)
+                setLastPage(data.last_page);
                 setLoading(false);
             });
     }, [postsPerPage, sort, currentPage]);
@@ -82,8 +75,13 @@ const App = () => {
         for (let i = 0; i < inCart.length; i++) {
             totalPrice += inCart[i].price * inCart[i].quantity;
         }
+
+        setSum(totalPrice);
+
         return totalPrice;
     };
+
+    console.log('sum', sum)
 
     const removeFromCart = e => {
         const clickedItemID = e.target.id;
@@ -103,23 +101,19 @@ const App = () => {
     //     return window.localStorage.getItem('_token');
     // }
 
-
-
     return (
         <>
             <Router history={history}>
-                <Topbar 
+                <Topbar
                     totalCount={totalCount}
-                    token={token} 
+                    token={token}
                     loggedIn={loggedIn}
                     setLoggedIn={setLoggedIn}
-                 />
+                />
                 <Navigation />
                 {/* <Page404/> */}
 
-
                 <Switch>
-
                     <Route exact path="/react">
                         <NewCarousel />
                         <About />
@@ -165,10 +159,10 @@ const App = () => {
 
                     <Route path="/react/login">
                         <LoginForm
-                        loginData={loginData} 
-                        setLoginData={setLoginData}
-                        setLoggedIn={setLoggedIn}
-                         />
+                            loginData={loginData}
+                            setLoginData={setLoginData}
+                            setLoggedIn={setLoggedIn}
+                        />
                     </Route>
 
                     <Route path="/react/signUp">
@@ -186,24 +180,20 @@ const App = () => {
                     <Route path="/react/new-company/user-registration">
                         <UserRegistrationForNewCompany
                             setLoggedIn={setLoggedIn}
-
-
-                         />
+                        />
                     </Route>
 
                     <Route path="/react/userform">
-                        <UserRegistrationRouter
-                            
-                            setLoggedIn={setLoggedIn}
-                        
-                        />
+                        <UserRegistrationRouter setLoggedIn={setLoggedIn} />
                     </Route>
 
-                    <Route exact path="/react/user-information-page" component={UserInformationPage}>
-                       
-                    </Route>
+                    <Route
+                        exact
+                        path="/react/user-information-page"
+                        component={UserInformationPage}
+                    ></Route>
 
-                    <Route path="/react/basket">
+                    <Route exact path="/react/basket">
                         <Basket
                             removeFromCart={removeFromCart}
                             inCart={inCart}
@@ -212,17 +202,12 @@ const App = () => {
                         />
                     </Route>
 
-                    <Route path="/react/basket">
-                        <Basket
-                            removeFromCart={removeFromCart}
+                    <Route exact path="/react/basket/resume">
+                        <Resume
                             inCart={inCart}
-                            setInCart={setInCart}
-                            totalPrice={totalPrice}
+                            sum={sum}
                         />
                     </Route>
-
-
-                    
                 </Switch>
 
                 <Footer />

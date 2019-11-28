@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const TotalPrice = props => {
     const { totalPrice } = props;
@@ -15,7 +16,9 @@ const TotalPrice = props => {
                 <p>Total: {totalPrice()} CZK </p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <button className="btn btn-success">Finish order</button>
+                <Link to="/react/basket/resume">
+                    <button className="btn btn-success">Finish order</button>
+                </Link>
             </div>
             <div className="col-10 mx-auto col-lg-2">
                 <p></p>
