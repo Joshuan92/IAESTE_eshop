@@ -6,6 +6,7 @@ import CompanyInformationEdit from "./CompanyInformationEdit";
 const UserInformationPage = () => {
     const [userData, setUserData] = useState(false);
     const [editOpen, setEditOpen] = useState(false);
+    const [editCompanyOpen, setEditCompanyOpen] = useState(false)
 
     const ids = JSON.parse(window.localStorage.getItem("user_data"));
 
@@ -103,7 +104,7 @@ const UserInformationPage = () => {
                                     className="pencil"
                                     src={Pencil}
                                     alt=""
-                                    onClick={() => setEditOpen(true)}
+                                    onClick={() => setEditCompanyOpen(true)}
                                 />
                             </td>
                         </tr>
@@ -167,10 +168,10 @@ const UserInformationPage = () => {
                     setEditOpen={setEditOpen}
                 />
             )}
-            {editOpen && (
+            {editCompanyOpen && (
                 <CompanyInformationEdit
                     userData={userData}
-                    setEditOpen={setEditOpen}
+                    setEditCompanyOpen={setEditCompanyOpen}
                 />
             )}
         </>

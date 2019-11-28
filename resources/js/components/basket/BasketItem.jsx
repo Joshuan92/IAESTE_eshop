@@ -32,9 +32,9 @@ const BasketItem = props => {
             </div>
             <div className="col-10 mx-auto col-lg-2">
                 <p>
-                    <button onClick={() => props.handleIncrement(item.id)} id={item.id}>+</button>
+                    <button className="btn btn-link" onClick={() => props.handleIncrement(item.id)} id={item.id}>+</button>
                     {item.quantity}
-                    <button onClick={() => props.handleDecrement(item.id)}>-</button>
+                    <button className="btn btn-link" onClick={() => props.handleDecrement(item.id)}>-</button>
                 </p>
             </div>
         </div>

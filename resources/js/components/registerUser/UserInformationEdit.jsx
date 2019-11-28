@@ -39,19 +39,19 @@ const UserInformationEdit = props => {
     return (
         <>
             <div id="backPop"></div>
-            <div className="userInfo">
+            <div className="userInfo1">
                 <form>
-                    <div className="form-group" id="popup">
-                        <button onClick={() => setEditOpen(false)}>
-                            Close
-                        </button>
-
-                        <div className="loginForm">
+                    <div id="popup">
+                        <div className="close-btn">
+                        <button className="btn btn-outline-primary x-btn" onClick={() => setEditOpen(false)}>x</button>
+                        </div>
+                        <div>
                             <h1>Update your profile information</h1>
 
                             <div className="form-group">
-                                <label htmlFor="name">Name:</label>
+                                <label htmlFor="name">Name: </label>
                                 <input
+                                    className="form-control"
                                     type="text"
                                     id="name"
                                     value={updatedValues.name}
@@ -60,8 +60,9 @@ const UserInformationEdit = props => {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="email">Email</label>
+                                <label htmlFor="email">Email: </label>
                                 <input
+                                    className="form-control"
                                     type="text"
                                     id="email"
                                     value={updatedValues.email}
@@ -70,8 +71,9 @@ const UserInformationEdit = props => {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="position">Position:</label>
+                                <label htmlFor="position">Position: </label>
                                 <input
+                                    className="form-control"
                                     type="text"
                                     id="contact_function"
                                     value={updatedValues.contact_function}
@@ -80,8 +82,9 @@ const UserInformationEdit = props => {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="mailing_address">Email</label>
+                                <label htmlFor="mailing_address">Email: </label>
                                 <input
+                                    className="form-control"
                                     type="text"
                                     id="mailing_address"
                                     value={updatedValues.mailing_address}
@@ -91,9 +94,10 @@ const UserInformationEdit = props => {
 
                             <div className="form-group">
                                 <label htmlFor="phone_number">
-                                    Phone number
+                                    Phone number:
                                 </label>
                                 <input
+                                    className="form-control"
                                     type="text"
                                     id="phone_number"
                                     value={updatedValues.phone_number}
@@ -101,8 +105,9 @@ const UserInformationEdit = props => {
                                 />
                             </div>
                         </div>
-
-                        <button onClick={handleUpdatedSave}>save</button>
+                        <div className="save-part">
+                        <button className="btn btn-success" onClick={handleUpdatedSave}>save</button>
+                        </div>
                     </div>
                 </form>
             </div>
