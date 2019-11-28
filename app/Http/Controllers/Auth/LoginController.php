@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 
 class LoginController extends Controller
@@ -54,16 +55,21 @@ class LoginController extends Controller
     {
 
         $token = Str::random(80);
+        $api_token_timestamp = Carbon::now()->add(12,'hour');
     
         $this->guard()->user()->forceFill([
             'api_token' => hash('sha256', $token),
+            'api_token_timestamp' => $api_token_timestamp
         ])->save();
     
         return [
             'status' => 'success',
             'message' => 'Login successful',
             'data' => [
-                'token' => $token
+                'token' => $token,
+                'token_timestamp' => $api_token_timestamp,
+                'user_id' => $this->guard()->user()->id,
+                'company_id' => $this->guard()->user()->company_id
             ]
         ];
     }
