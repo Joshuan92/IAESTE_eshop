@@ -140,7 +140,7 @@ const Resume = props => {
 
                 <div className="save-part">
                     <Link to="/react/basket/resume">
-                        <button onClick={sendEmail} className="btn btn-success">Order</button>
+                    <button className="btn btn-success" onClick={() => setEditOpen(true)}>Order</button>
                     </Link>
                 </div>
             </div>
