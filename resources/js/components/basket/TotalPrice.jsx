@@ -1,11 +1,23 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 
 const TotalPrice = props => {
-    const { totalPrice } = props;
+    const { totalPrice, loggedIn } = props;
+
+    const [redirectState, setRedirectState] = useState(false);
+
+    let content = "";
+
+    const redirect = () => {
+        if (loggedIn) {
+            setRedirectState(<Redirect to="/react/basket/resume" />);
+        } else {
+            setRedirectState(<Redirect to="/react/login" />);
+        }
+    };
 
     return (
-        <div className="row" style={{ margin: '10px' }}>
+        <div className="row" style={{ margin: "10px" }}>
             <div className="col-10 mx-auto col-lg-2">
                 <p></p>
             </div>
@@ -16,9 +28,9 @@ const TotalPrice = props => {
                 <p>Total: {totalPrice()} CZK </p>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <Link to="/react/basket/resume">
-                    <button className="btn btn-success">Finish order</button>
-                </Link>
+                <button className="btn btn-success" onClick={redirect}>
+                    Finish order
+                </button>
             </div>
             <div className="col-10 mx-auto col-lg-2">
                 <p></p>
@@ -26,6 +38,8 @@ const TotalPrice = props => {
             <div className="col-10 mx-auto col-lg-2">
                 <p></p>
             </div>
+            {content}
+            {redirectState ? redirectState : null}
         </div>
     );
 };
