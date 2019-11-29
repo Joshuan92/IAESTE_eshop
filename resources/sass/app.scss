@@ -49,7 +49,12 @@ h1 {
 
   button:hover {
     background-color: #0E4064;
-    color: #fff;
+    color: #fff !important ;
+  }
+
+  button:focus {
+    background-color: #0E4064;
+    color: #fff !important ;
   }
 
 
