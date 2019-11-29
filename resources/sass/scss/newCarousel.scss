@@ -1,7 +1,8 @@
 .jumbotron {
-  background-image: linear-gradient(rgba(248, 248, 248, 0.883),rgba(132, 170, 230, 0.644)), url('./../../public/img/world.jpg');
+  background-image: linear-gradient(rgba(248, 248, 248, 0.712),rgba(132, 170, 230, 0.644)), url('/img/world.jpg');
   background-repeat: no-repeat cover;
   width: 100vw; 
+  z-index: 200;
 }
 
 

@@ -1,5 +1,6 @@
 import React from "react";
 //import InternKar from "./InternKar.jsx";
+//import World from './../../../public/img/world.jpg'
 
 const NewCarousel = () => {
     return (
@@ -11,7 +12,7 @@ const NewCarousel = () => {
                 </h1>
                 <h2 className="text-center" style={{ color: "#555", fontWeight: '200' }}>
                     Be seen at the best career events and workshops around <span style={{ textDecoration: 'underline' }} >Czech
-                    Republic.</span> 
+                    Republic.</span>
                 </h2>
 
                 
