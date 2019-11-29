@@ -7,14 +7,14 @@ const UserRegistrationForNewCompany = (props) => {
 
   const [formInputValues, setFormInputValues] = useState(
     { 
-      name: 'John Doe', 
-      email: 'john.doe@codingbootcamp.com', 
+      name: '', 
+      email: '', 
       password:'',
       password_confirmation: '', 
-      phone_number: '+4178456123',
+      phone_number: '',
       company_identification_number: '', 
-      contact_function: 'CEO',
-      mailing_address: 'Irisweg 5, 4665, Oftringen, Switzerland',
+      contact_function: '',
+      mailing_address: '',
       company_id: undefined,
       user_id: null
     });

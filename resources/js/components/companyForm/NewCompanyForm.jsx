@@ -4,17 +4,17 @@ import { Redirect } from "react-router-dom";
 const NewCompanyForm = () => {
   
   const [formInputValues, setFormInputValue] = useState({
-                                                    company_name: 'Skoda Auto',
-                                                    address_street: 'tř. Václava Klementa 869', 
-                                                    address_zip_code: '293 01', 
-                                                    address_city: 'Mladá Boleslav', 
-                                                    address_country: 'Czech Republic', 
-                                                    ICO: '123456789', 
-                                                    DICO: 'CZ123456789', 
-                                                    primary_contact: 'John Doe', 
-                                                    contact_email: 'john.doe@skodaauto.cz',
-                                                    contact_phone: '+420123456789',
-                                                    web: 'www.skodaauto.cz'});
+                                                    company_name: '',
+                                                    address_street: '', 
+                                                    address_zip_code: '', 
+                                                    address_city: '', 
+                                                    address_country: '', 
+                                                    ICO: '', 
+                                                    DICO: '', 
+                                                    primary_contact: '', 
+                                                    contact_email: '',
+                                                    contact_phone: '',
+                                                    web: ''});
 
   const [data, setData] = useState(false);
   
