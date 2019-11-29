@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 */
 
+Route::redirect('/', '/react');
 
 Route::get('/{anything?}', function () {
     return view('welcome');
