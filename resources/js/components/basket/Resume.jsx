@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ResumeItem from "./ResumeItem.jsx";
 import { Link } from "react-router-dom";
+import EmailSent from './EmailSent.jsx'
 
 const Resume = props => {
     const { inCart, sum } = props;
 
     const [userData, setUserData] = useState(false);
+    const [editOpen, setEditOpen] = useState(false);
 
     const ids = JSON.parse(window.localStorage.getItem("user_data"));
 
@@ -145,7 +147,12 @@ const Resume = props => {
         );
     }
 
-    return <>{content}</>;
+    return <>{content}
+    {editOpen && (
+        <EmailSent email={userData.email}
+        setEditOpen={setEditOpen}/>
+    )}
+    </>;
 };
 
 export default Resume;

@@ -199,6 +199,7 @@ const App = () => {
                             inCart={inCart}
                             setInCart={setInCart}
                             totalPrice={totalPrice}
+                            loggedIn={loggedIn}
                         />
                     </Route>
 

@@ -4,7 +4,7 @@ import BasketItem from "./BasketItem.jsx";
 import TotalPrice from "./TotalPrice.jsx";
 
 const Basket = props => {
-    const { inCart, setInCart, removeFromCart, totalPrice } = props;
+    const { inCart, setInCart, removeFromCart, totalPrice, loggedIn } = props;
 
     let content = "";
 
@@ -51,7 +51,8 @@ const Basket = props => {
                             />
                         );
                     })}
-                    <TotalPrice totalPrice={totalPrice} />
+                    <TotalPrice totalPrice={totalPrice}
+                    loggedIn={loggedIn} />
                 </div>
             </>
         );

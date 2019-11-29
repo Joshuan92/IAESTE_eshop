@@ -1,5 +1,5 @@
 import React from "react";
-import InternKar from "./InternKar.jsx";
+//import InternKar from "./InternKar.jsx";
 
 const NewCarousel = () => {
     return (

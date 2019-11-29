@@ -122,7 +122,7 @@ const CompanyInformationEdit = props => {
                             </div>
                             <div className="form-group">
                                 <label htmlFor="address_zip_code">
-                                    Street address:
+                                    ZIP code:
                                 </label>
                                 <input
                                     className="form-control"
