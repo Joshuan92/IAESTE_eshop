@@ -37,17 +37,4 @@ mix.react('resources/js/app.js', 'public/js')
 // add versioning 
 mix.version();
 
-module.exports = {
-    module: {
-      rules: [
-        {
-          test: /\.(png|jpe?g|gif)$/i,
-          use: [
-            {
-              loader: 'file-loader',
-            },
-          ],
-        },
-      ],
-    },
-  };
+
