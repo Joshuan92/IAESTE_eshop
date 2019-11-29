@@ -73,7 +73,8 @@ const SingleFair = props => {
                                 className="form-control"
                                 style={{
                                     border: "1px solid blue",
-                                    margin: "5px"
+                                    margin: "5px",
+                                    
                                 }}
                             >
                                 More info
