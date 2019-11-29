@@ -28,6 +28,8 @@ class OrderComplete extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->from('hanzlik.martin.92@email.cz')
+            ->view('emails.order');
+    
     }
 }
