@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth:api']], function ($group) {
  
 });
 
-
+Route::get('/send-email', 'OrderController@sendEmail');
 
 Route::get('/user', 'CompanyController@index');
 

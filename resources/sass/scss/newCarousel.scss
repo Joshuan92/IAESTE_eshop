@@ -1,24 +1,7 @@
 .jumbotron {
   background-image: linear-gradient(rgba(248, 248, 248, 0.705),rgba(132, 170, 230, 0.644)), url('./../../public/img/world.jpg');
-  background-repeat: no-repeat;
+  background-repeat: no-repeat cover;
   width: 100vw; 
-
-  @media (max-width: 767px) {
-    height: 70vh;
-  }
-  @media (max-width: 1024px) {
-    height: 42vh; 
-  }
-
-  @media (max-width: 1439px) {
-    height: 75vh;
-  }
-
-  @media (min-width: 1440px) {
-    height: 60vh; 
-  }
-
-  
 }
 
 

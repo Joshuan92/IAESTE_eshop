@@ -5,16 +5,16 @@ const NewCompanyForm = () => {
   
   const [formInputValues, setFormInputValue] = useState({
                                                     company_name: 'Skoda Auto',
-                                                    address_street: 'dsggddgs', 
-                                                    address_zip_code: 'dgsgds', 
-                                                    address_city: 'sdggds', 
-                                                    address_country: 'sgdsg', 
+                                                    address_street: 'tř. Václava Klementa 869', 
+                                                    address_zip_code: '293 01', 
+                                                    address_city: 'Mladá Boleslav', 
+                                                    address_country: 'Czech Republic', 
                                                     ICO: '123456789', 
                                                     DICO: 'CZ123456789', 
-                                                    primary_contact: 'Martin', 
-                                                    contact_email: 'awesome@great.cz',
-                                                    contact_phone: '123456789',
-                                                    web: 'www.lesoparky.cz'});
+                                                    primary_contact: 'John Doe', 
+                                                    contact_email: 'john.doe@skodaauto.cz',
+                                                    contact_phone: '+420123456789',
+                                                    web: 'www.skodaauto.cz'});
 
   const [data, setData] = useState(false);
   

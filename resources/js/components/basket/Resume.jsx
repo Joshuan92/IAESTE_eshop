@@ -25,7 +25,21 @@ const Resume = props => {
             });
     }, []);
 
-    console.log("user", userData);
+    const sendEmail = () => {
+
+        fetch("/api/send-email", {
+            headers: {
+                // Accept: "application/json",
+                "Content-type": "application/json"
+            } 
+
+        })
+        .then(
+            console.log('email')
+        )
+
+    }
+
 
     let content = (
         <div className="container">
@@ -124,7 +138,7 @@ const Resume = props => {
 
                 <div className="save-part">
                     <Link to="/react/basket/resume">
-                        <button className="btn btn-success">Order</button>
+                        <button onClick={sendEmail} className="btn btn-success">Order</button>
                     </Link>
                 </div>
             </div>

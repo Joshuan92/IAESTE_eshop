@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => 'michal@gazdik.com',
-        'secret' => '123456',
+        'domain' => 'hanzlik.martin.92@gmail.com',
+        'secret' => 'B3AQ5HheY4Quaj9'
     ],
 
     'postmark' => [

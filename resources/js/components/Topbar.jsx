@@ -31,8 +31,6 @@ const Topbar = props => {
         // content = <Redirect to="/react" />;
         window.location.href = '/react'
     }
-
-    console.log(loggedIn);
     
 
     if (loggedIn && datetime < token_timestamp)
