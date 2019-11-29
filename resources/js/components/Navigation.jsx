@@ -67,9 +67,9 @@ const Navigation = (props) => {
             <NavItem>
             <Link to='/react/partnership' className="nav-link">Partnership</Link>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
             <Link to='/react/projectinfo' className="nav-link">Project information</Link>
-            </NavItem>
+            </NavItem> */}
           </Nav>
         </Collapse>
       </nav>

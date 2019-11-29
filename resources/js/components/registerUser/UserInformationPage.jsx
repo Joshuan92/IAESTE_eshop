@@ -8,8 +8,8 @@ const UserInformationPage = () => {
     const [editOpen, setEditOpen] = useState(false);
     const [editCompanyOpen, setEditCompanyOpen] = useState(false)
 
-    const ids = JSON.parse(window.localStorage.getItem('user_data'));
-    
+    const ids = JSON.parse(window.localStorage.getItem('user_data'))
+
     useEffect(()=>{
 
         fetch('/api/findUser', {
@@ -26,6 +26,8 @@ const UserInformationPage = () => {
                 setUserData(data);
             });
     }, []);
+
+  
 
     let content = (
         <div className="container">

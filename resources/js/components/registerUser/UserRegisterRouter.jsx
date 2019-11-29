@@ -9,14 +9,15 @@ const UserRegistrationRouter = (props) => {
   const setLoggedIn = props.setLoggedIn;
 
   const [formInputValues, setFormInputValues] = useState(
-                      { name: 'Martin Hanzlik', 
-                        email: 'pedro.gonszales@tree.com', 
-                        password:'123456789',
-                        password_confirmation: '123456789', 
-                        phone_number: '123456789',
-                        company_identification_number: '123456789', 
-                        contact_function: 'HR',
-                        mailing_address: 'Lesna 15',
+                      { 
+                        name: 'John Doe', 
+                        email: 'john.doe@codingbootcamp.com', 
+                        password:'',
+                        password_confirmation: '', 
+                        phone_number: '+4178456123',
+                        company_identification_number: '', 
+                        contact_function: 'CEO',
+                        mailing_address: 'Irisweg 5, 4665, Oftringen, Switzerland',
                         company_id: undefined,
                         user_id: null
                       });

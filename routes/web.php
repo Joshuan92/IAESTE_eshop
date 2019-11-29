@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 */
 
+
 Route::get('/{anything?}', function () {
     return view('welcome');
 })->where('anything', '.*');
@@ -19,4 +20,3 @@ Auth::routes();
 
 //logout
 Auth::logout();
-
