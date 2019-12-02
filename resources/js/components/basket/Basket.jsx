@@ -39,7 +39,7 @@ const Basket = props => {
             <>
                 <div className="container-fluid text-center d-lg-block">
                     <h1>Your picks</h1>
-                    <Layout />
+                    <Layout className="" />
                     {inCart.map(item => {
                         return (
                             <BasketItem
