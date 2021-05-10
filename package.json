@@ -22,7 +22,7 @@
         "cross-env": "^5.2.1",
         "file-loader": "^5.0.2",
         "laravel-mix": "^4.0.7",
-        "lodash": "^4.17.13",
+        "lodash": "^4.17.21",
         "react": "^16.11.0",
         "react-dom": "^16.11.0",
         "resolve-url-loader": "^2.3.1",
